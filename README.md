@@ -1,4 +1,3 @@
+![alt text](image.png)
 # StuntGuard
-
-![alt text](image.jpg)
 
