@@ -13,4 +13,5 @@ StuntGuard is built as a requirement for Bangkit 2023's Product-based Capstone P
 
 # Team Members
 | Member | Student ID | Path | Contacts |
+| ------ | ---------- | ---- | -------- |
 | Ferza Noveri | daffa | Mobile Development | <a href="https://www.linkedin.com/in/ferzanoveri/">LinkedIn</a> |
