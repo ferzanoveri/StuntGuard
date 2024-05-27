@@ -12,6 +12,12 @@ StuntGuard is built as a requirement for Bangkit 2023's Product-based Capstone P
 
 
 # Team Members
-| Member | Student ID | Path | Contacts |
+| Member | Bangkit ID | Path | Contacts |
 | ------ | ---------- | ---- | -------- |
-| Ferza Noveri | daffa | Mobile Development | <a href="https://www.linkedin.com/in/ferzanoveri/">LinkedIn</a> |
+| Angela Aivel Alan Putri | C180D4KX0814 | Cloud Computing | <a href="https://www.linkedin.com/in/angela-aivel/">LinkedIn</a> |
+| Airlangga Dwi Satrio | C180D4KY0911 | Cloud Computing | <a href="https://www.linkedin.com/in/airlanggadwisatrio/">LinkedIn</a> |
+| Beauty Valen Fajri | M004D4KX1899 | Machine Learning | <a href="https://www.linkedin.com/in/beautyvalenfajri/">LinkedIn</a> |
+| Lauren Valentina | M118D4KX2819 | Machine Learning | <a href="https://www.linkedin.com/in/lauren-valentina-3a4105224/">LinkedIn</a> |
+| Vellan Ristiana Herawanti | M200D4KX1494 | Machine Learning | <a href="https://www.linkedin.com/in/vellanristianaherawanti/">LinkedIn</a> |
+| Ferza Noveri | A004D4KY3679 | Mobile Development | <a href="https://www.linkedin.com/in/ferzanoveri/">LinkedIn</a> |
+| Muhammad Fastabiqul Khairat | A118D4KY3913 | Mobile Development | <a href="https://www.linkedin.com/in/muhammad-fastabiqul-khairat-996709226/">LinkedIn</a> |
