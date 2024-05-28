@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.news.DetailNewsActivity">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/black">
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="@string/news_back_button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/news_detail"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/img_news"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        tools:background="@drawable/bakso"
+        android:foreground="@drawable/detail_color_gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:contentDescription="@string/news_image" />
+
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/author"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:textSize="14sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/headline"
+        app:layout_constraintStart_toStartOf="@id/headline"
+        android:fontFamily="@font/poppins_bold"
+        tools:text="author"/>
+
+    <TextView
+        android:id="@+id/headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        tools:text="Perbedaan 4 Sehat 5 Sempurna dan Pedoman Gizi Seimbang dan dan dandan"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_news"
+        android:layout_marginTop="-100dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_detail_news"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headline">
+
+        <TextView
+            android:id="@+id/nama_perusahaan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            tools:text="CNN Indonesia"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@id/container_description"
+            app:layout_constraintStart_toStartOf="@id/container_description"
+            app:layout_constraintEnd_toEndOf="@id/container_description"
+            android:textAlignment="center"
+            android:layout_marginTop="15dp"/>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nama_perusahaan">
+
+            <TextView
+                android:id="@+id/deskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Anak remaja terkadang menolak saran-saran orang tuanya. Kendati ditolak, saran orang tua ternyata tetap dapat bermanfaat bagi sang anak. Lebih jauh, peneliti mendapati anak yang patuh atas saran orang tua tak selalu baik untuk pertumbuhannya. Mengapa demikian?Studi menunjukkan, para remaja kerap butuh waktu untuk mencerna dan mengevaluasi saran yang orang tua berikan. Kendati tidak langsung dianggap membantu, saran yang berisi opsi-opsi cara pandang dan cara penyelesaian dari orang tua bantu sang anak membentuk strategi sendiri dalam mengatasi masalah.Penelitian tim asal University of Illinois Urbana-Champaign semula berangkat dari adanya kecenderungan remaja untuk menolak saran-saran dari orang tua saat menghadapi suatu masalah. Contohnya saat menghadapi kesulitan di masa transisi akademik dan pertemanan dari SD ke SMP.Para peneliti coba mengamati percakapan antara 100 anak kelas 5 SD dan ibunya. Pada tahap ini, peneliti mencari tahu seperti apa strategi para ibu bantu anak menghadapi masalah dan respons para anak "
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"
+                android:justificationMode="inter_word"/>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#4E7771"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

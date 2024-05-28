@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">StuntGuard</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+<!--    Authentication -->
+    <string name="auth_hello">Hello Again!</string>
+    <string name="auth_welcome">Welcome Back</string>
+    <string name="auth_missed">You\'ve Been Missed</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_confirm_password">Confirm Password</string>
+    <string name="auth_btn_login">Login</string>
+    <string name="auth_account">Don\'t Have an Account? </string>
+    <string name="auth_sign_up">Sign Up</string>
+    <string name="auth_logo">Logo</string>
+    <string name="auth_registration_text">Register Now</string>
+    <string name="auth_registration">Register</string>
+    <string name="auth_complete">Complete your data below</string>
+    <string name="auth_name">Full Name</string>
+    <string name="auth_number">Phone Number</string>
+    <string name="auth_have_account">Already Have an Account? </string>
+    <string name="auth_sign_in"> Sign In</string>
+
+<!--    Calendar -->
+    <string name="calendar_status">Status</string>
+    <string name="calendar_stunt_indicator">Stunting Indicator</string>
+    <string name="calendar_weight">Weight</string>
+    <string name="calendar_height">Height</string>
+    <string name="calendar_food_recommendation">Get food recommendation</string>
+    <string name="calendar_notes">Notes</string>
+
+<!--    News -->
+    <string name="news_back_button">Back Button</string>
+    <string name="news_detail">Detail News</string>
+    <string name="news_text">News</string>
+    <string name="news_image">News Image</string>
+
+
+    <string-array name="child">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+    </string-array>
+</resources>

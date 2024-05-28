@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo_stuntguard_1"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_stuntguard_1"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.StuntGuard"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.dashboard.news.SeeMoreNewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.news.SeeAllNewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.predict.ResultHealthyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.predict.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.recommendation.FoodRecommendationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.news.DetailNewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.profile.edit.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.profile.edit.EditPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.predict.PrediksiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.profile.family.FamilyMemberActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.calendar.CalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.profile.family.FormAddChildActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.splashscreen.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.dashboard.MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
