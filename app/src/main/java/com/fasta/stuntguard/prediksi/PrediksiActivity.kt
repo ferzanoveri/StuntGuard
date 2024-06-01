@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.fasta.stuntguard.MainActivity
 import com.fasta.stuntguard.R
-import com.fasta.stuntguard.databinding.ActivityMainBinding
 import com.fasta.stuntguard.databinding.ActivityPrediksiBinding
+import com.fasta.stuntguard.prediksi.result.ResultActivity
 import com.fasta.stuntguard.profile.ProfileActivity
+import com.fasta.stuntguard.profile.edit.EditProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PrediksiActivity : AppCompatActivity() {
@@ -41,6 +42,10 @@ class PrediksiActivity : AppCompatActivity() {
                 }
                 else -> false
             }
+        }
+
+        binding.btnPrediksi.setOnClickListener {
+            startActivity(Intent(this@PrediksiActivity, ResultActivity::class.java))
         }
     }
 }

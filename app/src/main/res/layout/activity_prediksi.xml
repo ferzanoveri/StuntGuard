@@ -146,14 +146,15 @@
 
 
     <Button
-        android:id="@+id/containedButton"
+        android:id="@+id/btn_prediksi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#58E978"
-        android:textColor="@color/black"
-        android:fontFamily="@font/roboto_regular"
+        android:backgroundTint="#4E7771"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:fontFamily="@font/roboto_bold"
         android:text="Prediksi"
         app:layout_constraintTop_toBottomOf="@id/radio" />
 

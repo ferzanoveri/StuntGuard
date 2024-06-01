@@ -28,40 +28,42 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="6dp"
-            android:background="@drawable/hah">
+            android:background="@drawable/bg_home">
 
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Good Morning"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
             <TextView
                 android:id="@+id/hallo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hallo,"
-                android:layout_marginTop="30dp"
+                android:textColor="@color/white"
                 android:fontFamily="@font/roboto_bold"
-                android:textSize="20dp"
-                android:layout_marginStart="10dp"
+                android:textSize="30dp"
+                android:layout_marginStart="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/day"/>
+
 
             <TextView
-                android:id="@+id/nama"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
-                android:textSize="20dp"
-                android:text="Nama"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/hallo"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_regular"
-                android:text="hhhhhhhh hhhhhhhhhhhh hhhhhhhhhh sjsjwwwd wwdwnndd"
-                android:textSize="16dp"
-                android:layout_marginStart="11dp"
+                android:text="Username"
+                android:textColor="@color/white"
+                android:layout_marginStart="15dp"
+                android:textSize="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/hallo" />
@@ -69,32 +71,51 @@
 
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:id="@+id/kategori"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Kategori"
+        android:textSize="30dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top" />
+
     <HorizontalScrollView
         android:id="@+id/horizontal_sv_news"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top">
+        app:layout_constraintTop_toBottomOf="@id/kategori">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/logo_stuntguard" />
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/vektor_sayuran" />
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/logo_stuntguard" />
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/vektor_sayuran" />
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/logo_stuntguard" />
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/vektor_sayuran" />
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/logo_stuntguard" />
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/vektor_sayuran" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -102,10 +123,11 @@
         android:id="@+id/news"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="News"
-        android:fontFamily="@font/roboto_regular"
-        android:textSize="16dp"
-        android:layout_marginTop="10dp"
+        android:text="Just For You"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
         android:layout_marginHorizontal="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/horizontal_sv_news" />
