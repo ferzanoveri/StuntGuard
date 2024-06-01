@@ -2,11 +2,11 @@
 
 ## StuntGuard Backend API
 
-| Endpoint | Method |                   Input                   |                Description                | JWT Token |
-| :---------: | :------: | :------------------------------------------: | :------------------------------------------: | :---------: |
-| /register |  POST  | fullname, gender, email, phone, password, confirmpassword |       Register account      |  &#9744;  |
-|  /login  |  POST  |              email, password              | Login to application |  &#9744;  |
-|  /getUsers  |  GET  |                     -                     |             Get all parents data             |  &#9745;  |
+| Endpoint | Method |                   Input                   |                Description                |
+| :---------: | :------: | :------------------------------------------: | :------------------------------------------: |
+| /register |  POST  | fullname, gender, email, phone, password, confirmpassword |       Register account      |
+|  /login  |  POST  |              email, password              | Login to application |
+|  /getUsers  |  GET  |                     -                     |             Get all parents data             |
 
 ## How to run this API on your local machine 💻
 
