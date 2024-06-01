@@ -1,0 +1,73 @@
+datasource db {
+    provider = "mysql"
+    url = env("DB_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Child {
+  child_id       String @id @db.Char(16) @default(nanoid(16))
+  parent_id      String @db.Char(16)
+  child_name     String @db.VarChar(255)
+  child_gender   Boolean
+  born_date      DateTime
+  child_age      Int
+  born_weight    Float
+  born_height    Float
+  breastfeeding  Boolean
+  created_at     DateTime @default(now()) @db.Timestamp(0)
+  updated_at     DateTime @default(now()) @db.Timestamp(0)
+
+  parent         Parent @relation(fields: [parent_id], references: [parent_id], onDelete: Restrict, onUpdate: Restrict)
+  stuntPredict   StuntPredict[]
+  recommendation Recommendation[]
+}
+
+model Parent {
+  parent_id     String @id @db.Char(16) @default(nanoid(16))
+  parent_name   String @db.VarChar(255)
+  parent_gender Boolean
+  email          String @db.VarChar(200) @unique
+  phone          String @db.VarChar(13)
+  password       String @db.VarChar(255)
+  created_at     DateTime @default(now()) @db.Timestamp(0)
+  updated_at     DateTime @default(now()) @db.Timestamp(0)
+
+  children       Child[]
+}
+
+model StuntPredict {
+  predict_id     String @id @db.VarChar(8)
+  child_weight   Float
+  child_height   Float
+  predict_result Boolean
+  child_id       String @db.Char(16)
+  created_at     DateTime @default(now()) @db.Timestamp(0)
+  updated_at     DateTime @default(now()) @db.Timestamp(0)
+
+  child          Child @relation(fields: [child_id], references: [child_id], onDelete: Restrict, onUpdate: Restrict)
+}
+
+model Recommendation {
+  recommendation_id String @id @db.VarChar(8)
+  child_id          String @db.Char(16)
+  created_at        DateTime @default(now()) @db.Timestamp(0)
+  updated_at        DateTime @default(now()) @db.Timestamp(0)
+
+  child             Child @relation(fields: [child_id], references: [child_id], onDelete: Restrict, onUpdate: Restrict)
+  food_details      FoodDetails[]
+}
+
+model FoodDetails {
+  food_id           String @id @db.Char(16) @default(nanoid(16))
+  ingredients       String @db.VarChar(255)
+  nutritions        String @db.VarChar(255)
+  measure           Float
+  recommendation_id String @db.Char(16)
+  created_at        DateTime @default(now()) @db.Timestamp(0)
+  updated_at        DateTime @default(now()) @db.Timestamp(0)
+
+  recommendation    Recommendation @relation(fields: [recommendation_id], references: [recommendation_id], onDelete: Restrict, onUpdate: Restrict)
+}
