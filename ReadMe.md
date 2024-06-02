@@ -4,20 +4,26 @@
 
 ## API Endpoints
 
-| Endpoint                   | Method | Input                                                                         | Description                       |
-|----------------------------|--------|-------------------------------------------------------------------------------|-----------------------------------|
-| /register                  | POST   | fullname, gender, email, phone, password, confirmpassword                     | Register account                  |
-| /login                     | POST   | email, password                                                               | Login to application              |
-| /getUsers                  | GET    | -                                                                             | Get all parents data              |
-| /getUserbyId/:parent_id    | GET    | parent_id                                                                     | Get parent data by ID             |
-| /updateUser/:parent_id     | POST   | fullname, gender, email, phone, password, confirmpassword                     | Update parent data                |
-| /removeUser/:parent_id     | DELETE | -                                                                             | Remove parent account             |
-| /addChild/:child_id        | POST   | child_name, child_gender, born_date, born_weight, born_height, breastfeeding  | Add child data to family          |
-| /getChilds                 | GET    | -                                                                             | Get all children data             |
-| /getChildbyId/:child_id    | GET    | need child_id                                                                 | Get child data by ID              |
-| /getParentChilds/:parent_id| GET    | need parent_id                                                                | Get childrens data by parent ID   |
-| /updateChild/:child_id     | POST   | child_name, child_gender, born_date, born_weight, born_height, breastfeeding  | Update child data                 |
-| /removeChild/:parent_id    | DELETE | -                                                                             | Remove child data                 |
+| Endpoint                          | Method | Input                                                                         | Description                       | Status         |
+|-----------------------------------|--------|-------------------------------------------------------------------------------|-----------------------------------|----------------|
+| /register                         | POST   | fullname, gender, email, phone, password, confirmpassword                     | Register account                  |
+| /login                            | POST   | email, password                                                               | Login to application              |
+| /getUsers                         | GET    | -                                                                             | Get all parents data              |
+| /getUserbyId/:parent_id           | GET    | parent_id                                                                     | Get parent data by ID             |
+| /updateUser/:parent_id            | POST   | fullname, gender, email, phone (optional)                                     | Update parent data                |
+| /updatePassword/:parent_id        | POST   | oldPassword, newPassword, confirmPassword                                     | Update parent data                |
+| /removeUser/:parent_id            | DELETE | -                                                                             | Remove parent account             |
+| /addChild/:child_id               | POST   | child_name, child_gender, born_date, born_weight, born_height, breastfeeding  | Add child data to family          |
+| /getChilds                        | GET    | -                                                                             | Get all children data             |
+| /getChildbyId/:child_id           | GET    | need child_id                                                                 | Get child data by ID              |
+| /getParentChilds/:parent_id       | GET    | need parent_id                                                                | Get childrens data by parent ID   |
+| /updateChild/:child_id            | POST   | child_name, child_gender, born_date, born_weight, born_height, breastfeeding  | Update child data                 |
+| /removeChild/:parent_id           | DELETE | -                                                                             | Remove child data                 |
+| /prediction/:child_id             | POST   | child_weigth, child_height                                                    | Post a prediction                 |
+| /getAllPredicts/                  | GET    | -                                                                             | Get all predictions               |
+| /getPredictbyId/:predict_id       | GET    | need predict_id                                                               | Get predictions by predict_id     |
+| /getAllPredictbyChild/:child_id   | GET    | need child_id                                                                 | Get predictions by child_id       |
+
 
 ## How to run this API on your local machine 💻
 
@@ -46,7 +52,7 @@ If you want to run this API Server on your local machine, you need to do this st
 
 4. **Cloud SQL**
    - **Deskripsi:** Cloud SQL digunakan untuk menyimpan data relasional berupa data pengguna, data anak, serta data hasil prediksi model ml.
-   - **Fungsi:** Mengelola basis data relasional dengan dukungan untuk MySQL, PostgreSQL, dan SQL Server.
+   - **Fungsi:** Mengelola basis data relasional dengan MySQL.
 
 6. **Postman**
    - **Deskripsi:** Postman digunakan untuk menguji API backend.
