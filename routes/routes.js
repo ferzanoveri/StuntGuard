@@ -34,7 +34,7 @@ router.get('/getChildbyId/:child_id', childController.getChildbyId);
 // Predict
 router.post('/prediction/:child_id', predict.createPrediction)
 router.get('/getAllPredicts', predict.getAllPredicts)
-router.get('/getPredictbyId', predict.getPredictbyId)
-router.get('/getAllPredictbyChild', predict.getAllPredictbyChild)
+router.get('/getPredictbyId/:predict_id', predict.getPredictbyId)
+router.get('/getAllPredictbyChild/:child_id', predict.getAllPredictbyChild)
 
 module.exports = router;
