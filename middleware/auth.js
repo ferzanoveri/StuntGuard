@@ -74,15 +74,6 @@ exports.register = async (req, res) => {
     }
 }
 
-exports.getUsers = async (req, res) => {
-    const parents = await prisma.parent.findMany()
-    res.status(200).json({
-        "status": true,
-        "message": "All users",
-        "data": parents,
-    })
-}
-
 exports.login = async (req, res) => {
     const { email, password } = req.body
     const parent = await prisma.parent.findUnique({
