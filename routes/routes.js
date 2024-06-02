@@ -2,10 +2,11 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
-const vaalidation = require("../middleware/validation");
+const validation = require("../middleware/validation");
 const predict = require("../controller/predictController");
 const childController = require("../controller/childController");
 const userController = require("../controller/userController");
+const predictController = require("../controller/predictController");
 
 router.get("/", (req, res) => {
     res.status(200).json({
@@ -19,6 +20,7 @@ router.post('/login', auth.login)
 router.get('/getUsers', userController.getUsers)
 router.get('/getUserbyId/:parent_id', userController.getUserbyId)
 router.post('/updateUser/:parent_id', userController.updateUser)
+router.post('/updatePassword/:parent_id', userController.updatePassword)
 router.delete('/removeUser/:parent_id', userController.removeUser)
 
 // Child
@@ -31,4 +33,8 @@ router.get('/getChildbyId/:child_id', childController.getChildbyId);
 
 // Predict
 router.post('/prediction/:child_id', predict.createPrediction)
+router.get('/getAllPredicts', predict.getAllPredicts)
+router.get('/getPredictbyId', predict.getPredictbyId)
+router.get('/getAllPredictbyChild', predict.getAllPredictbyChild)
+
 module.exports = router;

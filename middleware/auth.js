@@ -10,7 +10,7 @@ const createToken = (payload) => {
 
 exports.register = async (req, res) => {
 
-    const { parent_name, parent_gender, email, phone, password, confirmPassword } = req.body
+    const { parent_name, email, phone, password, confirmPassword } = req.body
 
     if (password !== confirmPassword) {
         return res.status(400).json({
@@ -18,16 +18,6 @@ exports.register = async (req, res) => {
             "message": "Passwords do not match",
         })
     }
-
-    // Validate gender
-    if (parent_gender !== "male" && parent_gender !== "female") {
-        return res.status(400).json({
-            "status": false,
-            "message": "Gender must be either 'male' or 'female'",
-        });
-    }
-    // Convert gender to boolean
-    const genderBoolean = parent_gender === "male";
 
     //check if email already exists
     const exists = await prisma.parent.count({
@@ -42,7 +32,6 @@ exports.register = async (req, res) => {
         })
     }
 
-
     //encrypt the password
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(password, salt)
@@ -51,7 +40,6 @@ exports.register = async (req, res) => {
         const newParents = await prisma.parent.create({
             data: {
                 parent_name: parent_name,
-                parent_gender: genderBoolean,
                 email: email,
                 phone: phone,
                 password: hashedPassword,
@@ -66,7 +54,7 @@ exports.register = async (req, res) => {
         "token": token
     })
     } catch (error) {
-        console.log(error)
+        console.error(error)
         res.status(500).json({
             "status": false,
             "message": "An unexpected error occurred on the server",

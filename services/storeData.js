@@ -1,21 +1,37 @@
 const prisma = require('../prisma/prisma');
-const { nanoid } = require('nanoid');
+const moment = require('moment');
 
 async function storePredict(data) {
   try {
+    const dateId = moment().format('YYYYMMDD'); // Generate date-based ID
+
     const predictData = {
-      predict_id: nanoid(8),
+      predict_id: dateId,
       child_weight: data.child_weight,
       child_height: data.child_height,
       predict_result: data.predict_result,
       child_id: data.child_id,
     };
 
-    const result = await prisma.stuntPredict.create({
-      data: predictData,
+    // Check if a prediction already exists for the current date
+    const existingPrediction = await prisma.stuntPredict.findUnique({
+      where: { predict_id: dateId },
     });
 
-    return result;
+    if (existingPrediction) {
+      // Update the existing prediction
+      const result = await prisma.stuntPredict.update({
+        where: { predict_id: dateId },
+        data: predictData,
+      });
+      return result;
+    } else {
+      // Create a new prediction
+      const result = await prisma.stuntPredict.create({
+        data: predictData,
+      });
+      return result;
+    }
   } catch (error) {
     throw new Error(`Error storing predict data: ${error.message}`);
   }

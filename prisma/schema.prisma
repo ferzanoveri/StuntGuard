@@ -12,10 +12,10 @@ model Child {
   parent_id      String @db.Char(16)
   child_name     String @db.VarChar(255)
   child_gender   Boolean
-  born_date      DateTime
+  birth_date      DateTime
   child_age      Int
-  born_weight    Float
-  born_height    Float
+  birth_weight    Float
+  birth_height    Float
   breastfeeding  Boolean
   created_at     DateTime @default(now()) @db.Timestamp(0)
   updated_at     DateTime @default(now()) @db.Timestamp(0)
@@ -28,7 +28,6 @@ model Child {
 model Parent {
   parent_id     String @id @db.Char(16) @default(nanoid(16))
   parent_name   String @db.VarChar(255)
-  parent_gender Boolean
   email          String @db.VarChar(200) @unique
   phone          String @db.VarChar(13)
   password       String @db.VarChar(255)
