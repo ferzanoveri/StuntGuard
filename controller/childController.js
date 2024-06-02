@@ -1,7 +1,5 @@
 const { where } = require("@tensorflow/tfjs-node");
 const prisma = require("../prisma/prisma")
-const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken")
 
 exports.addChild = async (req, res) => {
 

@@ -1,4 +1,5 @@
 const prisma = require('../prisma/prisma')
+const bcrypt = require("bcrypt")
 
 exports.getUsers = async (req, res) => {
     const parents = await prisma.parent.findMany()
