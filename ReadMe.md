@@ -29,3 +29,27 @@ If you want to run this API Server on your local machine, you need to do this st
 4. Activate your xampp and create database name `stuntguard-db`.
 5. Type `npx prisma migrate dev` in the terminal to migrate your databases (if needed, type `npx prisma generate` first).
 6. Run your application with `npm run start-dev` in the terminal.
+
+# Cloud Services
+
+## ![Cloud Architecture](images/CloudArchitecture.png)
+
+## Deskripsi Layanan Cloud
+
+1. **Cloud Run**
+   - **Deskripsi:** Cloud Run digunakan sebagai backend service, selain itu juga untuk menyebarkan model machine learning dan endpoint API menggunakan layanan terkontainer.
+   - **Fungsi:** Menyediakan lingkungan yang dapat diskalakan untuk aplikasi berbasis kontainer.
+
+3. **Cloud Storage**
+   - **Deskripsi:** Cloud Storage digunakan untuk menyimpan aset dan model machine learning.
+   - **Fungsi:** Menyediakan penyimpanan yang tahan lama dan aman untuk data dalam jumlah besar.
+
+4. **Cloud SQL**
+   - **Deskripsi:** Cloud SQL digunakan untuk menyimpan data relasional berupa data pengguna, data anak, serta data hasil prediksi model ml.
+   - **Fungsi:** Mengelola basis data relasional dengan dukungan untuk MySQL, PostgreSQL, dan SQL Server.
+
+6. **Postman**
+   - **Deskripsi:** Postman digunakan untuk menguji API backend.
+   - **Fungsi:** Menyediakan alat untuk mengembangkan, menguji, dan mendokumentasikan API.
+
+## ![Database Diagram](images/DatabaseDiagram.png)
