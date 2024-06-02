@@ -3,8 +3,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const App = require('./routes/routes')
 const { PORT } = require('./config/config')
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.use(App)
 
 app.listen(PORT, () =>
