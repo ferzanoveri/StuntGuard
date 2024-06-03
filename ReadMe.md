@@ -6,11 +6,11 @@
 
 | Endpoint                          | Method | Input                                                                         | Description                       | Status         |
 |-----------------------------------|--------|-------------------------------------------------------------------------------|-----------------------------------|----------------|
-| /register                         | POST   | fullname, gender, email, phone, password, confirmpassword                     | Register account                  |✅ Completed   |
+| /register                         | POST   | parent_name, email, phone, password, confirmPassword                          | Register account                  |✅ Completed   |
 | /login                            | POST   | email, password                                                               | Login to application              |✅ Completed   |
 | /getUsers                         | GET    | -                                                                             | Get all parents data              |✅ Completed   |
 | /getUserbyId/:parent_id           | GET    | parent_id                                                                     | Get parent data by ID             |✅ Completed   |
-| /updateUser/:parent_id            | POST   | fullname, gender, email, phone (optional)                                     | Update parent data                |✅ Completed   |
+| /updateUser/:parent_id            | POST   | parent_name, email, phone (optional)                                          | Update parent data                |✅ Completed   |
 | /updatePassword/:parent_id        | POST   | oldPassword, newPassword, confirmPassword                                     | Update parent data                |✅ Completed   |
 | /removeUser/:parent_id            | DELETE | -                                                                             | Remove parent account             |✅ Completed   |
 | /addChild/:child_id               | POST   | child_name, child_gender, born_date, born_weight, born_height, breastfeeding  | Add child data to family          |✅ Completed   |

@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
 const validation = require("../middleware/validation");
-const predict = require("../controller/predictController");
 const childController = require("../controller/childController");
 const userController = require("../controller/userController");
 const predictController = require("../controller/predictController");
@@ -32,9 +31,9 @@ router.get('/getChilds', childController.getChilds);
 router.get('/getChildbyId/:child_id', childController.getChildbyId);
 
 // Predict
-router.post('/prediction/:child_id', predict.createPrediction)
-router.get('/getAllPredicts', predict.getAllPredicts)
-router.get('/getPredictbyId/:predict_id', predict.getPredictbyId)
-router.get('/getAllPredictbyChild/:child_id', predict.getAllPredictbyChild)
+router.post('/prediction/:child_id', predictController.createPrediction)
+router.get('/getAllPredicts', predictController.getAllPredicts)
+router.get('/getPredictbyId/:predict_id', predictController.getPredictbyId)
+router.get('/getAllPredictbyChild/:child_id', predictController.getAllPredictbyChild)
 
 module.exports = router;
