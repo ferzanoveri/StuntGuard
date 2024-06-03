@@ -19,7 +19,8 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 2. Install all necessary requirements by typing `pip install -r requirements.txt` in the terminal.
 3. Make sure XAMPP is running and that you have a database set up as before.
 4. Create your `.env` file with the required configurations.
-5. Run your application using `python predict_service.py` in the terminal.
+5. Download the `model.h5` file using the link provided in `model.txt`
+6. Run your application using `python predict_service.py` in the terminal.
 
 ## StuntGuard API Endpoints
 
@@ -67,20 +68,16 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 
 ## Deskripsi Layanan Cloud
 
-1. **Cloud Run**
-   - **Deskripsi:** Cloud Run digunakan sebagai backend service, selain itu juga untuk menyebarkan model machine learning dan endpoint API menggunakan layanan terkontainer.
-   - **Fungsi:** Menyediakan lingkungan yang dapat diskalakan untuk aplikasi berbasis kontainer.
+### Cloud Run
+Cloud Run is used as a backend service and to deploy machine learning models and API endpoints using containerized services.
 
-3. **Cloud Storage**
-   - **Deskripsi:** Cloud Storage digunakan untuk menyimpan aset dan model machine learning.
-   - **Fungsi:** Menyediakan penyimpanan yang tahan lama dan aman untuk data dalam jumlah besar.
+### Cloud Storage
+Cloud Storage is used to store assets and machine learning models.
 
-4. **Cloud SQL**
-   - **Deskripsi:** Cloud SQL digunakan untuk menyimpan data relasional berupa data pengguna, data anak, serta data hasil prediksi model ml.
-   - **Fungsi:** Mengelola basis data relasional dengan MySQL.
+### Cloud SQL
+Cloud SQL is used to store relational data such as user data, child data, and prediction results from machine learning models.
 
-6. **Postman**
-   - **Deskripsi:** Postman digunakan untuk menguji API backend.
-   - **Fungsi:** Menyediakan alat untuk mengembangkan, menguji, dan mendokumentasikan API.
+### Postman
+Postman is used to test the backend API. Provides tools for developing, testing, and documenting APIs.
 
 ## ![Database Diagram](images/DatabaseDiagram.png)
