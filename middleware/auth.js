@@ -83,6 +83,7 @@ exports.login = async (req, res) => {
         res.status(200).json({
             "status": true,
             "message": "Login successful",
+            "userId": parent.parent_id,
             "data":  parent.parent_name,
             "token": token
     }) 

@@ -42,6 +42,7 @@ model StuntPredict {
   child_weight   Float
   child_height   Float
   predict_result Boolean
+  confidenceScore Float
   child_id       String @db.Char(16)
   created_at     DateTime @default(now()) @db.Timestamp(0)
   updated_at     DateTime @default(now()) @db.Timestamp(0)
