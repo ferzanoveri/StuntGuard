@@ -4,25 +4,25 @@
 
 ## API Endpoints
 
-| Endpoint                          | Method | Input                                                                         | Description                       | Status         |
-|-----------------------------------|--------|-------------------------------------------------------------------------------|-----------------------------------|----------------|
-| /register                         | POST   | parent_name, email, phone, password, confirmPassword                          | Register account                  |✅ Completed   |
-| /login                            | POST   | email, password                                                               | Login to application              |✅ Completed   |
-| /getUsers                         | GET    | -                                                                             | Get all parents data              |✅ Completed   |
-| /getUserbyId/:parent_id           | GET    | parent_id                                                                     | Get parent data by ID             |✅ Completed   |
-| /updateUser/:parent_id            | POST   | parent_name, email, phone (optional)                                          | Update parent data                |✅ Completed   |
-| /updatePassword/:parent_id        | POST   | oldPassword, newPassword, confirmPassword                                     | Update parent data                |✅ Completed   |
-| /removeUser/:parent_id            | DELETE | -                                                                             | Remove parent account             |✅ Completed   |
-| /addChild/:child_id               | POST   | child_name, child_gender, born_date, born_weight, born_height, breastfeeding  | Add child data to family          |✅ Completed   |
-| /getChilds                        | GET    | -                                                                             | Get all children data             |✅ Completed   |
-| /getChildbyId/:child_id           | GET    | need child_id                                                                 | Get child data by ID              |✅ Completed   |
-| /getParentChilds/:parent_id       | GET    | need parent_id                                                                | Get childrens data by parent ID   |✅ Completed   |
-| /updateChild/:child_id            | POST   | child_name, child_gender, born_date, born_weight, born_height, breastfeeding  | Update child data                 |✅ Completed   |
-| /removeChild/:parent_id           | DELETE | -                                                                             | Remove child data                 |✅ Completed   |
-| /prediction/:child_id             | POST   | child_weigth, child_height                                                    | Post a prediction                 |🟠 Ongoing     |
-| /getAllPredicts/                  | GET    | -                                                                             | Get all predictions               |🟠 Ongoing     |
-| /getPredictbyId/:predict_id       | GET    | need predict_id                                                               | Get predictions by predict_id     |🟠 Ongoing     |
-| /getAllPredictbyChild/:child_id   | GET    | need child_id                                                                 | Get predictions by child_id       |🟠 Ongoing     |
+| Endpoint                          | Method | Input                                                                            | Description                       | Status         |
+|-----------------------------------|--------|----------------------------------------------------------------------------------|-----------------------------------|----------------|
+| /register                         | POST   | parent_name, email, phone, password, confirmPassword                             | Register account                  |✅ Completed   |
+| /login                            | POST   | email, password                                                                  | Login to application              |✅ Completed   |
+| /getUsers                         | GET    | -                                                                                | Get all parents data              |✅ Completed   |
+| /getUserbyId/:parent_id           | GET    | parent_id                                                                        | Get parent data by ID             |✅ Completed   |
+| /updateUser/:parent_id            | POST   | parent_name, email, phone (optional)                                             | Update parent data                |✅ Completed   |
+| /updatePassword/:parent_id        | POST   | oldPassword, newPassword, confirmPassword                                        | Update parent data                |✅ Completed   |
+| /removeUser/:parent_id            | DELETE | -                                                                                | Remove parent account             |✅ Completed   |
+| /addChild/:child_id               | POST   | child_name, child_gender, birth_date, birth_weight, birth_height, breastfeeding  | Add child data to family          |✅ Completed   |
+| /getChilds                        | GET    | -                                                                                | Get all children data             |✅ Completed   |
+| /getChildbyId/:child_id           | GET    | need child_id                                                                    | Get child data by ID              |✅ Completed   |
+| /getParentChilds/:parent_id       | GET    | need parent_id                                                                   | Get childrens data by parent ID   |✅ Completed   |
+| /updateChild/:child_id            | POST   | child_name, child_gender, birth_date, birth_weight, birth_height, breastfeeding  | Update child data                 |✅ Completed   |
+| /removeChild/:parent_id           | DELETE | -                                                                                | Remove child data                 |✅ Completed   |
+| /prediction/:child_id             | POST   | child_weigth, child_height                                                       | Post a prediction                 |🟠 Ongoing     |
+| /getAllPredicts/                  | GET    | -                                                                                | Get all predictions               |🟠 Ongoing     |
+| /getPredictbyId/:predict_id       | GET    | need predict_id                                                                  | Get predictions by predict_id     |🟠 Ongoing     |
+| /getAllPredictbyChild/:child_id   | GET    | need child_id                                                                    | Get predictions by child_id       |🟠 Ongoing     |
 
 
 ## How to run this API on your local machine 💻
