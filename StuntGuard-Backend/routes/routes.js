@@ -17,13 +17,13 @@ router.post('/register', auth.register)
 router.post('/login', auth.login)
 router.get('/user/all', userController.getUsers)
 router.get('/user/id/:parent_id', userController.getUserbyId)
-router.post('/user/update/:parent_id', userController.updateUser)
-router.post('/user/updatePassword/:parent_id', userController.updatePassword)
+router.put('/user/update/:parent_id', userController.updateUser)
+router.put('/user/updatePassword/:parent_id', userController.updatePassword)
 router.delete('/user/remove/:parent_id', userController.removeUser)
 
 // Child
 router.post('/child/:parent_id', childController.addChild);
-router.post('/updateChild/:child_id', childController.updateChild);
+router.put('/child/update/:child_id', childController.updateChild);
 router.get('/parent/childs/:parent_id', childController.getParentChilds);
 router.get('/child/all', childController.getChilds);
 router.get('/child/id/:child_id', childController.getChildbyId);
