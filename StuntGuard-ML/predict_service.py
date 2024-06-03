@@ -71,30 +71,18 @@ def predict(child_id):
             return jsonify({"error": "Child data not found."}), 404
 
         # Parse request data
-        print("data child =", child_data)
-
         data = request.json
         child_weight = data.get("child_weight")
         child_height = data.get("child_height")
 
-        # Allow user to override breastfeeding value
-        breastfeeding = data.get("breastfeeding")
-        breastfeeding = 1 if breastfeeding == "Yes" else 0
-        default_breastfeeding = 1 if child_data[8] == "Yes" else 0
-
-        if breastfeeding is not None and breastfeeding != default_breastfeeding:
-            # Connect to MySQL and update breastfeeding value
-            conn = get_mysql_connection()
-            cursor = conn.cursor()
-            cursor.execute(
-                "UPDATE Child SET breastfeeding = %s WHERE child_id = %s",
-                (breastfeeding, child_id),
-            )
-            conn.commit()  # Commit the changes to the database
-            conn.close()  # Close the connection after committing
-            print("Breastfeeding value updated successfully.")
-
-        print("data child 2 =", child_weight, child_height, breastfeeding)
+        # Handle breastfeeding value
+        input_breastfeeding = data.get("breastfeeding")
+        if input_breastfeeding == "Yes":
+            breastfeeding = True
+        elif input_breastfeeding == "No":
+            breastfeeding = False
+        else:
+            breastfeeding = bool(child_data[8])  # Use default value from Child data
 
         # Prepare data for prediction
         prediction_data = {
@@ -104,32 +92,23 @@ def predict(child_id):
             "Birth Length": child_data[7],
             "Body Weight": child_weight,
             "Body Length": child_height,
-            "Breastfeeding": breastfeeding,
+            "Breastfeeding": 1 if breastfeeding else 0,
         }
 
-        print("data predict =", prediction_data)
+        
 
         # Perform prediction with the model
         prediction_array = np.array([list(prediction_data.values())])
-        print(model.predict)
         if hasattr(model, "predict"):
-            print("predict")
             prediction = model.predict(prediction_array)
-            print("predict lagi", prediction)
             confidence_score = float(prediction[0][0])
-            print("confidence_score", confidence_score)
-            predict_result = bool(
-                confidence_score > 0.5
-            )  # Assuming threshold is 0.5 for binary classification
-            print(predict_result)
+            predict_result = confidence_score > 0.5  # Assuming threshold is 0.5 for binary classification
         else:
             return jsonify({"error": "Model does not have predict method."}), 500
 
         # Generate predict_id and current timestamp
         predict_id = datetime.now().strftime("%d%m%Y")
-        print("predict id =", predict_id)
         created_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        print("created_at =", created_at)
 
         # Connect to MySQL and insert or update prediction data
         conn = get_mysql_connection()
@@ -140,10 +119,8 @@ def predict(child_id):
             "SELECT * FROM StuntPredict WHERE predict_id = %s", (predict_id,)
         )
         existing_prediction = cursor.fetchone()
-        print("existing pred :", existing_prediction)
         if existing_prediction:
             # Update existing prediction
-            print("existing pred true")
             cursor.execute(
                 "UPDATE StuntPredict SET child_weight = %s, child_height = %s, predict_result = %s, created_at = %s, confidenceScore = %s WHERE predict_id = %s",
                 (
@@ -157,7 +134,6 @@ def predict(child_id):
             )
         else:
             # Insert new prediction
-            print("existing pred false")
             cursor.execute(
                 "INSERT INTO StuntPredict (predict_id, child_weight, child_height, predict_result, child_id, created_at, confidenceScore) VALUES (%s, %s, %s, %s, %s, %s, %s)",
                 (
@@ -171,10 +147,13 @@ def predict(child_id):
                 ),
             )
 
-        print("don 1")
-        conn.commit()
-        print("don 2")
+        # Update breastfeeding value in Child table
+        cursor.execute(
+            "UPDATE Child SET breastfeeding = %s WHERE child_id = %s",
+            (breastfeeding, child_id),
+        )
 
+        conn.commit()
         cursor.close()
         conn.close()
 
@@ -187,7 +166,7 @@ def predict(child_id):
             "created_at": created_at,
             "confidenceScore": confidence_score,
             "child_id": child_id,
-            "breastfeeding": "Yes" if breastfeeding == 1 else "No"
+            "breastfeeding": "Yes" if breastfeeding else "No"
         }
 
         return jsonify(response_data)
