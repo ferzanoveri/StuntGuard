@@ -12,7 +12,6 @@
   "dependencies": {
     "@google-cloud/storage": "^7.11.1",
     "@prisma/client": "^5.14.0",
-    "@tensorflow/tfjs-node": "4.14",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "dateformat": "^5.0.3",
