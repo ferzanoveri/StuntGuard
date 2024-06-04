@@ -5,6 +5,7 @@ const auth = require("../middleware/auth");
 const validation = require("../middleware/validation");
 const childController = require("../controller/childController");
 const userController = require("../controller/userController");
+const newsController = require("../controller/newsController");
 
 router.get("/", (req, res) => {
     res.status(200).json({
@@ -28,5 +29,8 @@ router.get('/parent/childs/:parent_id', childController.getParentChilds);
 router.get('/child/all', childController.getChilds);
 router.get('/child/id/:child_id', childController.getChildbyId);
 router.delete('/child/remove/:child_id', childController.removeChild);
+
+//News
+router.get('/news', newsController.getNews);
 
 module.exports = router;
