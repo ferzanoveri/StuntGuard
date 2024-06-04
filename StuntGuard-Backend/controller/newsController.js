@@ -17,8 +17,8 @@ exports.getIndex = async () =>{
         // idk apakah ini akan realtime ganti
         date = $(this).find('div.media__date').text()
         publisher = $(this).find('h2.media__subtitle').text()
-        // detail = $(this).find('div.detail__body-text ito-bodycontent').text()
-        result.push({link, image, title, publisher})
+        detail = $(this).find('div.detail__body-text.ito-bodycontent').text()
+        result.push({link, image, title, publisher, detail})
       })
       return result.slice(0, 5);
   } catch (error) {
