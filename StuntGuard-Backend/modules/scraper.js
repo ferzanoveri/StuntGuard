@@ -21,24 +21,27 @@ exports.getIndex = async (page = 1) => {
             const date = $(this).find('div.media__date').text().trim();
             const publisher = $(this).find('h2.media__subtitle').text().trim();
 
-            // Generate a token for the link
-            const token = crypto.createHash('sha256').update(link).digest('hex');
-            result.push({ token, link, image, title, date, publisher });
+            // Exclude articles with publisher "20Detik"
+            if (publisher !== "20Detik") {
+                // Generate a token for the link
+                const token = crypto.createHash('sha256').update(link).digest('hex').slice(0,8);
+                result.push({ token, link, image, title, date, publisher });
+            }
         });
 
         const hasNext = $("a.pagination__item.pagination__item--next").length > 0;
         const hasPrevious = $("a.pagination__item.pagination__item--previous").length > 0;
 
-        return { result, hasNext, hasPrevious };
+        return { result, hasNext, hasPrevious, currentPage: page };
     } catch (error) {
         throw error; // Tangkap dan lemparkan error untuk menangani di controller
     }
 };
 
 // Function to get detailed information of a news article
-exports.getDetail = async (token) => {
+exports.getDetail = async (token, page) => {
     try {
-        const articles = await exports.getIndex();
+        const articles = await exports.getIndex(page);
         const article = articles.result.find(article => article.token === token);
 
         if (!article) {
