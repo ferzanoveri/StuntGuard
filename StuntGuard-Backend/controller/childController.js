@@ -41,8 +41,8 @@ exports.addChild = async (req, res) => {
                 child_gender: genderBoolean,
                 birth_date: birth_date,
                 child_age: child_age,
-                birth_weight: birth_weight,
-                birth_height: birth_height,
+                birth_weight: parseFloat(birth_weight),
+                birth_height: parseFloat(birth_height),
                 breastfeeding: breastfeedingBoolean,
             },
         }
@@ -257,8 +257,8 @@ exports.updateChild = async (req, res) => {
             }
             updatedData.child_age = newAge;
         }
-        if (birth_weight !== undefined) updatedData.birth_weight = birth_weight;
-        if (birth_height !== undefined) updatedData.birth_height = birth_height;
+        if (birth_weight !== undefined) updatedData.birth_weight = parseFloat(birth_weight);
+        if (birth_height !== undefined) updatedData.birth_height = parseFloat(birth_height);
         if (breastfeeding !== undefined) {
             if (breastfeeding !== "Yes" && breastfeeding !== "No") {
                 return res.status(400).json({
