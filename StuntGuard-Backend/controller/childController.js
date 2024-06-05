@@ -1,4 +1,3 @@
-const cron = require('node-cron');
 const prisma = require("../prisma/prisma")
 
 exports.addChild = async (req, res) => {
@@ -76,13 +75,16 @@ function calculateChildAge(birthDate) {
 
     return ageMonths;
 }
-// Cron job to update child age monthly on birthdate
-cron.schedule('0 0 * * *', async () => {
+
+async function updateChildAges() {
     try {
         const children = await prisma.child.findMany();
+        const today = new Date();
+
         for (const child of children) {
-            const today = new Date();
             const birthDate = new Date(child.birth_date);
+            
+            // Perbarui usia anak jika tanggal lahirnya sama dengan tanggal hari ini
             if (today.getDate() === birthDate.getDate() && today.getMonth() === birthDate.getMonth()) {
                 const newAge = calculateChildAge(child.birth_date);
                 await prisma.child.update({
@@ -95,7 +97,7 @@ cron.schedule('0 0 * * *', async () => {
     } catch (error) {
         console.error('Error updating child ages:', error);
     }
-});
+}
 
 exports.getChilds = async (req, res) => {
     try {
