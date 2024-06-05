@@ -39,7 +39,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
-                        android:text="Good Morning"
+                        android:text="Day"
                         android:textColor="@color/white"
                         android:textSize="16dp"
                         android:layout_marginTop="30dp"
@@ -61,6 +61,7 @@
                         app:layout_constraintTop_toBottomOf="@id/day" />
 
                     <TextView
+                        android:id="@+id/username"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
@@ -159,6 +160,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu" />
+        app:menu="@menu/menu"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        app:backgroundTint="#4E7771"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

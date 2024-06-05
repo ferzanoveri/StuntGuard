@@ -1,29 +1,29 @@
-package com.fasta.stuntguard.prediksi
+package com.fasta.stuntguard.calendar
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import com.fasta.stuntguard.MainActivity
 import com.fasta.stuntguard.R
-import com.fasta.stuntguard.calendar.CalendarActivity
-import com.fasta.stuntguard.databinding.ActivityPrediksiBinding
-import com.fasta.stuntguard.prediksi.result.ResultActivity
+import com.fasta.stuntguard.databinding.ActivityCalendarBinding
+import com.fasta.stuntguard.prediksi.PrediksiActivity
 import com.fasta.stuntguard.profile.ProfileActivity
-import com.fasta.stuntguard.profile.edit.EditProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class PrediksiActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityPrediksiBinding
+class CalendarActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityCalendarBinding
     private lateinit var bottomNavigationView: BottomNavigationView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPrediksiBinding.inflate(layoutInflater)
+        binding = ActivityCalendarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.hide()
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation_main)
+        bottomNavigationView = findViewById(R.id.bottom_navigation_calender)
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
@@ -31,10 +31,10 @@ class PrediksiActivity : AppCompatActivity() {
                     true
                 }
                 R.id.calender -> {
-                    startActivity(Intent(this, CalendarActivity::class.java))
                     true
                 }
                 R.id.prediksi -> {
+                    startActivity(Intent(this, PrediksiActivity::class.java))
                     true
                 }
                 R.id.profile -> {
@@ -45,8 +45,14 @@ class PrediksiActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnPrediksi.setOnClickListener {
-            startActivity(Intent(this@PrediksiActivity, ResultActivity::class.java))
-        }
+        //setupView()
     }
+
+//    private fun setupView(){
+//        @Suppress("DEPRECATION")
+//        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//        window.statusBarColor = Color.TRANSPARENT
+//        supportActionBar?.hide()
+//        binding.bottomNavigationCalender.selectedItemId = R.id.calendar
+//    }
 }

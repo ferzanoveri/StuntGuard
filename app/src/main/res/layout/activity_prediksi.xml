@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu"/>
+        app:menu="@menu/menu"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        app:backgroundTint="#4E7771"/>
 
     <ImageView
         android:id="@+id/logo"

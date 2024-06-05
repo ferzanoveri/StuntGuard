@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.fasta.stuntguard.LoginActivity
 import com.fasta.stuntguard.MainActivity
 import com.fasta.stuntguard.R
+import com.fasta.stuntguard.auth.LoginActivity
+import com.fasta.stuntguard.calendar.CalendarActivity
 import com.fasta.stuntguard.databinding.ActivityProfileBinding
 import com.fasta.stuntguard.prediksi.PrediksiActivity
 import com.fasta.stuntguard.profile.edit.EditPasswordActivity
@@ -46,10 +47,10 @@ class ProfileActivity : AppCompatActivity() {
                     startActivity(Intent(this, MainActivity::class.java))
                     true
                 }
-//                R.id.calender -> {
-//                    startActivity(Intent(this, PrediksiActivity::class.java))
-//                    true
-//                }
+                R.id.calender -> {
+                    startActivity(Intent(this, CalendarActivity::class.java))
+                    true
+                }
                 R.id.prediksi -> {
                     startActivity(Intent(this, PrediksiActivity::class.java))
                     true

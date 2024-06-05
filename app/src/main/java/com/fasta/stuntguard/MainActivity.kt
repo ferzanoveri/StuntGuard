@@ -1,27 +1,25 @@
 package com.fasta.stuntguard
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
+import com.fasta.stuntguard.calendar.CalendarActivity
 import com.fasta.stuntguard.databinding.ActivityMainBinding
-import com.fasta.stuntguard.news.NewsAdapter
-import com.fasta.stuntguard.news.NewsViewModel
 import com.fasta.stuntguard.prediksi.PrediksiActivity
 import com.fasta.stuntguard.profile.ProfileActivity
+import com.fasta.stuntguard.utils.factory.ViewModelFactory
+import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var factory: ViewModelFactory
     private lateinit var binding: ActivityMainBinding
     private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var newsAdapter: NewsAdapter
-    private lateinit var newsViewModel: NewsViewModel
     private lateinit var newsRecyclerView: RecyclerView
+    private val profileViewModel: ProfileViewModel by viewModels { factory }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,10 +35,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.home -> {
                     true
                 }
-//                R.id.calender -> {
-//                    startActivity(Intent(this, PrediksiActivity::class.java))
-//                    true
-//                }
+                R.id.calender -> {
+                    startActivity(Intent(this, CalendarActivity::class.java))
+                    true
+                }
                 R.id.prediksi -> {
                     startActivity(Intent(this, PrediksiActivity::class.java))
                     true
@@ -55,22 +53,49 @@ class MainActivity : AppCompatActivity() {
 
         newsRecyclerView = findViewById(R.id.rv_news)
 
-        newsViewModel = ViewModelProvider(this).get(NewsViewModel::class.java)
-        newsViewModel.fetchHealthNews()
-        newsViewModel.newsList.observe(this, Observer { newsList ->
-            newsAdapter.submitList(newsList)
-        })
 
-        initRecyclerView()
+        //initRecyclerView()
+
+        setupViewModel()
+        updateGreetingText()
     }
 
-    private fun initRecyclerView() {
-        newsAdapter = NewsAdapter()
-        binding.rvNews.apply {
-            adapter = newsAdapter
-            layoutManager = LinearLayoutManager(this@MainActivity)
+    private fun setupViewModel(){
+        factory = ViewModelFactory.getInstance(this)
+
+        profileViewModel.getUserData().observe(this){ user ->
+            val usernameText = user.name
+            if (usernameText.isNotEmpty()) {
+                val capitalizedText = usernameText.substring(0, 1).uppercase() + usernameText.substring(1)
+                binding.username.text = capitalizedText
+            } else {
+                binding.username.text = usernameText // or set a default text if needed
+            }
+
         }
     }
+
+    private fun updateGreetingText() {
+        val calendar = Calendar.getInstance()
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+
+        val greeting = when (hour) {
+            in 0..5 -> "Good Night"
+            in 6..11 -> "Good Morning"
+            in 12..17 -> "Good Afternoon"
+            else -> "Good Evening"
+        }
+
+        binding.day.text = greeting
+    }
+
+//    private fun initRecyclerView() {
+//        newsAdapter = NewsAdapter()
+//        binding.rvNews.apply {
+//            adapter = newsAdapter
+//            layoutManager = LinearLayoutManager(this@MainActivity)
+//        }
+//    }
 
 //    fun openNewsUrl(view: View) {
 //        val url = view.getTag(R.id.tvLink) as? String
