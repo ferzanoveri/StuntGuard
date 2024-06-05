@@ -1,53 +1,45 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
+const scraper = require('../modules/scraper');
 
-exports.getIndex = async () =>{
-    const base = "https://www.detik.com/search/searchall?query=kesehatan+anak"
-    try {
-      const response = await axios.get(base);
-      const html_data = response.data;
-      const $ = cheerio.load(html_data);
-      const result = [];
-  
-      const selectedElement = $("article.list-content__item");
-      selectedElement.each(function(){
-        link = $(this).find(' a.media__link').attr('href')
-        image = $(this).find(".media__image img").attr('src')
-        title = $(this).find('a.media__link').attr('dtr-ttl')
-        // idk apakah ini akan realtime ganti
-        date = $(this).find('div.media__date').text()
-        publisher = $(this).find('h2.media__subtitle').text()
-        detail = $(this).find('div.detail__body-text.ito-bodycontent').text()
-        result.push({link, image, title, publisher, detail})
-      })
-      return result.slice(0, 5);
-  } catch (error) {
-      throw error; // Tangkap dan lemparkan error untuk menangani di controller
-  }
-      
-      
-  }
-
+// Controller to get the list of news articles
 exports.getNews = async (req, res) => {
     try {
-        // var query= req.params.query
-        
-        // if (!query || typeof query !== "string") {
-        //     throw new Error("Invalid query parameter");
-        // }
-
-//   query = query.replace(/ /g, "+");
-      const data = await exports.getIndex();
-      return res.status(200).json({
-        status: true,
-        message: "Data retrieved sucessfully",
-        result: data,
-      });
+        const page = req.params.page ? parseInt(req.params.page) : 1;
+        const data = await scraper.getIndex(page);
+        return res.status(200).json({
+            status: true,
+            message: "Data retrieved successfully",
+            result: data.result,
+            hasNext: data.hasNext,
+            hasPrevious: data.hasPrevious,
+            currentPage: page
+        });
     } catch (err) {
-      return res.status(500).json({
-        status: false,
-        message: "An error occured",
-        err: err.toString(),
-      });
+        return res.status(500).json({
+            status: false,
+            message: "An error occurred",
+            err: err.toString(),
+        });
     }
-}
+};
+
+// Controller to get detailed information for a specific news article by token
+exports.getNewsDetails = async (req, res) => {
+    try {
+        const { token } = req.params;
+        if (!token) {
+            throw new Error("Token parameter is required");
+        }
+        const data = await scraper.getDetail(token);
+        return res.status(200).json({
+            status: true,
+            message: "Data retrieved successfully",
+            result: data,
+        });
+    } catch (err) {
+        return res.status(500).json({
+            status: false,
+            message: "An error occurred",
+            err: err.toString(),
+        });
+    }
+};

@@ -32,5 +32,7 @@ router.delete('/child/remove/:child_id', childController.removeChild);
 
 //News
 router.get('/news', newsController.getNews);
+router.get('/news/details/:token', newsController.getNewsDetails);
+router.get('/news/page/:page', newsController.getNews)
 
 module.exports = router;
