@@ -1,0 +1,435 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:2:1-76:12
+INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:2:1-76:12
+INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:2:1-76:12
+INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:2:1-76:12
+MERGED from [androidx.databinding:viewbinding:8.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/b012714a8d1e36106a5406bc4f3d5d8d/transformed/viewbinding-8.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.12.0] /Users/ferzanoveri/.gradle/caches/transforms-3/21888238da8e74170f8ad38209fa9464/transformed/material-1.12.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/ferzanoveri/.gradle/caches/transforms-3/add64b0870e65c4ad242924b80cf80b9/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/ferzanoveri/.gradle/caches/transforms-3/181403b29006b304d48e24766f5f64c7/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/ferzanoveri/.gradle/caches/transforms-3/95fd9b8a0b89d0d467a25305ae4bdd31/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.16.0] /Users/ferzanoveri/.gradle/caches/transforms-3/80b96d6f5c9d35c9f850f04c9f94450e/transformed/glide-4.16.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/c987655f8ed4109609d85b54faa13fdd/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/ferzanoveri/.gradle/caches/transforms-3/fdd2ebaff0268c4604b5a90e8c50f678/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/ferzanoveri/.gradle/caches/transforms-3/277e729be19ed952296cec30ee1952ae/transformed/activity-ktx-1.8.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.8.0] /Users/ferzanoveri/.gradle/caches/transforms-3/5de8959deeb05175c0d032cc77efe4df/transformed/activity-1.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/ferzanoveri/.gradle/caches/transforms-3/d9565b919a9a5e40d0bf6a4755e035fb/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/0e77304175cda80a9c09883969dceb16/transformed/core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/73a23964d745cd23642a7cf15c7f7714/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/98c0debb0fa26d074de3bd43602bfa50/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/184291c84af1b30da629056d37f1e604/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] /Users/ferzanoveri/.gradle/caches/transforms-3/cc6c5b16b5c11070cfe38bb7e04ac9a4/transformed/transition-1.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/2c09e446ecc53c7aa36458e17ad301e9/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/8495390ca3caac530f923587ec8ed467/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/2a17d8215dddbd8ab116d315037cc270/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/2f106f0a769a6a60deac86135114b423/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ad4740236829c7329044361f6b301fae/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/b988d1c6c691b596dab63120ffbd5833/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/168e5e363d7ea4815aa22020abf9cb25/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/080b7ca6d64271165b63574557a2033d/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/23c16814cd474d0972694dff1396eff1/transformed/lifecycle-livedata-core-ktx-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/bfe617154f1b08b2b9951011bc3afc54/transformed/lifecycle-viewmodel-ktx-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/069f5d54a1c29430f5503a488c624cac/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/1abc8914ef9811b1bc8d26946139046f/transformed/lifecycle-runtime-ktx-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/952701338daaddd9554760b7cd2df86a/transformed/lifecycle-livedata-ktx-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/d193385d1f58d3053c44fffd78621804/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/531560f43acc7eb7f82ab2fe58c0d1e4/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/ce38b5f734c2c0ea6a8a4231499a2adf/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/7aa1bca07495fdb986925737ff91a493/transformed/lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/ferzanoveri/.gradle/caches/transforms-3/c74794d2eb7c29992379d3349bf69271/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/97fea670911915c9e948d3e25dc98eb0/transformed/datastore-preferences-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.datastore:datastore:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ecad8b099d7a34f201a35775d925ba81/transformed/datastore-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/19f5add56f2d5a7648fbe089a168d878/transformed/circleimageview-3.1.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/883f809c0c7faa99227f219127359357/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/f36b774ee68584229dc89721e2ab3a1c/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/1c59afcb62030cbcfab277316fd10ca8/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/0254ed0deadd0b30ce94913069500607/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] /Users/ferzanoveri/.gradle/caches/transforms-3/8c9b3784b80240cb273be9a144751c04/transformed/gifdecoder-4.16.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/ferzanoveri/.gradle/caches/transforms-3/04693974fc69228815f599407348ff40/transformed/exifinterface-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/7937d55de60c8d54128d623e83ae90f8/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/6590bf7915a418bae3a1fc7b51b41211/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/a41e11b48dd024e0cb2e2e53a07dbdd7/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/7b8a5529e851db2adb97e3fee6d9cbc8/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/909e9323af52513e875444b33c8c57d3/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/43be9b3626b967585649ceb25762eb80/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/ferzanoveri/.gradle/caches/transforms-3/353f615ef11adc936e8855ba609ff223/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+	package
+		INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:5:22-64
+application
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:7:5-74:19
+INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:7:5-74:19
+MERGED from [com.google.android.material:material:1.12.0] /Users/ferzanoveri/.gradle/caches/transforms-3/21888238da8e74170f8ad38209fa9464/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.12.0] /Users/ferzanoveri/.gradle/caches/transforms-3/21888238da8e74170f8ad38209fa9464/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/ferzanoveri/.gradle/caches/transforms-3/add64b0870e65c4ad242924b80cf80b9/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/ferzanoveri/.gradle/caches/transforms-3/add64b0870e65c4ad242924b80cf80b9/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/19f5add56f2d5a7648fbe089a168d878/transformed/circleimageview-3.1.0/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/19f5add56f2d5a7648fbe089a168d878/transformed/circleimageview-3.1.0/AndroidManifest.xml:9:5-20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/1c59afcb62030cbcfab277316fd10ca8/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/1c59afcb62030cbcfab277316fd10ca8/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/6590bf7915a418bae3a1fc7b51b41211/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/6590bf7915a418bae3a1fc7b51b41211/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:12:9-41
+	android:fullBackupContent
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:10:9-54
+	android:roundIcon
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:13:9-56
+	tools:targetApi
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:16:9-29
+	android:icon
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:11:9-51
+	android:allowBackup
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:8:9-35
+	android:theme
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:15:9-48
+	android:dataExtractionRules
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:9:9-65
+activity#com.example.stuntguard.ui.dashboard.news.SeeMoreNewsActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:17:9-19:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:19:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:18:13-66
+activity#com.example.stuntguard.ui.dashboard.news.SeeAllNewsActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:20:9-22:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:22:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:21:13-65
+activity#com.example.stuntguard.ui.dashboard.predict.ResultHealthyActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:23:9-25:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:24:13-71
+activity#com.example.stuntguard.ui.dashboard.predict.ResultActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:26:9-28:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:27:13-64
+activity#com.example.stuntguard.ui.dashboard.recommendation.FoodRecommendationActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:29:9-31:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:30:13-83
+activity#com.example.stuntguard.ui.dashboard.news.DetailNewsActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:33:13-65
+activity#com.example.stuntguard.ui.dashboard.profile.edit.EditProfileActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:35:9-37:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:37:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:36:13-74
+activity#com.example.stuntguard.ui.dashboard.profile.edit.EditPasswordActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:38:9-40:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:40:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:39:13-75
+activity#com.example.stuntguard.ui.dashboard.predict.PrediksiActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:41:9-43:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:43:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:42:13-66
+activity#com.example.stuntguard.ui.dashboard.profile.ProfileActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:44:9-46:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:45:13-65
+activity#com.example.stuntguard.ui.dashboard.profile.family.FamilyMemberActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:47:9-49:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:49:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:48:13-77
+activity#com.example.stuntguard.ui.dashboard.calendar.CalendarActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:50:9-52:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:52:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:51:13-67
+activity#com.example.stuntguard.ui.auth.RegisterActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:53:9-55:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:55:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:54:13-53
+activity#com.example.stuntguard.ui.auth.LoginActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:56:9-58:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:58:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:57:13-50
+activity#com.example.stuntguard.ui.dashboard.profile.family.FormAddChildActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:59:9-61:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:61:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:60:13-77
+activity#com.example.stuntguard.ui.splashscreen.SplashScreenActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:62:9-70:20
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:64:13-36
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:63:13-65
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:65:13-69:29
+action#android.intent.action.MAIN
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:66:17-69
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:66:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:68:17-77
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:68:27-74
+activity#com.example.stuntguard.ui.dashboard.MainActivity
+ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:71:9-73:40
+	android:exported
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:73:13-37
+	android:name
+		ADDED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml:72:13-54
+uses-sdk
+INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/b012714a8d1e36106a5406bc4f3d5d8d/transformed/viewbinding-8.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/b012714a8d1e36106a5406bc4f3d5d8d/transformed/viewbinding-8.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.12.0] /Users/ferzanoveri/.gradle/caches/transforms-3/21888238da8e74170f8ad38209fa9464/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] /Users/ferzanoveri/.gradle/caches/transforms-3/21888238da8e74170f8ad38209fa9464/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/ferzanoveri/.gradle/caches/transforms-3/add64b0870e65c4ad242924b80cf80b9/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/ferzanoveri/.gradle/caches/transforms-3/add64b0870e65c4ad242924b80cf80b9/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/ferzanoveri/.gradle/caches/transforms-3/181403b29006b304d48e24766f5f64c7/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/ferzanoveri/.gradle/caches/transforms-3/181403b29006b304d48e24766f5f64c7/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/ferzanoveri/.gradle/caches/transforms-3/95fd9b8a0b89d0d467a25305ae4bdd31/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/ferzanoveri/.gradle/caches/transforms-3/95fd9b8a0b89d0d467a25305ae4bdd31/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.16.0] /Users/ferzanoveri/.gradle/caches/transforms-3/80b96d6f5c9d35c9f850f04c9f94450e/transformed/glide-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.16.0] /Users/ferzanoveri/.gradle/caches/transforms-3/80b96d6f5c9d35c9f850f04c9f94450e/transformed/glide-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/c987655f8ed4109609d85b54faa13fdd/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/c987655f8ed4109609d85b54faa13fdd/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/ferzanoveri/.gradle/caches/transforms-3/fdd2ebaff0268c4604b5a90e8c50f678/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/ferzanoveri/.gradle/caches/transforms-3/fdd2ebaff0268c4604b5a90e8c50f678/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/ferzanoveri/.gradle/caches/transforms-3/277e729be19ed952296cec30ee1952ae/transformed/activity-ktx-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/ferzanoveri/.gradle/caches/transforms-3/277e729be19ed952296cec30ee1952ae/transformed/activity-ktx-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.8.0] /Users/ferzanoveri/.gradle/caches/transforms-3/5de8959deeb05175c0d032cc77efe4df/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.0] /Users/ferzanoveri/.gradle/caches/transforms-3/5de8959deeb05175c0d032cc77efe4df/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/ferzanoveri/.gradle/caches/transforms-3/d9565b919a9a5e40d0bf6a4755e035fb/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/ferzanoveri/.gradle/caches/transforms-3/d9565b919a9a5e40d0bf6a4755e035fb/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/0e77304175cda80a9c09883969dceb16/transformed/core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/0e77304175cda80a9c09883969dceb16/transformed/core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/73a23964d745cd23642a7cf15c7f7714/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/73a23964d745cd23642a7cf15c7f7714/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/98c0debb0fa26d074de3bd43602bfa50/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/98c0debb0fa26d074de3bd43602bfa50/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/184291c84af1b30da629056d37f1e604/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/184291c84af1b30da629056d37f1e604/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] /Users/ferzanoveri/.gradle/caches/transforms-3/cc6c5b16b5c11070cfe38bb7e04ac9a4/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] /Users/ferzanoveri/.gradle/caches/transforms-3/cc6c5b16b5c11070cfe38bb7e04ac9a4/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/2c09e446ecc53c7aa36458e17ad301e9/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/2c09e446ecc53c7aa36458e17ad301e9/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/8495390ca3caac530f923587ec8ed467/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/8495390ca3caac530f923587ec8ed467/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/2a17d8215dddbd8ab116d315037cc270/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/2a17d8215dddbd8ab116d315037cc270/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/2f106f0a769a6a60deac86135114b423/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/2f106f0a769a6a60deac86135114b423/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ad4740236829c7329044361f6b301fae/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ad4740236829c7329044361f6b301fae/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/b988d1c6c691b596dab63120ffbd5833/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/b988d1c6c691b596dab63120ffbd5833/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/168e5e363d7ea4815aa22020abf9cb25/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/168e5e363d7ea4815aa22020abf9cb25/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/080b7ca6d64271165b63574557a2033d/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/080b7ca6d64271165b63574557a2033d/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/23c16814cd474d0972694dff1396eff1/transformed/lifecycle-livedata-core-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/23c16814cd474d0972694dff1396eff1/transformed/lifecycle-livedata-core-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/bfe617154f1b08b2b9951011bc3afc54/transformed/lifecycle-viewmodel-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/bfe617154f1b08b2b9951011bc3afc54/transformed/lifecycle-viewmodel-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/069f5d54a1c29430f5503a488c624cac/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/069f5d54a1c29430f5503a488c624cac/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/1abc8914ef9811b1bc8d26946139046f/transformed/lifecycle-runtime-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/1abc8914ef9811b1bc8d26946139046f/transformed/lifecycle-runtime-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/952701338daaddd9554760b7cd2df86a/transformed/lifecycle-livedata-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/952701338daaddd9554760b7cd2df86a/transformed/lifecycle-livedata-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/d193385d1f58d3053c44fffd78621804/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/d193385d1f58d3053c44fffd78621804/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/531560f43acc7eb7f82ab2fe58c0d1e4/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/531560f43acc7eb7f82ab2fe58c0d1e4/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/ce38b5f734c2c0ea6a8a4231499a2adf/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/ce38b5f734c2c0ea6a8a4231499a2adf/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/7aa1bca07495fdb986925737ff91a493/transformed/lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/7aa1bca07495fdb986925737ff91a493/transformed/lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/ferzanoveri/.gradle/caches/transforms-3/c74794d2eb7c29992379d3349bf69271/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/ferzanoveri/.gradle/caches/transforms-3/c74794d2eb7c29992379d3349bf69271/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/97fea670911915c9e948d3e25dc98eb0/transformed/datastore-preferences-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/97fea670911915c9e948d3e25dc98eb0/transformed/datastore-preferences-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ecad8b099d7a34f201a35775d925ba81/transformed/datastore-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ecad8b099d7a34f201a35775d925ba81/transformed/datastore-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/19f5add56f2d5a7648fbe089a168d878/transformed/circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/ferzanoveri/.gradle/caches/transforms-3/19f5add56f2d5a7648fbe089a168d878/transformed/circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/883f809c0c7faa99227f219127359357/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/883f809c0c7faa99227f219127359357/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/f36b774ee68584229dc89721e2ab3a1c/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/f36b774ee68584229dc89721e2ab3a1c/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/1c59afcb62030cbcfab277316fd10ca8/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/1c59afcb62030cbcfab277316fd10ca8/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/0254ed0deadd0b30ce94913069500607/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/0254ed0deadd0b30ce94913069500607/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] /Users/ferzanoveri/.gradle/caches/transforms-3/8c9b3784b80240cb273be9a144751c04/transformed/gifdecoder-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] /Users/ferzanoveri/.gradle/caches/transforms-3/8c9b3784b80240cb273be9a144751c04/transformed/gifdecoder-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/ferzanoveri/.gradle/caches/transforms-3/04693974fc69228815f599407348ff40/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/ferzanoveri/.gradle/caches/transforms-3/04693974fc69228815f599407348ff40/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/7937d55de60c8d54128d623e83ae90f8/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/7937d55de60c8d54128d623e83ae90f8/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/6590bf7915a418bae3a1fc7b51b41211/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/6590bf7915a418bae3a1fc7b51b41211/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/a41e11b48dd024e0cb2e2e53a07dbdd7/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/a41e11b48dd024e0cb2e2e53a07dbdd7/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/7b8a5529e851db2adb97e3fee6d9cbc8/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/7b8a5529e851db2adb97e3fee6d9cbc8/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/909e9323af52513e875444b33c8c57d3/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/909e9323af52513e875444b33c8c57d3/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/43be9b3626b967585649ceb25762eb80/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/ferzanoveri/.gradle/caches/transforms-3/43be9b3626b967585649ceb25762eb80/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/ferzanoveri/.gradle/caches/transforms-3/353f615ef11adc936e8855ba609ff223/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/ferzanoveri/.gradle/caches/transforms-3/353f615ef11adc936e8855ba609ff223/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+	android:targetSdkVersion
+		INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/ferzanoveri/Documents/Kuliah/MBKM/StuntGuard/app/src/main/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/1c59afcb62030cbcfab277316fd10ca8/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ferzanoveri/.gradle/caches/transforms-3/1c59afcb62030cbcfab277316fd10ca8/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/ferzanoveri/.gradle/caches/transforms-3/092f61ffdd1e9563e7f8e9b2bff8687a/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+permission#com.example.stuntguard.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+uses-permission#com.example.stuntguard.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /Users/ferzanoveri/.gradle/caches/transforms-3/29187a38530831a00e8706c2304d9492/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/ferzanoveri/.gradle/caches/transforms-3/6a490139b57ab53a5075ecb5145dd489/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/ferzanoveri/.gradle/caches/transforms-3/ea583e3cd4ebeceffb375affd472c2e6/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92

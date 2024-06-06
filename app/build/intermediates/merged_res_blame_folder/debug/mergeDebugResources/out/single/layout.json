@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/item_news_latest.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/item_news_latest.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_edit_profile.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_edit_profile.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_family_member.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_family_member.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_prediksi.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_prediksi.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_login.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_edit_password.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_edit_password.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_see_all_news.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_see_all_news.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_see_more_news.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_see_more_news.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_result.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_result.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_splash_screen.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_splash_screen.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_profile.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_register.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_register.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_detail_news.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_detail_news.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_calendar.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_calendar.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/item_news.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/item_news.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_food_recommendation.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_food_recommendation.xml"
+    },
+    {
+        "merged": "com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_register.xml",
+        "source": "com.example.stuntguard.app-main-43:/layout/activity_register.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/item_family.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/item_family.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_main.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_result_healthy.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_result_healthy.xml"
+    },
+    {
+        "merged": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_form_add_child.xml",
+        "source": "/Users/ferzanoveri/.gradle/daemon/8.4/com.example.stuntguard.app-main-43:/layout/activity_form_add_child.xml"
+    },
+    {
+        "merged": "com.example.stuntguard.app-mergeDebugResources-40:/layout/activity_login.xml",
+        "source": "com.example.stuntguard.app-main-43:/layout/activity_login.xml"
+    }
+]

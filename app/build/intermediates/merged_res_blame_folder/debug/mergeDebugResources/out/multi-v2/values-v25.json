@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.stuntguard.app-mergeDebugResources-39:/values-v25/values-v25.xml",
+            "map": [
+                {
+                    "source": "/Users/ferzanoveri/.gradle/caches/transforms-3/95fd9b8a0b89d0d467a25305ae4bdd31/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        }
+    ]
+}
