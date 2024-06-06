@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fasta.stuntguard.auth.LoginActivity
 import com.fasta.stuntguard.calendar.CalendarActivity
@@ -20,9 +21,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var newsRecyclerView: RecyclerView
+    private val mainViewModel: MainViewModel by viewModels { factory }
     private val profileViewModel: ProfileViewModel by viewModels { factory }
-    private lateinit var sessionManager: SessionManager
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,15 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        sessionManager = SessionManager(this)
-
-        if (!sessionManager.isLoggedIn()) {
-            val intent = Intent(this, LoginActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-            finish()
-            return
-        }
+        factory = ViewModelFactory.getInstance(this)
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_main)
         bottomNavigationView.setOnItemSelectedListener { item ->
@@ -63,18 +55,22 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        newsRecyclerView = findViewById(R.id.rv_news)
-
-
-        //initRecyclerView()
-
         setupViewModel()
         updateGreetingText()
+        checkUserLoginStatus()
     }
 
-    private fun setupViewModel(){
-        factory = ViewModelFactory.getInstance(this)
+    private fun checkUserLoginStatus() {
+        mainViewModel.getSession().observe(this) { user ->
+            if (!user.isLogin) {
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+            }
+        }
+    }
 
+
+    private fun setupViewModel(){
         profileViewModel.getUserData().observe(this){ user ->
             val usernameText = user.name
             if (usernameText.isNotEmpty()) {
@@ -97,7 +93,6 @@ class MainActivity : AppCompatActivity() {
             in 12..17 -> "Good Afternoon"
             else -> "Good Evening"
         }
-
         binding.day.text = greeting
     }
 

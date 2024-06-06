@@ -8,12 +8,10 @@ import com.fasta.stuntguard.data.model.UserModel
 import kotlinx.coroutines.launch
 
 class MainViewModel (private val repo: Repository) : ViewModel(){
-    fun logout() {
-        viewModelScope.launch {
-            repo.logout()
-        }
+
+
+    fun getSession(): LiveData<UserModel> {
+        return repo.getUser()
     }
-//    fun getSession(): LiveData<UserModel> {
-//        return repo.getSession().asLiveData()
-//    }
+
 }
