@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
+import com.fasta.stuntguard.auth.LoginActivity
 import com.fasta.stuntguard.calendar.CalendarActivity
 import com.fasta.stuntguard.databinding.ActivityMainBinding
 import com.fasta.stuntguard.prediksi.PrediksiActivity
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var newsRecyclerView: RecyclerView
     private val profileViewModel: ProfileViewModel by viewModels { factory }
+    private lateinit var sessionManager: SessionManager
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +30,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.hide()
+
+        sessionManager = SessionManager(this)
+
+        if (!sessionManager.isLoggedIn()) {
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+            return
+        }
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_main)
         bottomNavigationView.setOnItemSelectedListener { item ->
@@ -89,20 +101,4 @@ class MainActivity : AppCompatActivity() {
         binding.day.text = greeting
     }
 
-//    private fun initRecyclerView() {
-//        newsAdapter = NewsAdapter()
-//        binding.rvNews.apply {
-//            adapter = newsAdapter
-//            layoutManager = LinearLayoutManager(this@MainActivity)
-//        }
-//    }
-
-//    fun openNewsUrl(view: View) {
-//        val url = view.getTag(R.id.tvLink) as? String
-//        url?.let {
-//            val intent = Intent(Intent.ACTION_VIEW)
-//            intent.data = Uri.parse(url)
-//            startActivity(intent)
-//        }
-//    }
 }

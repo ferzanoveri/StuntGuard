@@ -35,7 +35,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/poppins_regular"
             android:text="Perbedaan 4 Sehat 5 Sempurna dan Pedoman Gizi Seimbang"
             android:textColor="@color/black"
             android:textSize="16dp"

@@ -4,21 +4,28 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.fasta.stuntguard.MainActivity
+import com.fasta.stuntguard.SessionManager
+import com.fasta.stuntguard.data.api.ApiConfig
 import com.fasta.stuntguard.data.model.UserModel
+import com.fasta.stuntguard.data.response.LoginResponse
 import com.fasta.stuntguard.databinding.ActivityLoginBinding
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.auth.LoginViewModel
+import com.google.android.material.snackbar.Snackbar
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var factory: ViewModelFactory
     private val loginViewModel: LoginViewModel by viewModels { factory }
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +33,44 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        sessionManager = SessionManager(this)
+
+        binding.btnLogin.setOnClickListener {
+            val email = binding.emailEditText.text.toString()
+            val password = binding.passEditText.text.toString()
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                login(email, password)
+            } else {
+                showSnackbar("Please fill in all fields")
+            }
+        }
+
         setupView()
         setupViewModel()
         setupAction()
+    }
+
+    private fun login(email: String, password: String) {
+        val apiService = ApiConfig.getApiService()
+        apiService.postLogin(email, password).enqueue(object : Callback<LoginResponse> {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                if (response.isSuccessful && response.body()?.status == true) {
+                    val userId = response.body()?.userId
+                    sessionManager.saveLoginState(true, userId)
+
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
+                } else {
+                    showSnackbar("Login failed")
+                }
+            }
+
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                showSnackbar("An error occurred")
+            }
+        })
     }
 
     private fun setupView() {
@@ -51,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
                         true
                     )
                 )
-                Toast.makeText(this, user.message, Toast.LENGTH_SHORT).show()
+                showSnackbar(user.message)
                 startActivity(Intent(this, MainActivity::class.java))
 //                this.transition()
             }
@@ -62,23 +104,11 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginViewModel.isError.observe(this) {
-            showError(it)
+            showSnackbar("Error occurred")
         }
     }
 
     private fun setupAction() {
-        binding.btnLogin.setOnClickListener {
-            val email = binding.emailEditText.text.toString()
-            val pass = binding.passEditText.text.toString()
-
-            if (isEmailValid(email) && isPasswordValid(pass)) {
-                loginViewModel.postLogin(email, pass)
-            } else {
-                Toast.makeText(this, "Format email atau password tidak valid", Toast.LENGTH_SHORT)
-                    .show()
-            }
-        }
-
         binding.btnRegister.setOnClickListener {
             val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)
@@ -89,13 +119,8 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.saveUser(user)
     }
 
-    private fun isEmailValid(email: String): Boolean {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
-    }
-
-    private fun isPasswordValid(password: String): Boolean {
-        val pattern = Regex("^(?=.*[A-Z]).{8,}$")
-        return pattern.matches(password)
+    private fun showSnackbar(message: String) {
+        Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
     }
 
     private fun showLoading(isLoading: Boolean) {
@@ -103,16 +128,6 @@ class LoginActivity : AppCompatActivity() {
             binding.progressBar.visibility = View.VISIBLE
         } else {
             binding.progressBar.visibility = View.GONE
-        }
-    }
-
-    private fun showError(isError: Boolean) {
-        if (isError) {
-            Toast.makeText(
-                this,
-                "Error occured",
-                Toast.LENGTH_SHORT
-            ).show()
         }
     }
 
@@ -124,16 +139,4 @@ class LoginActivity : AppCompatActivity() {
 //    private fun transition() {
 //        overridePendingTransition(com.google.android.material.R.anim.m3_motion_fade_enter, com.google.android.material.R.anim.m3_motion_fade_exit)
 //    }
-
-
 }
-
-
-
-
-
-
-
-
-
-

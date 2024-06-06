@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.fasta.stuntguard.MainActivity
 import com.fasta.stuntguard.R
+import com.fasta.stuntguard.SessionManager
 import com.fasta.stuntguard.auth.LoginActivity
 import com.fasta.stuntguard.calendar.CalendarActivity
 import com.fasta.stuntguard.databinding.ActivityProfileBinding
@@ -30,11 +31,9 @@ class ProfileActivity : AppCompatActivity() {
             ubahProfile.setOnClickListener {
                 startActivity(Intent(this@ProfileActivity, EditProfileActivity::class.java))
             }
-
             ubahPassword.setOnClickListener {
                 startActivity(Intent(this@ProfileActivity, EditPasswordActivity::class.java))
             }
-
             logout.setOnClickListener {
                 showDialog()
             }
@@ -61,8 +60,6 @@ class ProfileActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
-
     }
 
     private fun showDialog() {
@@ -70,11 +67,19 @@ class ProfileActivity : AppCompatActivity() {
         builder.setTitle("Logout")
         builder.setMessage("Are you sure you want to log out?")
         builder.setPositiveButton(android.R.string.ok) { _, _ ->
+            clearSession()
             startActivity(Intent(this, LoginActivity::class.java))
-            Toast.makeText(this,"You are successfully logged out", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "You are successfully logged out", Toast.LENGTH_SHORT).show()
+            finish()
         }
         builder.setNegativeButton(android.R.string.cancel) { _, _ ->
         }
         builder.show()
     }
+
+    private fun clearSession() {
+        val sessionManager = SessionManager(this)
+        sessionManager.clearSession()
+    }
+
 }

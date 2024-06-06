@@ -14,11 +14,6 @@ class LoginViewModel (private val repository: Repository) : ViewModel() {
     val isLoading: LiveData<Boolean> = repository.isLoading
     val isError: LiveData<Boolean> = repository.isError
 
-    fun postLogin(email: String, password: String){
-        viewModelScope.launch {
-            repository.postLogin(email, password)
-        }
-    }
 
     fun saveUser(user: UserModel){
         viewModelScope.launch {
