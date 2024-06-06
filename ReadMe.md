@@ -52,6 +52,15 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 | /child/id/:child_id             | GET    | need child_id params                                        | Get child data by ID          | ✅ Completed |
 | /child/remove/:child_id         | DELETE | -                                               | Remove child data              | ✅ Completed |
 
+### News
+
+| Endpoint                          | Method | Input                       | Description                   | Status       |
+|-----------------------------------|--------|-----------------------------|-------------------------------|--------------|
+| /news           | GET   | -  | Get all news and redirect to page 1             | ✅ Completed   |
+| /news/:page/next                  | GET    | -                           | Get next page           | ✅ Completed   |
+| /news/:page/back                  | GET    | -                           | Get previous page           | ✅ Completed   |
+| /news/:page/:token                  | GET    | token                           | Get all news details           | ✅ Completed   |
+
 ### Predictions
 
 | Endpoint                          | Method | Input                       | Description                   | Status       |
