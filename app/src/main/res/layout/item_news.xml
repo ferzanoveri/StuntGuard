@@ -31,7 +31,7 @@
             app:layout_constraintTop_toTopOf="@+id/img_item_news"/>
 
         <TextView
-            android:id="@+id/deskripsi_news"
+            android:id="@+id/news_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"

@@ -5,8 +5,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import com.fasta.stuntguard.data.api.ApiConfig
+import com.fasta.stuntguard.data.model.NewsModel
 import com.fasta.stuntguard.data.model.UserModel
 import com.fasta.stuntguard.data.response.LoginResponse
+import com.fasta.stuntguard.data.response.NewsResponse
 import com.fasta.stuntguard.data.response.RegisterResponse
 import com.fasta.stuntguard.utils.UserPreferences
 import retrofit2.Call
@@ -92,6 +94,35 @@ class Repository private constructor(
     suspend fun logout() {
         preferences.logout()
     }
+
+    fun getHealthNews(onSuccess: (List<NewsModel>) -> Unit, onFailure: (String) -> Unit) {
+        val client = ApiConfig.getApiService().getNews("health", "health", "en", "", "", "", "", "")
+        client.enqueue(object : Callback<NewsResponse> {
+            override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
+                if (response.isSuccessful) {
+                    response.body()?.let { newsResponse ->
+                        val newsList = newsResponse.result.map { article ->
+                            NewsModel(
+                                title = article.title ?: "",
+                                imageUrl = article.urlToImage ?: "",
+                                url = article.url ?: ""
+                            )
+                        }
+                        onSuccess(newsList)
+                    } ?: run {
+                        onFailure("No news found")
+                    }
+                } else {
+                    onFailure("Failed to fetch news")
+                }
+            }
+
+            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
+                onFailure(t.message.toString())
+            }
+        })
+    }
+
 
     companion object {
         private const val TAG = "Repository"

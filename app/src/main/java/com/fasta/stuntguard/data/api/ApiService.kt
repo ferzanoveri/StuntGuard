@@ -1,6 +1,7 @@
 package com.fasta.stuntguard.data.api
 
 import com.fasta.stuntguard.data.response.LoginResponse
+import com.fasta.stuntguard.data.response.NewsResponse
 import com.fasta.stuntguard.data.response.ParentChildResponse
 import com.fasta.stuntguard.data.response.RegisterResponse
 import retrofit2.Call
@@ -9,6 +10,7 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
 
@@ -34,4 +36,17 @@ interface ApiService {
     fun getParentChild(
         @Path("id") id: String
     ): Call<ParentChildResponse>
+
+
+    @GET("news")
+    fun getNews(
+        @Query("title") title: String,
+        @Query("date") date: String,
+        @Query("authorlabel") autorlabel: String,
+        @Query("label") label: String,
+        @Query("author") author: String,
+        @Query("image") image: String,
+        @Query("content") content: String,
+        @Query("token") token: String
+    ): Call<NewsResponse>
 }

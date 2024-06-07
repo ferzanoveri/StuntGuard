@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.stuntguard.repository.Repository
-import com.fasta.stuntguard.MainViewModel
+import com.fasta.stuntguard.viewmodel.MainViewModel
 import com.fasta.stuntguard.utils.Injection
 import com.fasta.stuntguard.viewmodel.auth.LoginViewModel
 import com.fasta.stuntguard.viewmodel.auth.RegisterViewModel

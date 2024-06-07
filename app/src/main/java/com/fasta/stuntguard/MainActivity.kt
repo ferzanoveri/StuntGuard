@@ -3,7 +3,9 @@ package com.fasta.stuntguard
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fasta.stuntguard.auth.LoginActivity
@@ -12,17 +14,18 @@ import com.fasta.stuntguard.databinding.ActivityMainBinding
 import com.fasta.stuntguard.prediksi.PrediksiActivity
 import com.fasta.stuntguard.profile.ProfileActivity
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
-import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
+import com.fasta.stuntguard.viewmodel.MainViewModel
+import com.fasta.stuntguard.news.NewsAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var factory: ViewModelFactory
     private lateinit var binding: ActivityMainBinding
+    private lateinit var newsAdapter: NewsAdapter
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var newsRecyclerView: RecyclerView
     private val mainViewModel: MainViewModel by viewModels { factory }
-    private val profileViewModel: ProfileViewModel by viewModels { factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         factory = ViewModelFactory.getInstance(this)
+
+        newsRecyclerView = findViewById(R.id.rv_news)
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_main)
         bottomNavigationView.setOnItemSelectedListener { item ->
@@ -58,6 +63,21 @@ class MainActivity : AppCompatActivity() {
         setupViewModel()
         updateGreetingText()
         checkUserLoginStatus()
+        initRecyclerView()
+        observeNews()
+        mainViewModel.fetchHealthNews()
+        mainViewModel.newsList.observe(this, Observer { newsList ->
+            newsAdapter.submitList(newsList)
+        })
+
+    }
+
+    private fun initRecyclerView() {
+        newsAdapter = NewsAdapter()
+        binding.rvNews.apply {
+            adapter = newsAdapter
+            layoutManager = LinearLayoutManager(this@MainActivity)
+        }
     }
 
     private fun checkUserLoginStatus() {
@@ -69,15 +89,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun setupViewModel(){
-        profileViewModel.getUserData().observe(this){ user ->
+        mainViewModel.getSession().observe(this){ user ->
             val usernameText = user.name
             if (usernameText.isNotEmpty()) {
                 val capitalizedText = usernameText.substring(0, 1).uppercase() + usernameText.substring(1)
                 binding.username.text = capitalizedText
             } else {
-                binding.username.text = usernameText // or set a default text if needed
+                binding.username.text = usernameText
             }
 
         }
@@ -96,4 +115,21 @@ class MainActivity : AppCompatActivity() {
         binding.day.text = greeting
     }
 
+    private fun observeNews() {
+        mainViewModel.newsList.observe(this, Observer { newsList ->
+            if (newsList != null && newsList.isNotEmpty()) {
+                Log.d(TAG, "News data available: $newsList")
+                for (news in newsList) {
+                    Log.d("MainActivity", "News: ${news.title}, ImageUrl: ${news.imageUrl}")
+                }
+                newsAdapter.submitList(newsList)
+            } else {
+                Log.d(TAG, "No news to display")
+            }
+        })
+    }
+
+    companion object {
+        private const val TAG = "MainActivity"
+    }
 }
