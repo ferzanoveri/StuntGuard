@@ -22,7 +22,7 @@ exports.getIndex = async (page = 1) => {
             const publisher = $(this).find('h2.media__subtitle').text().trim();
 
             // Exclude articles with publisher "20Detik"
-            if (publisher !== "20Detik") {
+            if (publisher !== "20Detik" && !link.includes('video')) {
                 // Generate a token for the link
                 const token = crypto.createHash('sha256').update(link).digest('hex').slice(0,8);
                 result.push({ token, link, image, title, date, publisher });
@@ -54,7 +54,7 @@ exports.getDetail = async (token, page) => {
 
         const title = $('h1').text().trim();
         const date = $('div.detail__date').text().trim();
-        const image = $(".media__image img").attr('src');
+        const image = $(".p_img_zoomin.img-zoomin").attr('src');
 
         // Extract the author's label and content
         const authorLabel = $('div.detail__author').text().trim();
