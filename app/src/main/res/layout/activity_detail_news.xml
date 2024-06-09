@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bakso"
+        tools:src="@drawable/bakso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,16 +21,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
-        android:text="Perbedaan 4 Sehat 5 Sempurna dan Pedoman Gizi Seimbang"
+        tools:text="Perbedaan 4 Sehat 5 Sempurna dan Pedoman Gizi Seimbang"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_bold"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="200dp" />
+        app:layout_constraintBottom_toTopOf="@id/container_description"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="210dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_description"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/bg_detail_news"
@@ -40,28 +42,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headline">
 
-        <ImageView
-            android:id="@+id/logo_news"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:src="@drawable/vektor_sayuran"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="15dp"
-            tools:layout_editor_absoluteY="10dp" />
+        <!--        <ImageView-->
+        <!--            android:id="@+id/logo_news"-->
+        <!--            android:layout_width="64dp"-->
+        <!--            android:layout_height="64dp"-->
+        <!--            android:src="@drawable/vektor_sayuran"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/container_description"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/container_description"-->
+        <!--            android:layout_marginStart="15dp"-->
+        <!--            android:layout_marginTop="10dp" />-->
 
         <TextView
             android:id="@+id/nama_perusahaan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="CNN Indonesia"
+            tools:text="CNN Indonesia"
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_bold"
             android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/logo_news"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/logo_news"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@id/container_description"
+            app:layout_constraintStart_toStartOf="@id/container_description"
+            app:layout_constraintEnd_toEndOf="@id/container_description"
+            android:textAlignment="center"
+            android:layout_marginTop="15dp"/>
 
         <ScrollView
             android:layout_width="0dp"
@@ -71,19 +75,32 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo_news">
+            app:layout_constraintTop_toBottomOf="@+id/nama_perusahaan">
 
             <TextView
                 android:id="@+id/deskripsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Deskripsi"
+                tools:text="Anak remaja terkadang menolak saran-saran orang tuanya. Kendati ditolak, saran orang tua ternyata tetap dapat bermanfaat bagi sang anak. Lebih jauh, peneliti mendapati anak yang patuh atas saran orang tua tak selalu baik untuk pertumbuhannya. Mengapa demikian?Studi menunjukkan, para remaja kerap butuh waktu untuk mencerna dan mengevaluasi saran yang orang tua berikan. Kendati tidak langsung dianggap membantu, saran yang berisi opsi-opsi cara pandang dan cara penyelesaian dari orang tua bantu sang anak membentuk strategi sendiri dalam mengatasi masalah.Penelitian tim asal University of Illinois Urbana-Champaign semula berangkat dari adanya kecenderungan remaja untuk menolak saran-saran dari orang tua saat menghadapi suatu masalah. Contohnya saat menghadapi kesulitan di masa transisi akademik dan pertemanan dari SD ke SMP.Para peneliti coba mengamati percakapan antara 100 anak kelas 5 SD dan ibunya. Pada tahap ini, peneliti mencari tahu seperti apa strategi para ibu bantu anak menghadapi masalah dan respons para anak "
                 android:textColor="@color/black"
                 android:fontFamily="@font/poppins_regular"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:justificationMode="inter_word"/>
 
         </ScrollView>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#4E7771"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

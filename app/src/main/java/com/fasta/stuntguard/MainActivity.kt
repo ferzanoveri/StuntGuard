@@ -1,16 +1,21 @@
 package com.fasta.stuntguard
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fasta.stuntguard.auth.LoginActivity
 import com.fasta.stuntguard.calendar.CalendarActivity
+import com.fasta.stuntguard.data.response.GetAllNewsResponse
+import com.fasta.stuntguard.data.response.News
 import com.fasta.stuntguard.databinding.ActivityMainBinding
+import com.fasta.stuntguard.news.DetailNewsActivity
 import com.fasta.stuntguard.prediksi.PrediksiActivity
 import com.fasta.stuntguard.profile.ProfileActivity
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
@@ -22,9 +27,7 @@ import java.util.Calendar
 class MainActivity : AppCompatActivity() {
     private lateinit var factory: ViewModelFactory
     private lateinit var binding: ActivityMainBinding
-    private lateinit var newsAdapter: NewsAdapter
     private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var newsRecyclerView: RecyclerView
     private val mainViewModel: MainViewModel by viewModels { factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,73 +35,71 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.hide()
+        setupView()
+        setupViewModel()
+        setupAction()
+    }
 
-        factory = ViewModelFactory.getInstance(this)
-
-        newsRecyclerView = findViewById(R.id.rv_news)
-
+    private fun setupAction() {
         bottomNavigationView = findViewById(R.id.bottom_navigation_main)
-        bottomNavigationView.setOnItemSelectedListener { item ->
+        bottomNavigationView.setSelectedItemId(R.id.home)
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
                     true
                 }
-                R.id.calender -> {
+
+                R.id.calendar -> {
                     startActivity(Intent(this, CalendarActivity::class.java))
                     true
                 }
+
                 R.id.prediksi -> {
                     startActivity(Intent(this, PrediksiActivity::class.java))
                     true
                 }
+
                 R.id.profile -> {
                     startActivity(Intent(this, ProfileActivity::class.java))
                     true
                 }
+
                 else -> false
             }
         }
+    }
 
-        setupViewModel()
+    private fun setupView() {
+        @Suppress("DEPRECATION")
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        window.statusBarColor = Color.TRANSPARENT
+        supportActionBar?.hide()
+
         updateGreetingText()
-        checkUserLoginStatus()
-        initRecyclerView()
-        observeNews()
-        mainViewModel.fetchHealthNews()
-        mainViewModel.newsList.observe(this, Observer { newsList ->
-            newsAdapter.submitList(newsList)
-        })
-
     }
 
-    private fun initRecyclerView() {
-        newsAdapter = NewsAdapter()
-        binding.rvNews.apply {
-            adapter = newsAdapter
-            layoutManager = LinearLayoutManager(this@MainActivity)
-        }
-    }
+    private fun setupViewModel() {
+        factory = ViewModelFactory.getInstance(this)
 
-    private fun checkUserLoginStatus() {
-        mainViewModel.getSession().observe(this) { user ->
-            if (!user.isLogin) {
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
-            }
-        }
-    }
-
-    private fun setupViewModel(){
-        mainViewModel.getSession().observe(this){ user ->
+        mainViewModel.getUserData().observe(this) { user ->
             val usernameText = user.name
             if (usernameText.isNotEmpty()) {
-                val capitalizedText = usernameText.substring(0, 1).uppercase() + usernameText.substring(1)
+                val capitalizedText =
+                    usernameText.substring(0, 1).uppercase() + usernameText.substring(1)
                 binding.username.text = capitalizedText
             } else {
-                binding.username.text = usernameText
+                binding.username.text = usernameText // or set a default text if needed
             }
+        }
 
+        mainViewModel.getAllNews()
+
+        mainViewModel.allNews.observe(this) { news ->
+            setupData(news)
+        }
+
+        mainViewModel.isLoading.observe(this) {
+            showLoading(it)
         }
     }
 
@@ -112,24 +113,41 @@ class MainActivity : AppCompatActivity() {
             in 12..17 -> "Good Afternoon"
             else -> "Good Evening"
         }
+
         binding.day.text = greeting
     }
 
-    private fun observeNews() {
-        mainViewModel.newsList.observe(this, Observer { newsList ->
-            if (newsList != null && newsList.isNotEmpty()) {
-                Log.d(TAG, "News data available: $newsList")
-                for (news in newsList) {
-                    Log.d("MainActivity", "News: ${news.title}, ImageUrl: ${news.imageUrl}")
-                }
-                newsAdapter.submitList(newsList)
-            } else {
-                Log.d(TAG, "No news to display")
+    private fun setupData(data: GetAllNewsResponse) {
+        setupAdapter(data.result)
+    }
+
+    private fun setupAdapter(news: ArrayList<News>) {
+        binding.rvNews.layoutManager = LinearLayoutManager(this)
+        val adapter = NewsAdapter(news)
+        binding.rvNews.adapter = adapter
+
+        adapter.setOnItemClickCallback(object : NewsAdapter.OnItemClickCallback{
+            override fun onItemClicked(news: News) {
+                toDetailActivity(news)
             }
         })
     }
 
-    companion object {
-        private const val TAG = "MainActivity"
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    private fun toDetailActivity(news: News) {
+        val intent = Intent(this@MainActivity, DetailNewsActivity::class.java)
+        mainViewModel.allNews.observe(this){
+            intent.putExtra(DetailNewsActivity.EXTRA_PAGE, it.currentPage)
+        }
+        intent.putExtra(DetailNewsActivity.EXTRA_TOKEN, news.token)
+        startActivity(intent)
+        finish()
     }
 }

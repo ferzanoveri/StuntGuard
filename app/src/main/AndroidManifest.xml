@@ -41,13 +41,16 @@
             android:name=".auth.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".auth.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".calendar.CalendarActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".splashscreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

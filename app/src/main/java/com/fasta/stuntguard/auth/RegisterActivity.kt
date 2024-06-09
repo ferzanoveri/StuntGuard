@@ -3,6 +3,7 @@ package com.fasta.stuntguard.auth
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -25,6 +26,8 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //factory = ViewModelFactory.getInstance(this)
+
         setupView()
         setupViewModel()
         setupAction()
@@ -37,10 +40,12 @@ class RegisterActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
+
     private fun setupViewModel() {
         factory = ViewModelFactory.getInstance(this)
 
         registerViewModel.registerData.observe(this) { user ->
+            Log.d("RegisterActivity", "User data: $user")
             if (user.status) {
                 AlertDialog.Builder(this).apply {
                     setTitle(user.message)
@@ -52,6 +57,8 @@ class RegisterActivity : AppCompatActivity() {
                     create()
                     show()
                 }
+            } else {
+                showError(true)
             }
         }
 
@@ -63,6 +70,7 @@ class RegisterActivity : AppCompatActivity() {
             showError(it)
         }
     }
+
 
     private fun setupAction() {
         binding.btnRegister.setOnClickListener {
@@ -95,8 +103,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun isPasswordValid(password: String): Boolean {
-        val pattern = Regex("^(?=.*[A-Z]).{8,}$")
-        return pattern.matches(password)
+        return password.length >= 8
     }
 
     private fun showLoading(isLoading: Boolean) {

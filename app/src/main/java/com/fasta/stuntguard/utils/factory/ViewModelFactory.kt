@@ -3,12 +3,14 @@ package com.fasta.stuntguard.utils.factory
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.stuntguard.repository.Repository
+import com.fasta.stuntguard.repository.Repository
 import com.fasta.stuntguard.viewmodel.MainViewModel
 import com.fasta.stuntguard.utils.Injection
+import com.fasta.stuntguard.viewmodel.NewsViewModel
 import com.fasta.stuntguard.viewmodel.auth.LoginViewModel
 import com.fasta.stuntguard.viewmodel.auth.RegisterViewModel
 import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
+import com.fasta.stuntguard.viewmodel.profile.changepassword.ChangePasswordViewModel
 
 class ViewModelFactory(private val repository: Repository) :
     ViewModelProvider.NewInstanceFactory() {
@@ -30,6 +32,14 @@ class ViewModelFactory(private val repository: Repository) :
 
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(repository) as T
+            }
+
+            modelClass.isAssignableFrom(NewsViewModel::class.java) -> {
+                NewsViewModel(repository) as T
+            }
+
+            modelClass.isAssignableFrom(ChangePasswordViewModel::class.java) -> {
+                ChangePasswordViewModel(repository) as T
             }
 
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)

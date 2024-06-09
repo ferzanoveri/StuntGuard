@@ -3,8 +3,8 @@ package com.fasta.stuntguard.viewmodel.auth
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.stuntguard.repository.Repository
 import com.fasta.stuntguard.data.response.RegisterResponse
+import com.fasta.stuntguard.repository.Repository
 import kotlinx.coroutines.launch
 
 class RegisterViewModel (private val repository: Repository) : ViewModel(){

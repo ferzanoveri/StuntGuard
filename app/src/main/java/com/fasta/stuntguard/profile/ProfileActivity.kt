@@ -14,6 +14,8 @@ import com.fasta.stuntguard.databinding.ActivityProfileBinding
 import com.fasta.stuntguard.prediksi.PrediksiActivity
 import com.fasta.stuntguard.profile.edit.EditPasswordActivity
 import com.fasta.stuntguard.profile.edit.EditProfileActivity
+import com.fasta.stuntguard.splashscreen.SplashScreenActivity
+import com.fasta.stuntguard.utils.UserPreferences
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,13 +23,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
     private lateinit var bottomNavigationView: BottomNavigationView
-    private val viewModel by viewModels<ProfileViewModel> { ViewModelFactory.getInstance(this) }
+    private lateinit var factory: ViewModelFactory
+    private val profileViewModel: ProfileViewModel by viewModels { factory }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.hide()
+
+        factory = ViewModelFactory.getInstance(this)
 
         binding.apply {
             ubahProfile.setOnClickListener {
@@ -69,16 +75,12 @@ class ProfileActivity : AppCompatActivity() {
         builder.setTitle("Logout")
         builder.setMessage("Are you sure you want to log out?")
         builder.setPositiveButton(android.R.string.ok) { _, _ ->
-            viewModel.logout()
-            startActivity(Intent(this, LoginActivity::class.java))
+            profileViewModel.logout()
+            startActivity(Intent(this, SplashScreenActivity::class.java))
             Toast.makeText(this, "You are successfully logged out", Toast.LENGTH_SHORT).show()
             finish()
         }
-        builder.setNegativeButton(android.R.string.cancel) { _, _ ->
-        }
+        builder.setNegativeButton(android.R.string.cancel) { _, _ -> }
         builder.show()
     }
-
-
-
 }

@@ -10,44 +10,44 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.fasta.stuntguard.R
 import com.fasta.stuntguard.data.model.NewsModel
+import com.fasta.stuntguard.data.response.News
 import com.fasta.stuntguard.databinding.ItemNewsBinding
 
-class NewsAdapter: ListAdapter<NewsModel, NewsAdapter.NewsViewHolder>(DiffCallback){
-    inner class NewsViewHolder(private val binding: ItemNewsBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        private val imgNews: ImageView = itemView.findViewById(R.id.img_item_news)
-        fun bind(news: NewsModel) {
-            binding.newsTitle.text = news.title
-            if (!news.imageUrl.isNullOrEmpty()) {
-                Glide.with(itemView.context)
-                    .load(news.imageUrl)
-                    .placeholder(R.drawable.ic_place_holder)
-                    .error(R.drawable.ic_place_holder)
-                    .into(imgNews)
-            } else {
-                imgNews.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_place_holder))
-            }
-        }
+class NewsAdapter(private val listNews: ArrayList<News>) : RecyclerView.Adapter<NewsAdapter.ListViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
+
+    class ListViewHolder(var binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return NewsViewHolder(binding)
+        return ListViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        holder.bind(getItem(position))
-    }
+    override fun getItemCount(): Int = listNews.size
 
-    companion object {
-        private val DiffCallback = object : DiffUtil.ItemCallback<NewsModel>() {
-            override fun areItemsTheSame(oldItem: NewsModel, newItem: NewsModel): Boolean {
-                return oldItem.title == newItem.title
-            }
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+        val news = listNews[position]
 
-            override fun areContentsTheSame(oldItem: NewsModel, newItem: NewsModel): Boolean {
-                return oldItem == newItem
-            }
+        holder.binding.apply {
+            genre.text = news.publisher
+            newsTitle.text = news.title
+            Glide.with(imgItemNews.context)
+                .load(news.image)
+                .fitCenter()
+                .into(imgItemNews)
         }
+
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(news)
+        }
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(news : News)
     }
 }

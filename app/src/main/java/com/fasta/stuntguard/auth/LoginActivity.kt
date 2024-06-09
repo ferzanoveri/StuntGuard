@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel.loginData.observe(this) { user ->
             if (user.status) {
-                loginViewModel.saveUser(
+                saveSession(
                     UserModel(
                         user.data,
                         user.token,
@@ -60,7 +60,6 @@ class LoginActivity : AppCompatActivity() {
                 )
                 Toast.makeText(this, user.message, Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
-                finish()
             }
         }
 
@@ -101,8 +100,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun isPasswordValid(password: String): Boolean {
-        val pattern = Regex("^(?=.*[A-Z]).{8,}$")
-        return pattern.matches(password)
+        return password.length >= 8
     }
 
     private fun showLoading(isLoading: Boolean) {
