@@ -1,5 +1,6 @@
 package com.fasta.stuntguard.news
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import com.bumptech.glide.Glide
+import com.fasta.stuntguard.MainActivity
 import com.fasta.stuntguard.data.response.DetailNews
 import com.fasta.stuntguard.data.response.GetDetailNewsResponse
 import com.fasta.stuntguard.databinding.ActivityDetailNewsBinding
@@ -34,14 +36,17 @@ class DetailNewsActivity : AppCompatActivity() {
 
         setupView()
         setupViewModel()
-//        setupAction()
+        setupAction()
 
 
     }
 
-//    private fun setupAction() {
-//        TODO("Not yet implemented")
-//    }
+    private fun setupAction() {
+        binding.backButton.setOnClickListener {
+            onBackPressed()
+            finish()
+        }
+    }
 
     private fun setupViewModel() {
         factory = ViewModelFactory.getInstance(this)
@@ -65,10 +70,7 @@ class DetailNewsActivity : AppCompatActivity() {
         @Suppress("DEPRECATION")
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.statusBarColor = Color.TRANSPARENT
-
-        val actionbar = supportActionBar
-        actionbar?.title = "Detail News"
-        actionbar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.hide()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -103,6 +105,11 @@ class DetailNewsActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
     companion object{

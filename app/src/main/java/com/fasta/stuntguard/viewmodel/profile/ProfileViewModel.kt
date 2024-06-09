@@ -9,6 +9,8 @@ import com.fasta.stuntguard.repository.Repository
 import kotlinx.coroutines.launch
 
 class ProfileViewModel(private val repository: Repository) : ViewModel() {
+    val updatePasswordResponse: LiveData<ChangePasswordResponse> = repository.updatePasswordResponse
+
     fun getUserData() : LiveData<UserModel> {
         return repository.getUser()
     }
@@ -24,8 +26,6 @@ class ProfileViewModel(private val repository: Repository) : ViewModel() {
             repository.updateProfile(parentId, parentName, email, phone)
         }
     }
-
-    val updatePasswordResponse: LiveData<ChangePasswordResponse> = repository.updatePasswordResponse
 
     fun updatePassword(parentId: String, oldPassword: String, newPassword: String, confirmPassword: String) {
         repository.updatePassword(parentId, oldPassword, newPassword, confirmPassword)

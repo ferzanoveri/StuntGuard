@@ -4,19 +4,15 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.fasta.stuntguard.auth.LoginActivity
 import com.fasta.stuntguard.calendar.CalendarActivity
 import com.fasta.stuntguard.data.response.GetAllNewsResponse
 import com.fasta.stuntguard.data.response.News
 import com.fasta.stuntguard.databinding.ActivityMainBinding
 import com.fasta.stuntguard.news.DetailNewsActivity
-import com.fasta.stuntguard.prediksi.PrediksiActivity
+import com.fasta.stuntguard.prediksi.PredictionActivity
 import com.fasta.stuntguard.profile.ProfileActivity
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.MainViewModel
@@ -54,8 +50,8 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-                R.id.prediksi -> {
-                    startActivity(Intent(this, PrediksiActivity::class.java))
+                R.id.predict -> {
+                    startActivity(Intent(this, PredictionActivity::class.java))
                     true
                 }
 
@@ -88,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                     usernameText.substring(0, 1).uppercase() + usernameText.substring(1)
                 binding.username.text = capitalizedText
             } else {
-                binding.username.text = usernameText // or set a default text if needed
+                binding.username.text = usernameText
             }
         }
 

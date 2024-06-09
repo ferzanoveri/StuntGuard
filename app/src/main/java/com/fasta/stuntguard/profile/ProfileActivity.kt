@@ -1,21 +1,21 @@
 package com.fasta.stuntguard.profile
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.fasta.stuntguard.MainActivity
 import com.fasta.stuntguard.R
-import com.fasta.stuntguard.auth.LoginActivity
 import com.fasta.stuntguard.calendar.CalendarActivity
 import com.fasta.stuntguard.databinding.ActivityProfileBinding
-import com.fasta.stuntguard.prediksi.PrediksiActivity
+import com.fasta.stuntguard.prediksi.PredictionActivity
 import com.fasta.stuntguard.profile.edit.EditPasswordActivity
 import com.fasta.stuntguard.profile.edit.EditProfileActivity
 import com.fasta.stuntguard.splashscreen.SplashScreenActivity
-import com.fasta.stuntguard.utils.UserPreferences
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -31,10 +31,21 @@ class ProfileActivity : AppCompatActivity() {
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupView()
+        setUpAction()
+        bottomNavigation()
+    }
+
+    private fun setupView() {
+        @Suppress("DEPRECATION")
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        window.statusBarColor = Color.TRANSPARENT
         supportActionBar?.hide()
 
         factory = ViewModelFactory.getInstance(this)
+    }
 
+    private fun setUpAction(){
         binding.apply {
             ubahProfile.setOnClickListener {
                 startActivity(Intent(this@ProfileActivity, EditProfileActivity::class.java))
@@ -46,7 +57,9 @@ class ProfileActivity : AppCompatActivity() {
                 showDialog()
             }
         }
+    }
 
+    private fun bottomNavigation(){
         bottomNavigationView = findViewById(R.id.bottom_navigation_main)
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -58,8 +71,8 @@ class ProfileActivity : AppCompatActivity() {
                     startActivity(Intent(this, CalendarActivity::class.java))
                     true
                 }
-                R.id.prediksi -> {
-                    startActivity(Intent(this, PrediksiActivity::class.java))
+                R.id.predict -> {
+                    startActivity(Intent(this, PredictionActivity::class.java))
                     true
                 }
                 R.id.profile -> {
@@ -69,7 +82,6 @@ class ProfileActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun showDialog() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Logout")

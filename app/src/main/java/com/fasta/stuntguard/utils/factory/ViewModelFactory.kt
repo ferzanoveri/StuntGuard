@@ -9,8 +9,8 @@ import com.fasta.stuntguard.utils.Injection
 import com.fasta.stuntguard.viewmodel.NewsViewModel
 import com.fasta.stuntguard.viewmodel.auth.LoginViewModel
 import com.fasta.stuntguard.viewmodel.auth.RegisterViewModel
+import com.fasta.stuntguard.viewmodel.predict.PredictionViewModel
 import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
-import com.fasta.stuntguard.viewmodel.profile.changepassword.ChangePasswordViewModel
 
 class ViewModelFactory(private val repository: Repository) :
     ViewModelProvider.NewInstanceFactory() {
@@ -38,8 +38,8 @@ class ViewModelFactory(private val repository: Repository) :
                 NewsViewModel(repository) as T
             }
 
-            modelClass.isAssignableFrom(ChangePasswordViewModel::class.java) -> {
-                ChangePasswordViewModel(repository) as T
+            modelClass.isAssignableFrom(PredictionViewModel::class.java) -> {
+                PredictionViewModel(repository) as T
             }
 
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)

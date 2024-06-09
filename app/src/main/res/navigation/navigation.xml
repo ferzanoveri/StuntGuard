@@ -15,7 +15,7 @@
         tools:layout="@layout/activity_main"/>
 
     <fragment
-        android:id="@+id/prediksi"
+        android:id="@+id/predict"
         android:label="Home"
         tools:layout="@layout/activity_main"/>
 

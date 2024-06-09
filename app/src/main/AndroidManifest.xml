@@ -32,7 +32,7 @@
             android:name=".profile.edit.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".prediksi.PrediksiActivity"
+            android:name=".prediksi.PredictionActivity"
             android:exported="false" />
         <activity
             android:name=".profile.ProfileActivity"

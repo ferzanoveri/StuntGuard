@@ -4,12 +4,11 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.fasta.stuntguard.MainActivity
 import com.fasta.stuntguard.R
 import com.fasta.stuntguard.databinding.ActivityCalendarBinding
-import com.fasta.stuntguard.prediksi.PrediksiActivity
+import com.fasta.stuntguard.prediksi.PredictionActivity
 import com.fasta.stuntguard.profile.ProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -21,8 +20,18 @@ class CalendarActivity : AppCompatActivity() {
         binding = ActivityCalendarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.hide()
+        setupView()
+        bottomNavigation()
+    }
 
+    private fun setupView(){
+        @Suppress("DEPRECATION")
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        window.statusBarColor = Color.TRANSPARENT
+        supportActionBar?.hide()
+    }
+
+    private fun bottomNavigation(){
         bottomNavigationView = findViewById(R.id.bottom_navigation_calender)
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -33,8 +42,8 @@ class CalendarActivity : AppCompatActivity() {
                 R.id.calender -> {
                     true
                 }
-                R.id.prediksi -> {
-                    startActivity(Intent(this, PrediksiActivity::class.java))
+                R.id.predict -> {
+                    startActivity(Intent(this, PredictionActivity::class.java))
                     true
                 }
                 R.id.profile -> {
@@ -44,15 +53,5 @@ class CalendarActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
-        //setupView()
     }
-
-//    private fun setupView(){
-//        @Suppress("DEPRECATION")
-//        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-//        window.statusBarColor = Color.TRANSPARENT
-//        supportActionBar?.hide()
-//        binding.bottomNavigationCalender.selectedItemId = R.id.calendar
-//    }
 }

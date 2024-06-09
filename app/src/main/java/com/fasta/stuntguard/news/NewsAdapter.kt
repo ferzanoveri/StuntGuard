@@ -2,14 +2,9 @@ package com.fasta.stuntguard.news
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.fasta.stuntguard.R
-import com.fasta.stuntguard.data.model.NewsModel
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.fasta.stuntguard.data.response.News
 import com.fasta.stuntguard.databinding.ItemNewsBinding
 
@@ -38,7 +33,7 @@ class NewsAdapter(private val listNews: ArrayList<News>) : RecyclerView.Adapter<
             newsTitle.text = news.title
             Glide.with(imgItemNews.context)
                 .load(news.image)
-                .fitCenter()
+                .transform(CircleCrop())
                 .into(imgItemNews)
         }
 

@@ -7,6 +7,7 @@ import com.fasta.stuntguard.data.response.LoginResponse
 import com.fasta.stuntguard.data.response.ParentChildResponse
 import com.fasta.stuntguard.data.response.RegisterResponse
 import com.fasta.stuntguard.data.response.ChangeProfileResponse
+import com.fasta.stuntguard.data.response.PredictionResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -66,4 +67,26 @@ interface ApiService {
         @Field("email") email: String,
         @Field("phone") phone: String?
     ): Call<ChangeProfileResponse>
+
+    @FormUrlEncoded
+    @POST("predict/{child_id}")
+    fun postPrediction(
+        @Path("child_id") childId: String,
+        @Field("child_weight") childWeight: Float,
+        @Field("child_height") childHeight: Float,
+        @Field("breastfeeding") breastfeeding: Boolean?
+    ): Call<PredictionResponse>
+
+    @GET("predict/all")
+    fun getAllPredictions(): Call<List<PredictionResponse>>
+
+    @GET("predict/id/{predict_id}")
+    fun getPredictionById(
+        @Path("predict_id") predictId: String
+    ): Call<PredictionResponse>
+
+    @GET("predict/child/{child_id}")
+    fun getPredictionsByChildId(
+        @Path("child_id") childId: String
+    ): Call<List<PredictionResponse>>
 }

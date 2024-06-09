@@ -12,6 +12,7 @@ import com.fasta.stuntguard.data.response.GetDetailNewsResponse
 import com.fasta.stuntguard.data.response.LoginResponse
 import com.fasta.stuntguard.data.response.RegisterResponse
 import com.fasta.stuntguard.data.response.ChangeProfileResponse
+import com.fasta.stuntguard.data.response.PredictionResponse
 import com.fasta.stuntguard.utils.UserPreferences
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,6 +42,10 @@ class Repository private constructor(
 
     private val _updatePasswordResponse = MutableLiveData<ChangePasswordResponse>()
     val updatePasswordResponse: LiveData<ChangePasswordResponse> = _updatePasswordResponse
+
+    private val _updateProfileResponse = MutableLiveData<ChangeProfileResponse>()
+    val updateProfileResponse: LiveData<ChangeProfileResponse> = _updateProfileResponse
+
 
     fun postRegister(
         parentName: String,
@@ -195,9 +200,6 @@ class Repository private constructor(
         })
     }
 
-    private val _updateProfileResponse = MutableLiveData<ChangeProfileResponse>()
-    val updateProfileResponse: LiveData<ChangeProfileResponse> = _updateProfileResponse
-
     fun updateProfile(parentId: String, parentName: String, email: String, phone: String?) {
         _isLoading.value = true
         _isError.value = false
@@ -220,6 +222,79 @@ class Repository private constructor(
                 _isLoading.value = false
                 _isError.value = true
                 Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+        })
+    }
+
+    private val _predictionResponse = MutableLiveData<PredictionResponse>()
+    val predictionResponse: LiveData<PredictionResponse> = _predictionResponse
+
+    private val _allPredictions = MutableLiveData<List<PredictionResponse>>()
+    val allPredictions: LiveData<List<PredictionResponse>> = _allPredictions
+
+    private val _predictionsByChildId = MutableLiveData<List<PredictionResponse>>()
+    val predictionsByChildId: LiveData<List<PredictionResponse>> = _predictionsByChildId
+
+    fun postPrediction(childId: String, childWeight: Float, childHeight: Float, breastfeeding: Boolean?) {
+        _isLoading.value = true
+        _isError.value = false
+        val client = ApiConfig.getApiService().postPrediction(childId, childWeight, childHeight, breastfeeding)
+        client.enqueue(object : Callback<PredictionResponse> {
+            override fun onResponse(call: Call<PredictionResponse>, response: Response<PredictionResponse>) {
+                _isLoading.value = false
+                if (response.isSuccessful && response.body() != null) {
+                    _predictionResponse.value = response.body()
+                } else {
+                    _isError.value = true
+                }
+            }
+
+            override fun onFailure(call: Call<PredictionResponse>, t: Throwable) {
+                _isLoading.value = false
+                _isError.value = true
+                Log.e(TAG, "onFailure: ${t.message}")
+            }
+        })
+    }
+
+    fun getAllPredictions() {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().getAllPredictions()
+        client.enqueue(object : Callback<List<PredictionResponse>> {
+            override fun onResponse(call: Call<List<PredictionResponse>>, response: Response<List<PredictionResponse>>) {
+                _isLoading.value = false
+                if (response.isSuccessful && response.body() != null) {
+                    _allPredictions.value = response.body()
+                } else {
+                    _isError.value = true
+                }
+            }
+
+            override fun onFailure(call: Call<List<PredictionResponse>>, t: Throwable) {
+                _isLoading.value = false
+                _isError.value = true
+                Log.e(TAG, "onFailure: ${t.message}")
+            }
+        })
+    }
+
+    fun getPredictionsByChildId(childId: String) {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().getPredictionsByChildId(childId)
+        client.enqueue(object : Callback<List<PredictionResponse>> {
+            override fun onResponse(call: Call<List<PredictionResponse>>, response: Response<List<PredictionResponse>>) {
+                _isLoading.value = false
+                if (response.isSuccessful && response.body() != null) {
+                    _predictionsByChildId.value = response.body()
+                } else {
+                    _isError.value = true
+                }
+            }
+
+            override fun onFailure(call: Call<List<PredictionResponse>>, t: Throwable) {
+                _isLoading.value = false
+                _isError.value = true
+                Log.e(TAG, "onFailure: ${t.message}")
             }
         })
     }
