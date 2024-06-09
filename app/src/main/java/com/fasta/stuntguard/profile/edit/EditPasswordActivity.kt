@@ -5,17 +5,15 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.fasta.stuntguard.R
 import com.fasta.stuntguard.databinding.ActivityEditPasswordBinding
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
-import com.fasta.stuntguard.viewmodel.profile.changepassword.ChangePasswordViewModel
 
 class EditPasswordActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditPasswordBinding
     private val factory: ViewModelFactory by lazy { ViewModelFactory.getInstance(this) }
-    private val changePasswordViewModel: ChangePasswordViewModel by viewModels { factory }
+    private val profileViewModel: ProfileViewModel by viewModels { factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +25,7 @@ class EditPasswordActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
         }
 
-        changePasswordViewModel.updatePasswordResponse.observe(this) { response ->
+        profileViewModel.updatePasswordResponse.observe(this) { response ->
             if (response.status) {
                 Toast.makeText(this, "Password updated successfully", Toast.LENGTH_SHORT).show()
                 finish()
@@ -47,9 +45,9 @@ class EditPasswordActivity : AppCompatActivity() {
             }
 
             if (newPassword == confirmPassword) {
-                changePasswordViewModel.getUserData().observe(this) { user ->
+                profileViewModel.getUserData().observe(this) { user ->
                     if (user != null) {
-                        changePasswordViewModel.updatePassword(user.userId, oldPassword, newPassword, confirmPassword)
+                        profileViewModel.updatePassword(user.userId, oldPassword, newPassword, confirmPassword)
                     } else {
                         Toast.makeText(this, "User not found", Toast.LENGTH_SHORT).show()
                     }

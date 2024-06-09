@@ -11,7 +11,7 @@ import com.fasta.stuntguard.data.response.GetAllNewsResponse
 import com.fasta.stuntguard.data.response.GetDetailNewsResponse
 import com.fasta.stuntguard.data.response.LoginResponse
 import com.fasta.stuntguard.data.response.RegisterResponse
-import com.fasta.stuntguard.data.response.UpdateProfileResponse
+import com.fasta.stuntguard.data.response.ChangeProfileResponse
 import com.fasta.stuntguard.utils.UserPreferences
 import retrofit2.Call
 import retrofit2.Callback
@@ -195,18 +195,18 @@ class Repository private constructor(
         })
     }
 
-    private val _updateProfileResponse = MutableLiveData<UpdateProfileResponse>()
-    val updateProfileResponse: LiveData<UpdateProfileResponse> = _updateProfileResponse
+    private val _updateProfileResponse = MutableLiveData<ChangeProfileResponse>()
+    val updateProfileResponse: LiveData<ChangeProfileResponse> = _updateProfileResponse
 
     fun updateProfile(parentId: String, parentName: String, email: String, phone: String?) {
         _isLoading.value = true
         _isError.value = false
         val client = ApiConfig.getApiService()
             .updateProfile(parentId, parentName, email, phone)
-        client.enqueue(object : Callback<UpdateProfileResponse> {
+        client.enqueue(object : Callback<ChangeProfileResponse> {
             override fun onResponse(
-                call: Call<UpdateProfileResponse>,
-                response: Response<UpdateProfileResponse>
+                call: Call<ChangeProfileResponse>,
+                response: Response<ChangeProfileResponse>
             ) {
                 _isLoading.value = false
                 if (response.isSuccessful && response.body() != null) {
@@ -216,7 +216,7 @@ class Repository private constructor(
                 }
             }
 
-            override fun onFailure(call: Call<UpdateProfileResponse>, t: Throwable) {
+            override fun onFailure(call: Call<ChangeProfileResponse>, t: Throwable) {
                 _isLoading.value = false
                 _isError.value = true
                 Log.e(TAG, "onFailure: ${t.message.toString()}")

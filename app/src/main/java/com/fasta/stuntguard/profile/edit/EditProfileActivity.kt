@@ -5,13 +5,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.fasta.stuntguard.R
 import com.fasta.stuntguard.databinding.ActivityEditProfileBinding
-import com.fasta.stuntguard.databinding.ActivityProfileBinding
-import com.fasta.stuntguard.utils.UserPreferences
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
-import com.fasta.stuntguard.viewmodel.profile.changepassword.ChangePasswordViewModel
 
 class EditProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditProfileBinding

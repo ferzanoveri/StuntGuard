@@ -6,7 +6,7 @@ import com.fasta.stuntguard.data.response.GetDetailNewsResponse
 import com.fasta.stuntguard.data.response.LoginResponse
 import com.fasta.stuntguard.data.response.ParentChildResponse
 import com.fasta.stuntguard.data.response.RegisterResponse
-import com.fasta.stuntguard.data.response.UpdateProfileResponse
+import com.fasta.stuntguard.data.response.ChangeProfileResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -14,7 +14,6 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface ApiService {
 
@@ -66,5 +65,5 @@ interface ApiService {
         @Field("parent_name") parentName: String,
         @Field("email") email: String,
         @Field("phone") phone: String?
-    ): Call<UpdateProfileResponse>
+    ): Call<ChangeProfileResponse>
 }

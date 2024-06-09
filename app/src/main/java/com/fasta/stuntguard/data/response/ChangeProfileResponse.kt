@@ -1,6 +1,6 @@
 package com.fasta.stuntguard.data.response
 
-data class UpdateProfileResponse(
+data class ChangeProfileResponse(
     val success: Boolean,
     val message: String
 )

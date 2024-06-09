@@ -25,4 +25,10 @@ class ProfileViewModel(private val repository: Repository) : ViewModel() {
         }
     }
 
+    val updatePasswordResponse: LiveData<ChangePasswordResponse> = repository.updatePasswordResponse
+
+    fun updatePassword(parentId: String, oldPassword: String, newPassword: String, confirmPassword: String) {
+        repository.updatePassword(parentId, oldPassword, newPassword, confirmPassword)
+    }
+
 }
