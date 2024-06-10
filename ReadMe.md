@@ -25,14 +25,12 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 ## StuntGuard API Endpoints
 
 ### Auth
-
 | Endpoint             | Method | Input                                  | Description           | Status       |
 |----------------------|--------|----------------------------------------|-----------------------|--------------|
 | /register            | POST   | parent_name, email, phone, password, confirmPassword | Register account | ✅ Completed |
 | /login               | POST   | email, password                        | Login to application  | ✅ Completed |
 
 ### Users
-
 | Endpoint                 | Method | Input                                  | Description           | Status       |
 |--------------------------|--------|----------------------------------------|-----------------------|--------------|
 | /user/all                | GET    | -                                      | Get all parents data  | ✅ Completed |
@@ -42,7 +40,6 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 | /user/remove/:parent_id  | DELETE | -                                      | Remove parent account | ✅ Completed |
 
 ### Children
-
 | Endpoint                        | Method | Input                                           | Description                   | Status       |
 |---------------------------------|--------|-------------------------------------------------|-------------------------------|--------------|
 | /child/:parent_id               | POST   | child_name, child_gender, birth_date, birth_weight, birth_height, breastfeeding | Add child data to family | ✅ Completed |
@@ -53,7 +50,6 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 | /child/remove/:child_id         | DELETE | -                                               | Remove child data              | ✅ Completed |
 
 ### News
-
 | Endpoint                          | Method | Input                       | Description                   | Status       |
 |-----------------------------------|--------|-----------------------------|-------------------------------|--------------|
 | /news           | GET   | -  | Get all news and redirect to page 1             | ✅ Completed   |
@@ -62,14 +58,26 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 | /news/:page/:token                  | GET    | token                           | Get all news details           | ✅ Completed   |
 
 ### Predictions
-
 | Endpoint                          | Method | Input                       | Description                   | Status       |
 |-----------------------------------|--------|-----------------------------|-------------------------------|--------------|
-| /predict/:child_id             | POST   | child_weight, child_height, breastfeeding(optional)  | Post a prediction             | ✅ Completed   |
+| /predict/:child_id             | POST   | child_weight, child_height, breastfeeding(optional)  | Post a prediction             | 🟠 Model on development   |
 | /predict/all                  | GET    | -                           | Get all predictions           | ✅ Completed   |
 | /predict/id/:predict_id       | GET    | need predict_id params                 | Get predictions by predict_id | ✅ Completed   |
 | /predict/child/:child_id   | GET    | need child_id params                   | Get predictions by child_id   | ✅ Completed   |
 
+### Notes
+| Endpoint                            | Method | Input           | Description                                 | Status       |
+|-------------------------------------|--------|-----------------|---------------------------------------------|--------------|
+| /notes/:predict_id                  | POST   | need predict_id params       | Add a note to a prediction                  | ✅ Completed |
+| /get_notes/:predict_id              | GET    | need predict_id params       | Get notes for a prediction by prediction ID | ✅ Completed |
+
+### Recommendations
+| Endpoint                            | Method | Input           | Description                                 | Status       |
+|-------------------------------------|--------|-----------------|---------------------------------------------|--------------|
+| /recom/:predict_id                  | POST   | need predict_id params       | Add a recommendation to a prediction         | 🟠 Model on development       |
+| /recom/all                          | GET    | -               | Get all recommendations                      | ✅ Completed      |
+| /recom/child/:child_id              | GET    | need child_id params        | Get recommendations by child ID              | ✅ Completed      |
+| /recom/id/:recommendation_id/foods  | GET    | need recommendation_id params | Get food details for a recommendation by recommendation ID | ✅ Completed |
 
 # Cloud Services
 
