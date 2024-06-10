@@ -341,3 +341,26 @@ def post_notes(predict_id):
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+def get_notes(predict_id):
+    try:
+        # Connect to MySQL and fetch the note from StuntPredict table
+        conn = get_mysql_connection()
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "SELECT note FROM StuntPredict WHERE predict_id = %s",
+            (predict_id,)
+        )
+        note = cursor.fetchone()
+        
+        cursor.close()
+        conn.close()
+
+        if note:
+            return jsonify({"note": note[0]}), 200
+        else:
+            return jsonify({"message": "Note not found."}), 404
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

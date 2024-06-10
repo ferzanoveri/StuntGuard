@@ -30,19 +30,27 @@ def configure_routes(app):
     @app.route("/predict/all/<child_id>", methods=["GET"])
     def get_predictions_by_child_route(child_id):
         return predict.get_predictions_by_child(child_id)
+    
+    @app.route("/notes/<predict_id>", methods=["POST"])
+    def post_notes_route(predict_id):
+        return predict.post_notes(predict_id)
+    
+    @app.route('/get_notes/<int:predict_id>', methods=['GET'])
+    def get_notes_route(predict_id):
+        return predict.get_notes(predict_id)
 
     @app.route('/recom/<predict_id>', methods=['POST'])
     def post_recom_route(predict_id):
         return recom.post_recom(predict_id)
     
     @app.route('/recom/all', methods=['GET'])
-    def get_all_recommendations():
+    def get_all_recommendations_route():
         return recom.get_all_recommendations()
     
-    @app.route('/recom/<child_id>', methods=['GET'])
-    def get_recommendations_by_child(child_id):
+    @app.route('/recom/child/<child_id>', methods=['GET'])
+    def get_recommendations_by_child_route(child_id):
         return recom.get_recommendations_by_child(child_id)
     
-    @app.route('/recom/<recommendation_id>/foods', methods=['GET'])
-    def get_food_details_by_recommendation(recommendation_id):
+    @app.route('/recom/id/<recommendation_id>/foods', methods=['GET'])
+    def get_food_details_by_recommendation_route(recommendation_id):
         return recom.get_food_details_by_recommendation(recommendation_id)
