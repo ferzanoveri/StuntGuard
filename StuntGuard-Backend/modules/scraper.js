@@ -2,12 +2,12 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const crypto = require('crypto');
 
-const base = "https://www.detik.com/search/searchall?query=stunting+pada+anak";
+const base = "https://www.detik.com/search/searchall?query=stunting%20pada%20anak";
 
 // Function to get the list of news articles
-exports.getIndex = async (page = 1) => {
+exports.getIndex = async (page = 1, type) => {
     try {
-        const url = `${base}&page=${page}`;
+        const url = `${base}&page=${page}&result_type=${type}`;
         const response = await axios.get(url);
         const html_data = response.data;
         const $ = cheerio.load(html_data);
@@ -21,8 +21,10 @@ exports.getIndex = async (page = 1) => {
             const date = $(this).find('div.media__date').text().trim();
             const publisher = $(this).find('h2.media__subtitle').text().trim();
 
+
             // Exclude articles with publisher "20Detik"
-            if (publisher !== "20Detik" && !link.includes('video')) {
+            const excludedPublishers = ["20Detik", "detikInet"];
+            if (!excludedPublishers.includes(publisher) &&  !link.includes('video')) {
                 // Generate a token for the link
                 const token = crypto.createHash('sha256').update(link).digest('hex').slice(0,8);
                 result.push({ token, link, image, title, date, publisher });
@@ -31,8 +33,10 @@ exports.getIndex = async (page = 1) => {
 
         const hasNext = $("a.pagination__item.pagination__item--next").length > 0;
         const hasPrevious = $("a.pagination__item.pagination__item--previous").length > 0;
-
-        return { result, hasNext, hasPrevious, currentPage: page };
+        const relevansi = $("a.nav_item.nav_item--selected.itp-result-type").text().trim();
+        const terbaru = $("a.nav_item.itp-result-type").text().trim();
+ 
+        return { result, hasNext, hasPrevious, currentPage: page, relevansi, terbaru};
     } catch (error) {
         throw error; // Tangkap dan lemparkan error untuk menangani di controller
     }
