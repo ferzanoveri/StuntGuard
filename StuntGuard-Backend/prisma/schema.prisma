@@ -48,7 +48,7 @@ model StuntPredict {
   child_id       String @db.Char(16)
   created_at     DateTime @default(now()) @db.Timestamp(0)
   updated_at     DateTime @updatedAt @db.Timestamp(0)
-  note           String   @db.Text
+  note           String?   @db.Text
 
   child          Child @relation(fields: [child_id], references: [child_id], onDelete: Restrict, onUpdate: Restrict)
   recommendation Recommendation[]
