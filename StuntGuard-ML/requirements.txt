@@ -1,5 +1,7 @@
-Flask==3.0.3
-numpy==1.25.2
-mysql-connector-python==8.4.0
-python-dotenv==1.0.0
-tensorflow==2.16.1
+Flask
+numpy
+mysql-connector-python
+python-dotenv
+tensorflow
+nanoid
+pandas
