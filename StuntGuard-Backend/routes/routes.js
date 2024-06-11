@@ -34,6 +34,9 @@ router.delete('/child/remove/:child_id', childController.removeChild);
 router.get('/news', (req, res) => {
     res.redirect('/news/1');
 });
+router.get('/news/latest', (req, res) => {
+    res.redirect('/news/1/latest');
+});
 router.get('/news/:page/:result_type?', newsController.getNews);
 router.get('/news/:page/next', newsController.getNextPage);
 router.get('/news/:page/back', newsController.getPreviousPage);
