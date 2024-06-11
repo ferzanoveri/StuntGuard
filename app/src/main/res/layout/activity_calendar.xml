@@ -7,71 +7,189 @@
     tools:context=".calendar.CalendarActivity">
 
     <CalendarView
-        android:id="@+id/calendar"
+        android:id="@+id/calendarview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView1"
+    <LinearLayout
+        android:id="@+id/stunting_child"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        app:cardBackgroundColor="#4E7771"
-        app:cardElevation="8dp"
-        app:contentPadding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calendar">
-
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/calendarview">
         <TextView
-            android:fontFamily="@font/poppins_regular"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hasil Predict Sesuai Tanggal"
-            android:textAlignment="center"
-            android:textColor="@color/white" />
+            android:text="Stunting"
+            android:layout_weight="4"/>
+        <Spinner
+            android:id="@+id/choose_clhild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView2"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/weight_height"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        app:cardBackgroundColor="#4E7771"
-        app:cardElevation="8dp"
-        app:contentPadding="8dp"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardView1">
-
+        app:layout_constraintTop_toBottomOf="@id/stunting_child">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_weight_height">
             <TextView
-                android:fontFamily="@font/poppins_regular"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Rekomendasi Gizi Anak"
-                android:textAlignment="center"
-                android:textColor="@color/white" />
-
+                android:layout_height="wrap_content"
+                android:text="Weight"
+                android:gravity="center_horizontal"
+                android:layout_marginHorizontal="10dp"/>
             <TextView
-                android:id="@+id/tv_recommendation"
-                android:background="@color/white"
+                android:id="@+id/weight_child"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="8dp" />
-
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:layout_marginHorizontal="10dp"/>
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_weight_height">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Height"
+                android:gravity="center_horizontal"
+                android:layout_marginHorizontal="10dp"/>
+            <TextView
+                android:id="@+id/height_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:layout_marginHorizontal="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/get_food_recomendation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get food recommendation"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#4E7771"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/weight_height"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="10dp"
+        android:hint="Notes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get_food_recomendation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_regular"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/cardView1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="32dp"-->
+<!--        app:cardBackgroundColor="#4E7771"-->
+<!--        app:cardElevation="8dp"-->
+<!--        app:contentPadding="8dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/calendar">-->
+
+<!--        <TextView-->
+<!--            android:fontFamily="@font/poppins_regular"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Hasil Predict Sesuai Tanggal"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white" />-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/cardView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="32dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        app:cardBackgroundColor="#4E7771"-->
+<!--        app:cardElevation="8dp"-->
+<!--        app:contentPadding="8dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cardView1">-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="Rekomendasi Gizi Anak"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_recommendation"-->
+<!--                android:background="@color/white"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="8dp" />-->
+
+<!--        </LinearLayout>-->
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

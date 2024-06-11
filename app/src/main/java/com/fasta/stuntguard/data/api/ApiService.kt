@@ -7,8 +7,10 @@ import com.fasta.stuntguard.data.response.LoginResponse
 import com.fasta.stuntguard.data.response.ParentChildResponse
 import com.fasta.stuntguard.data.response.RegisterResponse
 import com.fasta.stuntguard.data.response.ChangeProfileResponse
+import com.fasta.stuntguard.data.response.PostChildResponse
 import com.fasta.stuntguard.data.response.PredictionResponse
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -35,8 +37,7 @@ interface ApiService {
         @Field("password") password: String
     ): Call<LoginResponse>
 
-    @FormUrlEncoded
-    @GET("getParentChilds/{id}")
+    @GET("parent/childs/{id}")
     fun getParentChild(
         @Path("id") id: String
     ): Call<ParentChildResponse>
@@ -69,11 +70,22 @@ interface ApiService {
     ): Call<ChangeProfileResponse>
 
     @FormUrlEncoded
-    @POST("predict/{child_id}")
+    @POST("child/{id}")
+    fun postChild(
+        @Path("id") id: String,
+        @Field("child_name") childName: String,
+        @Field("child_gender") childGender: String,
+        @Field("birth_date") birthDate: String,
+        @Field("birth_weight") birthWeight: Double,
+        @Field("birth_height") birthHeight: Int,
+        @Field("breastfeeding") breastfeeding: String
+    ): Call<PostChildResponse>
+
+    @POST("predict/{childId}")
     fun postPrediction(
-        @Path("child_id") childId: String,
-        @Field("child_weight") childWeight: Float,
-        @Field("child_height") childHeight: Float,
+        @Path("childId") childId: String,
+        @Field("childWeight") childWeight: Float,
+        @Field("childHeight") childHeight: Float,
         @Field("breastfeeding") breastfeeding: Boolean?
     ): Call<PredictionResponse>
 
@@ -89,4 +101,5 @@ interface ApiService {
     fun getPredictionsByChildId(
         @Path("child_id") childId: String
     ): Call<List<PredictionResponse>>
+
 }

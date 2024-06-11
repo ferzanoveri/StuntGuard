@@ -1,29 +1,22 @@
 package com.fasta.stuntguard.data.response
 
-import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
-
-@Parcelize
 data class PredictionResponse(
-    @SerializedName("id")
-    val id: String,
+	val data: List<DataItem>,
+	val message: String,
+	val status: Boolean
+)
 
-    @SerializedName("child_id")
-    val childId: String,
+data class DataItem(
+	val childGender: Boolean,
+	val childId: String,
+	val childAge: Int,
+	val updatedAt: String,
+	val parentId: String,
+	val birthDate: String,
+	val birthWeight: Int,
+	val createdAt: String,
+	val breastfeeding: Boolean,
+	val childName: String,
+	val birthHeight: Int
+)
 
-    @SerializedName("child_weight")
-    val childWeight: Float,
-
-    @SerializedName("child_height")
-    val childHeight: Float,
-
-    @SerializedName("breastfeeding")
-    val breastfeeding: Boolean?,
-
-    @SerializedName("prediction")
-    val prediction: String,
-
-    @SerializedName("accuracy")
-    val accuracy: Float
-) : Parcelable

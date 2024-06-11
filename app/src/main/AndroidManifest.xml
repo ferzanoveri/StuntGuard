@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,10 +15,13 @@
         android:theme="@style/Theme.StuntGuard"
         tools:targetApi="31">
         <activity
-            android:name=".profile.family.AddChildActivity"
+            android:name=".FoodRecomendationActivity"
             android:exported="false" />
         <activity
-            android:name=".profile.family.FamMemberActivity"
+            android:name=".profile.family.FormAddChildActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.family.FamilyMemberActivity"
             android:exported="false" />
         <activity
             android:name=".news.DetailNewsActivity"

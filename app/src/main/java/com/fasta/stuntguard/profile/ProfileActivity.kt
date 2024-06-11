@@ -15,6 +15,7 @@ import com.fasta.stuntguard.databinding.ActivityProfileBinding
 import com.fasta.stuntguard.prediksi.PredictionActivity
 import com.fasta.stuntguard.profile.edit.EditPasswordActivity
 import com.fasta.stuntguard.profile.edit.EditProfileActivity
+import com.fasta.stuntguard.profile.family.FamilyMemberActivity
 import com.fasta.stuntguard.splashscreen.SplashScreenActivity
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
@@ -52,6 +53,9 @@ class ProfileActivity : AppCompatActivity() {
             }
             ubahPassword.setOnClickListener {
                 startActivity(Intent(this@ProfileActivity, EditPasswordActivity::class.java))
+            }
+            editKeluarga.setOnClickListener {
+                startActivity(Intent(this@ProfileActivity, FamilyMemberActivity::class.java))
             }
             logout.setOnClickListener {
                 showDialog()

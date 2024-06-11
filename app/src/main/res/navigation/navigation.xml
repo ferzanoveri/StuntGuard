@@ -11,17 +11,17 @@
 
     <fragment
         android:id="@+id/calender"
-        android:label="Home"
-        tools:layout="@layout/activity_main"/>
+        android:label="Calender"
+        tools:layout="@layout/activity_calendar"/>
 
     <fragment
         android:id="@+id/predict"
-        android:label="Home"
-        tools:layout="@layout/activity_main"/>
+        android:label="Predict"
+        tools:layout="@layout/activity_prediction"/>
 
     <fragment
         android:id="@+id/profile"
-        android:label="Home"
-        tools:layout="@layout/activity_main"/>
+        android:label="Profile"
+        tools:layout="@layout/activity_profile"/>
 
 </navigation>

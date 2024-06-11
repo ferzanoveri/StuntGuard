@@ -40,7 +40,6 @@
         android:id="@+id/choose_clhild"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:entries="@array/child"
         android:layout_marginHorizontal="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,6 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/choose_clhild">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weight_now"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"/>
@@ -80,6 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldEmail">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/height_now"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"/>
@@ -99,6 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldPass">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/age_now"
             android:layout_width="match_parent"
             android:fontFamily="@font/poppins_regular"
             android:layout_height="wrap_content" />
@@ -126,11 +128,13 @@
         android:layout_marginHorizontal="32dp"
         app:layout_constraintTop_toBottomOf="@+id/menyusi">
         <RadioGroup
+            android:id="@+id/radiogroup_breastfeeding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_weight="1">
             <RadioButton
+                android:id="@+id/radioBreastfeedingYes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Menyusui"
@@ -138,6 +142,7 @@
                 android:textSize="16dp"
                 android:layout_weight="1"/>
             <RadioButton
+                android:id="@+id/radioBreastfeedingNo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tidak Menyusui"

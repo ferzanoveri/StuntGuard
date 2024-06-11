@@ -2,9 +2,10 @@ package com.fasta.stuntguard.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class ParentChildResponse(
+data class PostChildResponse(
+
 	@field:SerializedName("data")
-	val data: ArrayList<Child>,
+	val data: PostChild,
 
 	@field:SerializedName("message")
 	val message: String,
@@ -13,7 +14,7 @@ data class ParentChildResponse(
 	val status: Boolean
 )
 
-data class Child(
+data class PostChild(
 
 	@field:SerializedName("child_gender")
 	val childGender: Boolean,
@@ -34,7 +35,7 @@ data class Child(
 	val birthDate: String,
 
 	@field:SerializedName("birth_weight")
-	val birthWeight: Double,
+	val birthWeight: Any,
 
 	@field:SerializedName("created_at")
 	val createdAt: String,

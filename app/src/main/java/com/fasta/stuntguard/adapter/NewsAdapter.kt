@@ -1,4 +1,4 @@
-package com.fasta.stuntguard.news
+package com.fasta.stuntguard.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

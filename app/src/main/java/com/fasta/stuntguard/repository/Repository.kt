@@ -12,6 +12,8 @@ import com.fasta.stuntguard.data.response.GetDetailNewsResponse
 import com.fasta.stuntguard.data.response.LoginResponse
 import com.fasta.stuntguard.data.response.RegisterResponse
 import com.fasta.stuntguard.data.response.ChangeProfileResponse
+import com.fasta.stuntguard.data.response.ParentChildResponse
+import com.fasta.stuntguard.data.response.PostChildResponse
 import com.fasta.stuntguard.data.response.PredictionResponse
 import com.fasta.stuntguard.utils.UserPreferences
 import retrofit2.Call
@@ -46,6 +48,20 @@ class Repository private constructor(
     private val _updateProfileResponse = MutableLiveData<ChangeProfileResponse>()
     val updateProfileResponse: LiveData<ChangeProfileResponse> = _updateProfileResponse
 
+    private val _postChildData = MutableLiveData<PostChildResponse>()
+    val postChildData: LiveData<PostChildResponse> = _postChildData
+
+    private val _parentChild = MutableLiveData<ParentChildResponse>()
+    val parentChild: LiveData<ParentChildResponse> = _parentChild
+
+    private val _predictionResponse = MutableLiveData<PredictionResponse>()
+    val predictionResponse: LiveData<PredictionResponse> = _predictionResponse
+
+    private val _allPredictions = MutableLiveData<List<PredictionResponse>>()
+    val allPredictions: LiveData<List<PredictionResponse>> = _allPredictions
+
+    private val _predictionsByChildId = MutableLiveData<List<PredictionResponse>>()
+    val predictionsByChildId: LiveData<List<PredictionResponse>> = _predictionsByChildId
 
     fun postRegister(
         parentName: String,
@@ -226,15 +242,6 @@ class Repository private constructor(
         })
     }
 
-    private val _predictionResponse = MutableLiveData<PredictionResponse>()
-    val predictionResponse: LiveData<PredictionResponse> = _predictionResponse
-
-    private val _allPredictions = MutableLiveData<List<PredictionResponse>>()
-    val allPredictions: LiveData<List<PredictionResponse>> = _allPredictions
-
-    private val _predictionsByChildId = MutableLiveData<List<PredictionResponse>>()
-    val predictionsByChildId: LiveData<List<PredictionResponse>> = _predictionsByChildId
-
     fun postPrediction(childId: String, childWeight: Float, childHeight: Float, breastfeeding: Boolean?) {
         _isLoading.value = true
         _isError.value = false
@@ -296,6 +303,75 @@ class Repository private constructor(
                 _isError.value = true
                 Log.e(TAG, "onFailure: ${t.message}")
             }
+        })
+    }
+
+    fun postChild(
+        id: String,
+        childName: String,
+        childGender: String,
+        birthDate: String,
+        birthWeight: Double,
+        birthHeight: Int,
+        breastfeeding: String
+    ) {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().postChild(
+            id,
+            childName,
+            childGender,
+            birthDate,
+            birthWeight,
+            birthHeight,
+            breastfeeding
+        )
+        client.enqueue(object : Callback<PostChildResponse> {
+            override fun onResponse(
+                call: Call<PostChildResponse>,
+                response: Response<PostChildResponse>
+            ) {
+                _isLoading.value = true
+                if (response.isSuccessful && response.body() != null) {
+                    _isLoading.value = false
+                    _postChildData.value = response.body()
+                } else {
+                    _isLoading.value = false
+                }
+            }
+
+            override fun onFailure(call: Call<PostChildResponse>, t: Throwable) {
+                _isLoading.value = false
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+
+        })
+    }
+
+    fun getParentChild(id: String) {
+        _isLoading.value = true
+        _isError.value = false
+        val client = ApiConfig.getApiService().getParentChild(id)
+        client.enqueue(object : Callback<ParentChildResponse> {
+            override fun onResponse(
+                call: Call<ParentChildResponse>,
+                response: Response<ParentChildResponse>
+            ) {
+                _isLoading.value = true
+                if (response.isSuccessful && response.body() != null) {
+                    _isLoading.value = false
+                    _parentChild.value = response.body()
+                } else {
+                    _isError.value = true
+                    Log.e(TAG, "Response Error: ${response.errorBody()?.string()}")
+                }
+            }
+
+            override fun onFailure(call: Call<ParentChildResponse>, t: Throwable) {
+                _isLoading.value = false
+                _isError.value = true
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+
         })
     }
 

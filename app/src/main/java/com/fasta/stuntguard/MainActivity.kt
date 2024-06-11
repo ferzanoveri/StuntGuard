@@ -16,7 +16,7 @@ import com.fasta.stuntguard.prediksi.PredictionActivity
 import com.fasta.stuntguard.profile.ProfileActivity
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.MainViewModel
-import com.fasta.stuntguard.news.NewsAdapter
+import com.fasta.stuntguard.adapter.NewsAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.Calendar
 
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-                R.id.calendar -> {
+                R.id.calender -> {
                     startActivity(Intent(this, CalendarActivity::class.java))
                     true
                 }
