@@ -33,10 +33,8 @@ def post_recom(predict_id):
     data = request.get_json()
     random_seed = np.random.randint(1000)
     np.random.seed(random_seed)
-    # Assuming you get 'child_id' from the request
     child_id = data.get('child_id')
     
-    # Fetch child data from the database
     connection = get_mysql_connection()
     cursor = connection.cursor(dictionary=True)
     cursor.execute("""
@@ -52,10 +50,10 @@ def post_recom(predict_id):
         connection.close()
         return jsonify({'error': 'Child data not found'}), 404
     
-    # energy_kal = float(child_data['Energy_kal'])
-    # protein_g = float(child_data['Protein_g'])
-    energy_kal = 479.6328
-    protein_g = 17.98623
+    energy_kal = float(child_data['Energy_kal'])
+    protein_g = float(child_data['Protein_g'])
+    # energy_kal = 479.6328
+    # protein_g = 17.98623
     child_id = child_data['child_id']
     print('energy dan protein:', energy_kal, protein_g)
 
@@ -87,7 +85,6 @@ def post_recom(predict_id):
         """, (recommendation_id, child_id, predict_id))
         connection.commit()
 
-     # Use the loaded model to get recommendations
     input_data = np.array([[protein_g, energy_kal]])
     print('input: ', input_data)
 
@@ -156,7 +153,6 @@ def post_recom(predict_id):
             food['fiber'], food['sugar'], food['sodium'], food['potassium'], recommendation_id
         ))
     connection.commit()
-    # Fetch the inserted recommendations from the database
     cursor.execute("""
         SELECT * FROM Recommendation WHERE recommendation_id = %s
     """, (recommendation_id,))

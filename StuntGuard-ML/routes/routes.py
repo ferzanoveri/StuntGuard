@@ -13,7 +13,7 @@ def configure_routes(app):
 
     @app.route('/check_model_attributes', methods=['GET'])
     def check_model_attributes_route():
-        return recom.check_model_attributes()
+        return predict.check_model_attributes()
 
     @app.route('/predict/<child_id>', methods=['POST'])
     def predict_route(child_id):
@@ -27,7 +27,7 @@ def configure_routes(app):
     def get_prediction_by_id_route(predict_id):
         return predict.get_prediction_by_id(predict_id)
 
-    @app.route("/predict/all/<child_id>", methods=["GET"])
+    @app.route("/predict/child/<child_id>", methods=["GET"])
     def get_predictions_by_child_route(child_id):
         return predict.get_predictions_by_child(child_id)
     
@@ -35,7 +35,7 @@ def configure_routes(app):
     def post_notes_route(predict_id):
         return predict.post_notes(predict_id)
     
-    @app.route('/get_notes/<int:predict_id>', methods=['GET'])
+    @app.route('/get_notes/<predict_id>', methods=['GET'])
     def get_notes_route(predict_id):
         return predict.get_notes(predict_id)
 
