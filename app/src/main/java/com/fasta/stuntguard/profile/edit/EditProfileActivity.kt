@@ -19,9 +19,7 @@ class EditProfileActivity : AppCompatActivity() {
         binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val actionbar = supportActionBar
-        actionbar?.title = "Edit Profile"
-        actionbar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.hide()
 
         binding.btnEditprofile.setOnClickListener {
             saveChanges()

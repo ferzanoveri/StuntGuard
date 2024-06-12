@@ -5,18 +5,22 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.fasta.stuntguard.databinding.ActivityFamilyMemberBinding
+import com.fasta.stuntguard.databinding.ActivityFoodRecomendationBinding
 
 class FoodRecomendationActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityFoodRecomendationBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_food_recomendation)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        binding = ActivityFoodRecomendationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         supportActionBar?.hide()
+
+        binding.backButton.setOnClickListener {
+            onBackPressed()
+            finish()
+        }
     }
 }

@@ -20,10 +20,7 @@ class EditPasswordActivity : AppCompatActivity() {
         binding = ActivityEditPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.apply {
-            title = "Ubah Password"
-            setDisplayHomeAsUpEnabled(true)
-        }
+        supportActionBar?.hide()
 
         profileViewModel.updatePasswordResponse.observe(this) { response ->
             if (response.status) {
