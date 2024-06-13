@@ -5,3 +5,4 @@ python-dotenv
 tensorflow
 nanoid
 pandas
+scikit-learn

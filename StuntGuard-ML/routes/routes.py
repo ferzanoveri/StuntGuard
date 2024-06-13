@@ -1,4 +1,5 @@
-from flask import jsonify, request
+from flask import Flask, request, jsonify
+import requests
 from services.predict import *
 import services.predict as predict
 from services.recommendations import *
@@ -14,6 +15,8 @@ def configure_routes(app):
     @app.route('/check_model_attributes', methods=['GET'])
     def check_model_attributes_route():
         return recom.check_model_attributes()
+
+    # PREDICT
 
     @app.route('/predict/<child_id>', methods=['POST'])
     def predict_route(child_id):
@@ -31,6 +34,8 @@ def configure_routes(app):
     def get_predictions_by_child_route(child_id):
         return predict.get_predictions_by_child(child_id)
     
+    #  NOTES
+
     @app.route("/notes/<predict_id>", methods=["POST"])
     def post_notes_route(predict_id):
         return predict.post_notes(predict_id)
@@ -38,6 +43,8 @@ def configure_routes(app):
     @app.route('/get_notes/<predict_id>', methods=['GET'])
     def get_notes_route(predict_id):
         return predict.get_notes(predict_id)
+
+    # RECOMMENDATIONS
 
     @app.route('/recom/<predict_id>', methods=['POST'])
     def post_recom_route(predict_id):
@@ -55,6 +62,3 @@ def configure_routes(app):
     def get_food_details_by_recommendation_route(recommendation_id):
         return recom.get_food_details_by_recommendation(recommendation_id)
     
-    # @app.route('/register', methods=['POST'])
-    # def register():
-    #     return request ke "https://stuntguard-api-hz4azdtnzq-et.a.run.app/register"

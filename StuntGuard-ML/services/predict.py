@@ -91,10 +91,7 @@ def post_predict(child_id):
         print(prediction_df)
         prediction = model.predict(prediction_df)
         print(prediction)
-        # confidence_score = float(prediction[0])
         predict_result = bool(prediction[0])
-        confidence_score = float(prediction[0])
-        print(confidence_score)
         if predict_result:
             if prediction_data['Gender'] == 1:
                 energy = float((0.167 * prediction_data['Body Weight']) + (15.174 * prediction_data['Body Length']) - 617.6)
@@ -127,12 +124,11 @@ def post_predict(child_id):
         if existing_prediction:
             predict_id = existing_prediction[0]
             cursor.execute(
-                "UPDATE StuntPredict SET child_weight = %s, child_height = %s, predict_result = %s, confidenceScore = %s, protein = %s, energy = %s, updated_at = %s WHERE predict_id = %s AND child_id = %s",
+                "UPDATE StuntPredict SET child_weight = %s, child_height = %s, predict_result = %s, protein = %s, energy = %s, updated_at = %s WHERE predict_id = %s AND child_id = %s",
                 (
                     child_weight,
                     child_height,
                     predict_result,
-                    confidence_score,
                     protein,
                     energy,
                     updated_at,
@@ -142,7 +138,7 @@ def post_predict(child_id):
             )
         else:
             cursor.execute(
-                "INSERT INTO StuntPredict (predict_id, child_weight, child_height, predict_result, child_id, created_at, confidenceScore, protein, energy, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                "INSERT INTO StuntPredict (predict_id, child_weight, child_height, predict_result, child_id, created_at, protein, energy, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                 (
                     predict_id,
                     child_weight,
@@ -150,7 +146,6 @@ def post_predict(child_id):
                     predict_result,
                     child_id,
                     created_at,
-                    confidence_score,
                     protein,
                     energy,
                     updated_at,
@@ -173,7 +168,6 @@ def post_predict(child_id):
             "predict_result": "Yes" if predict_result else "No",
             "created_at": created_at,
             "updated_at": updated_at,
-            "confidenceScore": confidence_score,
             "protein": protein,
             "energy": energy,
             "child_id": child_id,

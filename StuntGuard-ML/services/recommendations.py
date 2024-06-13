@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Path relatif ke file model h5
-model_path = os.path.join(current_dir,"food_recommendation_pipeline2.pkl")
+model_path = os.path.join(current_dir,"food_recommendation.pkl")
 # Load the model using pickle
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
@@ -56,10 +56,10 @@ def post_recom(predict_id):
         connection.close()
         return jsonify({'error': 'Child data not found'}), 404
     
-    # energy_kal = float(child_data['Energy_kal'])
-    # protein_g = float(child_data['Protein_g'])
-    energy_kal = 102.67949999999996
-    protein_g = 3.787981249999999
+    energy_kal = float(child_data['Energy_kal'])
+    protein_g = float(child_data['Protein_g'])
+    # energy_kal = 102.67949999999996
+    # protein_g = 3.787981249999999
     child_id = child_data['child_id']
     print('energy dan protein:', energy_kal, protein_g)
 
