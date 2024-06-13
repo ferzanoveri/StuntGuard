@@ -4,19 +4,25 @@ import mysql.connector
 import os
 from datetime import datetime, date
 from dotenv import load_dotenv
+from sklearn.preprocessing import StandardScaler, FunctionTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.metrics.pairwise import cosine_distances
 import tensorflow as tf
 from db import *
 from nanoid import generate
 import pandas as pd
+import pickle
 
 app = Flask(__name__)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(current_dir, "recommender_model.h5")
+# Path relatif ke file model h5
+model_path = os.path.join(current_dir,"food_recommendation_pipeline2.pkl")
+# Load the model using pickle
+with open(model_path, 'rb') as file:
+    model = pickle.load(file)
 
-model = tf.keras.models.load_model(model_path)
 print(type(model))
-model.summary()
 # Load preprocessed data from CSV
 data_path = ("data/preprocessed_dataset.csv")
 df = pd.read_csv(data_path)
@@ -50,19 +56,18 @@ def post_recom(predict_id):
         connection.close()
         return jsonify({'error': 'Child data not found'}), 404
     
-    energy_kal = float(child_data['Energy_kal'])
-    protein_g = float(child_data['Protein_g'])
-    # energy_kal = 479.6328
-    # protein_g = 17.98623
+    # energy_kal = float(child_data['Energy_kal'])
+    # protein_g = float(child_data['Protein_g'])
+    energy_kal = 102.67949999999996
+    protein_g = 3.787981249999999
     child_id = child_data['child_id']
     print('energy dan protein:', energy_kal, protein_g)
 
-    # Check if there's already a recommendation for today
-    today_date = date.today()
+    # Check if there's already a recommendation for this predict_id
     cursor.execute("""
         SELECT recommendation_id FROM Recommendation
-        WHERE child_id = %s AND DATE(created_at) = %s
-    """, (child_id, today_date))
+        WHERE predict_id = %s
+    """, (predict_id,))
     recommendation = cursor.fetchone()
 
     if recommendation:
@@ -85,19 +90,48 @@ def post_recom(predict_id):
         """, (recommendation_id, child_id, predict_id))
         connection.commit()
 
+    # Use the model to scale and find nearest neighbors
     input_data = np.array([[protein_g, energy_kal]])
-    print('input: ', input_data)
+    print("Input data:", input_data)
 
-    predictions = model.predict(input_data)
-    print('predictions: ', predictions)
+    # Data makanan
+    df_numerik = df[['Protein (g)', 'Kalori (kkal)']]
 
-    # Extracting the top 5 recommendations
-    recommendation_indices = np.argsort(predictions[0])[-5:]
-    print('recommendation_indices', recommendation_indices)
+    # Skala data makanan
+    scaler = StandardScaler()
+    food_data_scaled = scaler.fit_transform(df_numerik.to_numpy())
 
-    print(df.columns)
+    # Latih model dengan data makanan yang telah diskalakan
+    model.n_neighbors = 5  # Ubah jumlah tetangga menjadi 5
+    model.leaf_size = 30  # Ubah ukuran daun menjadi 30
+    model.metric = 'cosine'  # Ubah metric menjadi cosine jika mendukung
+    model.fit(food_data_scaled)
+
+    # Skala data input menggunakan scaler yang sama
+    input_data_scaled = scaler.transform(input_data)
+    print("Scaled input data:", input_data_scaled)
+
+    # Pipeline untuk proses standardisasi dan pencarian tetangga terdekat
+    pipeline = Pipeline([
+        ('std_scaler', scaler),
+        ('NN', FunctionTransformer(model.kneighbors, kw_args={'n_neighbors': 5, 'return_distance': True}))
+    ])
+
+    # Temukan tetangga terdekat menggunakan pipeline
+    distances, indices = pipeline.named_steps['NN'].transform(input_data_scaled)
+    print('Distances: ', distances, ', Indices: ', indices)
+
+    # Data yang telah diskalakan untuk indeks tertentu
+    scaled_data_for_indices = food_data_scaled[indices[0]]
+    print("Scaled data for indices:", scaled_data_for_indices)
+
+    # Data asli yang sesuai dengan indeks
+    original_data_for_indices = df_numerik.iloc[indices[0]]
+    print("Original data for indices:", original_data_for_indices)
+    
+    # Process recommendations based on nearest neighbors
     recommended_foods = []
-    for idx in recommendation_indices:
+    for idx in indices[0]:
         food_data = df.iloc[idx]
         
         # Convert numeric values to appropriate data types
@@ -114,7 +148,6 @@ def post_recom(predict_id):
         sugar = float(food_data['Gula (g)'])
         sodium = float(food_data['Sodium (g)'])
         potassium = float(food_data['Kalium (g)'])
-
 
         recommended_foods.append({
             'food_id': generate(size=8),

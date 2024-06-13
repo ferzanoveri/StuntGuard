@@ -13,7 +13,7 @@ def configure_routes(app):
 
     @app.route('/check_model_attributes', methods=['GET'])
     def check_model_attributes_route():
-        return predict.check_model_attributes()
+        return recom.check_model_attributes()
 
     @app.route('/predict/<child_id>', methods=['POST'])
     def predict_route(child_id):
@@ -54,3 +54,7 @@ def configure_routes(app):
     @app.route('/recom/id/<recommendation_id>/foods', methods=['GET'])
     def get_food_details_by_recommendation_route(recommendation_id):
         return recom.get_food_details_by_recommendation(recommendation_id)
+    
+    # @app.route('/register', methods=['POST'])
+    # def register():
+    #     return request ke "https://stuntguard-api-hz4azdtnzq-et.a.run.app/register"

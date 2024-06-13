@@ -1,26 +1,23 @@
-from flask import Flask, request, jsonify
+import os
+import pickle
 import numpy as np
+from flask import Flask, request, jsonify
 from nanoid import generate
 from datetime import datetime
-import tensorflow as tf
 from db import *
+import pandas as pd
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-
 # Path relatif ke file model h5
-model_path = os.path.join(current_dir,"prediksi.h5")
-model = tf.keras.models.load_model(model_path)
-print(type(model))
-
-def home():
-    message = "StuntGuard Predict API"
-    return jsonify(message)
-
+model_path = os.path.join(current_dir,"random_forest_model.pkl")
+# Load the model using pickle
+with open(model_path, 'rb') as file:
+    model = pickle.load(file)
 
 def check_model_attributes():
     try:
-        # Check model attributes
         model_attributes = dir(model)
+        print(type(model))   
         return jsonify({"model_attributes": model_attributes})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -33,8 +30,9 @@ PREDICTION_LABELS = [
     "child_id",
     "created_at",
     "updated_at",
-    "confidence_score",
     "breastfeeding",
+    "energy",
+    "protein"
 ]
 
 def label_predictions(predictions):
@@ -54,11 +52,19 @@ def post_predict(child_id):
         if not child_data:
             return jsonify({"error": "Child data not found."}), 404
 
-        data = request.json
+        data = None
+        if request.headers['Content-Type'] == 'application/json':
+            data = request.json
+        elif request.headers['Content-Type'] == 'application/x-www-form-urlencoded':
+            data = request.form
+
+        if not data:
+            return jsonify({"error": "Invalid content type."}), 400
+
+        # Proses data berdasarkan jenis konten
         child_weight = float(data.get("child_weight"))
         child_height = float(data.get("child_height"))
 
-        # Handle breastfeeding value
         input_breastfeeding = data.get("breastfeeding")
         if input_breastfeeding == "Yes":
             breastfeeding = True
@@ -67,9 +73,7 @@ def post_predict(child_id):
         else:
             breastfeeding = bool(child_data[8])  # Use default value from Child data
 
-        # Prepare data for prediction
         prediction_data = {
-            # "Gender": 1 if child_data[3] else "Female",
             "Gender": child_data[3],
             "Age": child_data[5],
             "Birth Weight": child_data[6],
@@ -77,24 +81,20 @@ def post_predict(child_id):
             "Body Weight": child_weight,
             "Body Length": child_height,
             "Breastfeeding": 1 if breastfeeding else 0,
-            # "Breastfeeding": breastfeeding
         }
-        print(prediction_data)
 
-        # Perform prediction with the model
-        prediction_array = np.array([list(prediction_data.values())])
-        print(prediction_array)
-        if hasattr(model, "predict"):
-            prediction = model.predict(prediction_array)
-            print(prediction)
-            confidence_score = float(prediction[0][0])
-            print(confidence_score)
-            predict_result = (
-                confidence_score > 0.5
-            )  
-        else:
-            return jsonify({"error": "Model does not have predict method."}), 500
+        # prediction_array = np.array([list(prediction_data.values())])
+        prediction_df = pd.DataFrame([prediction_data])
+        if not hasattr(model, 'predict'):
+                    return jsonify({"error": "Loaded object is not a model with predict method."}), 500
 
+        print(prediction_df)
+        prediction = model.predict(prediction_df)
+        print(prediction)
+        # confidence_score = float(prediction[0])
+        predict_result = bool(prediction[0])
+        confidence_score = float(prediction[0])
+        print(confidence_score)
         if predict_result:
             if prediction_data['Gender'] == 1:
                 energy = float((0.167 * prediction_data['Body Weight']) + (15.174 * prediction_data['Body Length']) - 617.6)
@@ -113,7 +113,6 @@ def post_predict(child_id):
         protein = protein_grams
         energy = energy
 
-        print(protein, energy)
         predict_id = generate(size=8)
         created_at = datetime.now().strftime("%Y-%m-%d")
         updated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -121,14 +120,12 @@ def post_predict(child_id):
         conn = get_mysql_connection()
         cursor = conn.cursor()
 
-        # Check if a prediction for the current date and child_id already exists
         cursor.execute(
             "SELECT * FROM StuntPredict WHERE DATE(created_at) = %s AND child_id = %s", (created_at, child_id)
         )
         existing_prediction = cursor.fetchone()
         if existing_prediction:
-            # Update existing prediction
-            predict_id = existing_prediction[0]  # Use the existing predict_id
+            predict_id = existing_prediction[0]
             cursor.execute(
                 "UPDATE StuntPredict SET child_weight = %s, child_height = %s, predict_result = %s, confidenceScore = %s, protein = %s, energy = %s, updated_at = %s WHERE predict_id = %s AND child_id = %s",
                 (
@@ -195,7 +192,7 @@ def get_all_predictions():
         cursor.execute(
             """
             SELECT sp.predict_id, sp.child_weight, sp.child_height, sp.predict_result, sp.child_id, 
-                   sp.created_at, sp.updated_at, sp.confidenceScore, c.breastfeeding
+                   sp.created_at, sp.updated_at, c.breastfeeding, sp.energy, sp.protein
             FROM StuntPredict sp
             JOIN Child c ON sp.child_id = c.child_id
         """
@@ -204,25 +201,15 @@ def get_all_predictions():
         conn.close()
 
         if not predictions:
-            return (
-                jsonify(
-                    {"status": True, "message": "No predictions found.", "data": []}
-                ),
-                200,
-            )
+            return jsonify({"status": True, "message": "No predictions found.", "data": []}), 200
 
         labeled_predictions = label_predictions(predictions)
 
-        return (
-            jsonify(
-                {
-                    "status": True,
-                    "message": "All predictions retrieved successfully.",
-                    "data": labeled_predictions,
-                }
-            ),
-            200,
-        )
+        return jsonify({
+            "status": True,
+            "message": "All predictions retrieved successfully.",
+            "data": labeled_predictions,
+        }), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -234,7 +221,7 @@ def get_prediction_by_id(predict_id):
         cursor.execute(
             """
             SELECT sp.predict_id, sp.child_weight, sp.child_height, sp.predict_result, sp.child_id, 
-                   sp.created_at, sp.updated_at, sp.confidenceScore, c.breastfeeding
+                   sp.created_at, sp.updated_at, c.breastfeeding, sp.energy, sp.protein
             FROM StuntPredict sp
             JOIN Child c ON sp.child_id = c.child_id
             WHERE sp.predict_id = %s
@@ -249,16 +236,11 @@ def get_prediction_by_id(predict_id):
 
         labeled_prediction = label_predictions([prediction])[0]
 
-        return (
-            jsonify(
-                {
-                    "status": True,
-                    "message": "Prediction retrieved successfully.",
-                    "data": labeled_prediction,
-                }
-            ),
-            200,
-        )
+        return jsonify({
+            "status": True,
+            "message": "Prediction retrieved successfully.",
+            "data": labeled_prediction,
+        }), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -270,7 +252,7 @@ def get_predictions_by_child(child_id):
         cursor.execute(
             """
             SELECT sp.predict_id, sp.child_weight, sp.child_height, sp.predict_result, sp.child_id, 
-                   sp.created_at, sp.updated_at, sp.confidenceScore, c.breastfeeding
+                   sp.created_at, sp.updated_at, c.breastfeeding, sp.energy, sp.protein
             FROM StuntPredict sp
             JOIN Child c ON sp.child_id = c.child_id
             WHERE sp.child_id = %s
@@ -285,23 +267,26 @@ def get_predictions_by_child(child_id):
 
         labeled_predictions = label_predictions(predictions)
 
-        return (
-            jsonify(
-                {
-                    "status": True,
-                    "message": "All predictions for the child retrieved successfully.",
-                    "data": labeled_predictions,
-                }
-            ),
-            200,
-        )
+        return jsonify({
+            "status": True,
+            "message": "All predictions for the child retrieved successfully.",
+            "data": labeled_predictions,
+        }), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 def post_notes(predict_id):
     try:
-        data = request.json
+        data = None
+        if request.headers['Content-Type'] == 'application/json':
+            data = request.json
+        elif request.headers['Content-Type'] == 'application/x-www-form-urlencoded':
+            data = request.form
+
+        if not data:
+            return jsonify({"error": "Invalid content type."}), 400
+        
         note = data.get("note")
 
         conn = get_mysql_connection()
@@ -314,7 +299,6 @@ def post_notes(predict_id):
 
         conn.commit()
         
-        # Fetch updated note for response
         cursor.execute(
             "SELECT note FROM StuntPredict WHERE predict_id = %s",
             (predict_id,)
