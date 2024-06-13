@@ -33,19 +33,17 @@ exports.getIndex = async (page = 1, type) => {
 
         const hasNext = $("a.pagination__item.pagination__item--next").length > 0;
         const hasPrevious = $("a.pagination__item.pagination__item--previous").length > 0;
-        const relevansi = $("a.nav_item.nav_item--selected.itp-result-type").text().trim();
-        const terbaru = $("a.nav_item.itp-result-type").text().trim();
  
-        return { result, hasNext, hasPrevious, currentPage: page, relevansi, terbaru};
+        return { result, hasNext, hasPrevious, currentPage: page};
     } catch (error) {
         throw error; // Tangkap dan lemparkan error untuk menangani di controller
     }
 };
 
 // Function to get detailed information of a news article
-exports.getDetail = async (token, page) => {
+exports.getDetail = async (token, page, type) => {
     try {
-        const articles = await exports.getIndex(page);
+        const articles = await exports.getIndex(page, type);
         const article = articles.result.find(article => article.token === token);
 
         if (!article) {

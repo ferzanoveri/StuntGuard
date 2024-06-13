@@ -32,14 +32,14 @@ router.delete('/child/remove/:child_id', childController.removeChild);
 
 //News
 router.get('/news', (req, res) => {
-    res.redirect('/news/1');
+    res.redirect('/news/1/relevansi');
 });
-router.get('/news/latest', (req, res) => {
-    res.redirect('/news/1/latest');
-});
+// router.get('/news/latest', (req, res) => {
+//     res.redirect('/news/1/latest');
+// });
 router.get('/news/:page/:result_type?', newsController.getNews);
-router.get('/news/:page/next', newsController.getNextPage);
-router.get('/news/:page/back', newsController.getPreviousPage);
-router.get('/news/:page/:token', newsController.getNewsDetails);
+router.get('/news/:page/:result_type?/next', newsController.getNextPage);
+router.get('/news/:page/:result_type?/back', newsController.getPreviousPage);
+router.get('/news/:page/:result_type?/:token', newsController.getNewsDetails);
 
 module.exports = router;
