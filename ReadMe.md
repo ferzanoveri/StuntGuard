@@ -52,7 +52,8 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 ### News
 | Endpoint                          | Method | Input                       | Description                   | Status       |
 |-----------------------------------|--------|-----------------------------|-------------------------------|--------------|
-| /news           | GET   | -  | Get all news and redirect to page 1             | ✅ Completed   |
+| /news           | GET   | -  | Get all news and redirect automatically to result type relevance page 1.              | ✅ Completed   |
+| /news/:page/:result_type?   | GET   | -  | Get news category between 'latest' or 'relevansi'       | ✅ Completed   |
 | /news/:page/:result_type?/next                  | GET    | -                           | Get next page           | ✅ Completed   |
 | /news/:page/:result_type?/back                 | GET    | -                           | Get previous page           | ✅ Completed   |
 | /news/:page/:result_type?/:token                 | GET    | token                           | Get all news details           | ✅ Completed   |
@@ -74,7 +75,7 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 ### Recommendations
 | Endpoint                            | Method | Input           | Description                                 | Status       |
 |-------------------------------------|--------|-----------------|---------------------------------------------|--------------|
-| /recom/:predict_id                  | POST   | need predict_id params       | Add a recommendation to a prediction         | 🟠 Model on development       |
+| /recom/:predict_id                  | POST   | need predict_id params       | Add a recommendation to a prediction         | ✅ Completed  |
 | /recom/all                          | GET    | -               | Get all recommendations                      | ✅ Completed      |
 | /recom/child/:child_id              | GET    | need child_id params        | Get recommendations by child ID              | ✅ Completed      |
 | /recom/id/:recommendation_id/foods  | GET    | need recommendation_id params | Get food details for a recommendation by recommendation ID | ✅ Completed |
