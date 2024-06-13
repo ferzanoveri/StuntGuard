@@ -5,12 +5,10 @@ from datetime import datetime
 import tensorflow as tf
 from db import *
 
-# Load model
-# Dapatkan path direktori saat ini dari file ini
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Path relatif ke file model h5
-model_path = os.path.join(current_dir,"stunting_prediction_model.h5")
+model_path = os.path.join(current_dir,"prediksi.h5")
 model = tf.keras.models.load_model(model_path)
 print(type(model))
 
@@ -39,8 +37,6 @@ PREDICTION_LABELS = [
     "breastfeeding",
 ]
 
-
-# Convert the fetched data to a list of dictionaries with labels
 def label_predictions(predictions):
     return [
         {PREDICTION_LABELS[i]: value for i, value in enumerate(prediction)}
@@ -49,7 +45,6 @@ def label_predictions(predictions):
 
 def post_predict(child_id):
     try:
-        # Connect to MySQL and fetch child data
         conn = get_mysql_connection()
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM Child WHERE child_id = %s", (child_id,))
@@ -59,7 +54,6 @@ def post_predict(child_id):
         if not child_data:
             return jsonify({"error": "Child data not found."}), 404
 
-        # Parse request data
         data = request.json
         child_weight = float(data.get("child_weight"))
         child_height = float(data.get("child_height"))
@@ -97,7 +91,7 @@ def post_predict(child_id):
             print(confidence_score)
             predict_result = (
                 confidence_score > 0.5
-            )  # Assuming threshold is 0.5 for binary classification
+            )  
         else:
             return jsonify({"error": "Model does not have predict method."}), 500
 
@@ -120,12 +114,10 @@ def post_predict(child_id):
         energy = energy
 
         print(protein, energy)
-        # Generate predict_id and current timestamp
         predict_id = generate(size=8)
         created_at = datetime.now().strftime("%Y-%m-%d")
         updated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        # Connect to MySQL and insert or update prediction data
         conn = get_mysql_connection()
         cursor = conn.cursor()
 
@@ -152,7 +144,6 @@ def post_predict(child_id):
                 ),
             )
         else:
-            # Insert new prediction
             cursor.execute(
                 "INSERT INTO StuntPredict (predict_id, child_weight, child_height, predict_result, child_id, created_at, confidenceScore, protein, energy, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                 (
@@ -169,7 +160,6 @@ def post_predict(child_id):
                 ),
             )
 
-        # Update breastfeeding value in Child table
         cursor.execute(
             "UPDATE Child SET breastfeeding = %s WHERE child_id = %s",
             (breastfeeding, child_id),
@@ -179,7 +169,6 @@ def post_predict(child_id):
         cursor.close()
         conn.close()
 
-        # Prepare response data
         response_data = {
             "predict_id": predict_id,
             "child_weight": child_weight,
@@ -312,11 +301,9 @@ def get_predictions_by_child(child_id):
 
 def post_notes(predict_id):
     try:
-        # Parse request data
         data = request.json
         note = data.get("note")
 
-        # Connect to MySQL and update the note in StuntPredict table
         conn = get_mysql_connection()
         cursor = conn.cursor()
 
@@ -344,7 +331,6 @@ def post_notes(predict_id):
 
 def get_notes(predict_id):
     try:
-        # Connect to MySQL and fetch the note from StuntPredict table
         conn = get_mysql_connection()
         cursor = conn.cursor()
 
