@@ -18,42 +18,42 @@ router.get("/", (req, res) => {
 // Parents
 router.post('/register', auth.register)
 router.post('/login', auth.login)
-router.get('/user/all', userController.getUsers)
-router.get('/user/id/:parent_id', userController.getUserbyId)
-router.put('/user/update/:parent_id', userController.updateUser)
-router.put('/user/updatePassword/:parent_id', userController.updatePassword)
-router.delete('/user/remove/:parent_id', userController.removeUser)
+router.get('/user/all', validation, userController.getUsers)
+router.get('/user/id/:parent_id', validation, userController.getUserbyId)
+router.put('/user/update/:parent_id', validation, userController.updateUser)
+router.put('/user/updatePassword/:parent_id', validation, userController.updatePassword)
+router.delete('/user/remove/:parent_id', validation, userController.removeUser)
 
 // Child
-router.post('/child/:parent_id', childController.addChild);
-router.put('/child/update/:child_id', childController.updateChild);
-router.get('/parent/childs/:parent_id', childController.getParentChilds);
-router.get('/child/all', childController.getChilds);
-router.get('/child/id/:child_id', childController.getChildbyId);
-router.delete('/child/remove/:child_id', childController.removeChild);
+router.post('/child/:parent_id', validation, childController.addChild);
+router.put('/child/update/:child_id', validation, childController.updateChild);
+router.get('/parent/childs/:parent_id', validation, childController.getParentChilds);
+router.get('/child/all', validation, childController.getChilds);
+router.get('/child/id/:child_id', validation, childController.getChildbyId);
+router.delete('/child/remove/:child_id', validation, childController.removeChild);
 
 // News
 router.get('/news', (req, res) => {
     res.redirect('/news/1/relevansi');
 });
-router.get('/news/:page/:result_type?', newsController.getNews);
-router.get('/news/:page/:result_type?/next', newsController.getNextPage);
-router.get('/news/:page/:result_type?/back', newsController.getPreviousPage);
-router.get('/news/:page/:result_type?/:token', newsController.getNewsDetails);
+router.get('/news/:page/:result_type?', validation, newsController.getNews);
+router.get('/news/:page/:result_type?/next', validation, newsController.getNextPage);
+router.get('/news/:page/:result_type?/back', validation, newsController.getPreviousPage);
+router.get('/news/:page/:result_type?/:token', validation, newsController.getNewsDetails);
 
 // Predict
-router.post('/predict/:child_id', predictController.postPredict);
-router.get('/predict/all', predictController.getAllPredictions);
-router.get('/predict/id/:predict_id', predictController.getPredictionById);
-router.get('/predict/child/:child_id', predictController.getPredictionsByChild);
-router.post('/notes/:predict_id', predictController.postNotes);
-router.get('/get_notes/:predict_id', predictController.getNotes);
+router.post('/predict/:child_id', validation, predictController.postPredict);
+router.get('/predict/all', validation, predictController.getAllPredictions);
+router.get('/predict/id/:predict_id', validation, predictController.getPredictionById);
+router.get('/predict/child/:child_id', validation, predictController.getPredictionsByChild);
+router.post('/notes/:predict_id', validation, predictController.postNotes);
+router.get('/get_notes/:predict_id', validation, predictController.getNotes);
 
 // Recommendations
-router.post('/recom/:predict_id', recomController.postRecom);
-router.get('/recom/all', recomController.getAllRecommendations);
-router.get('/recom/child/:child_id', recomController.getRecommendationsByChild);
-router.get('/recom/id/:recommendation_id/foods', recomController.getFoodDetailsByRecommendation);
+router.post('/recom/:predict_id', validation, recomController.postRecom);
+router.get('/recom/all', validation, recomController.getAllRecommendations);
+router.get('/recom/child/:child_id', validation, recomController.getRecommendationsByChild);
+router.get('/recom/id/:recommendation_id/foods', validation, recomController.getFoodDetailsByRecommendation);
 
 
 module.exports = router;
