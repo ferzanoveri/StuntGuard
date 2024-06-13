@@ -42,7 +42,6 @@ model StuntPredict {
   child_weight   Float
   child_height   Float
   predict_result Boolean
-  confidenceScore Float
   protein        Float
   energy         Float  
   child_id       String @db.Char(16)
