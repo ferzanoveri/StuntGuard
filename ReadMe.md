@@ -19,8 +19,7 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 2. Install all necessary requirements by typing `pip install -r requirements.txt` in the terminal.
 3. Make sure XAMPP is running and that you have a database set up as before.
 4. Create your `.env` file with the required configurations.
-5. Download the `model.h5` file using the link provided in `model.txt`
-6. Run your application using `python predict_service.py` in the terminal.
+5. Run your application using `python app.py` in the terminal.
 
 ## StuntGuard API Endpoints
 
