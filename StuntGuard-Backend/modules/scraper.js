@@ -3,7 +3,6 @@ const cheerio = require('cheerio');
 const crypto = require('crypto');
 
 const base = "https://www.detik.com/search/searchall?query=stunting%20pada%20anak";
-const result = [];
 
 // Function to get the list of news articles
 exports.getIndex = async (type) => {
@@ -12,6 +11,7 @@ exports.getIndex = async (type) => {
         const response = await axios.get(url);
         const html_data = response.data;
         const $ = cheerio.load(html_data);
+        const result = [];
 
         const selectedElement = $("article.list-content__item");
         selectedElement.each(function () {
@@ -28,7 +28,7 @@ exports.getIndex = async (type) => {
             }
         });
         
-        return { result };
+        return result;
     } catch (error) {
         throw error; // Tangkap dan lemparkan error untuk menangani di controller
     }
@@ -43,7 +43,8 @@ exports.getArticle = async (page, type) => {
             promises.push(this.getIndex(i, type));
         }
         const hasil = await Promise.all(promises);
-        return hasil;
+        const mergedResults = [].concat(...hasil); // Gabungkan hasil dari semua halaman
+        return mergedResults;
 } catch (error) {
     throw error; 
 }
