@@ -8,7 +8,7 @@ exports.addChild = async (req, res) => {
     if (child_gender !== "Male" && child_gender !== "Female") {
         return res.status(400).json({
             "status": false,
-            "message": "Gender must be either 'male' or 'female'",
+            "message": "Gender must be either 'Male' or 'Female'",
         });
     }
     // Convert gender to boolean

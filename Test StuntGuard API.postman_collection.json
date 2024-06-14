@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "f19792fe-adfe-4c90-b3a2-da874a2bfb40",
+		"name": "Test StuntGuard API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34647531"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"parent_name\": \"coba otorisasi\",\r\n    \"email\": \"cobaotorisasi@gmail.com\",\r\n    \"phone\": \"085100987654\",\r\n    \"password\": \"christian123\",\r\n    \"confirmPassword\": \"christian123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5NTg0MCwiZXhwIjoxNzIwODg3ODQwfQ.Q3fdKeKV3wvLyxPGAL3hl7bU5crGA5j4aBNm0Xy8_m8"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/user/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/user/id/22_5nF60zA1CXO1J"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5NTg0MCwiZXhwIjoxNzIwODg3ODQwfQ.Q3fdKeKV3wvLyxPGAL3hl7bU5crGA5j4aBNm0Xy8_m8"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"cobaotorisasi@gmail.com\",\r\n    \"password\": \"christian123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"parent_name\": \"coba otorisasi update\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/user/update/DLMNvFNXH4e8noRv"
+			},
+			"response": []
+		},
+		{
+			"name": "Update password",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\": \"christian123\",\r\n    \"newPassword\": \"christian12345\",\r\n    \"confirmPassword\": \"christian12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/user/updatePassword/Zd1A3-PKbLgbHltg"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{URL}}/removeUser/hcG13qmnifZ5Ub3j"
+			},
+			"response": []
+		},
+		{
+			"name": "Add child",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "child_name",
+							"value": "coba anak 3",
+							"type": "text"
+						},
+						{
+							"key": "child_gender",
+							"value": "Male",
+							"type": "text"
+						},
+						{
+							"key": "birth_date",
+							"value": "2023-01-07T00:00:00.000Z",
+							"type": "text"
+						},
+						{
+							"key": "birth_weight",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "birth_height",
+							"value": "49",
+							"type": "text"
+						},
+						{
+							"key": "breastfeeding",
+							"value": "No",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{URL}}/child/rgidtLle_SoV-oK_"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all child",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5NTg0MCwiZXhwIjoxNzIwODg3ODQwfQ.Q3fdKeKV3wvLyxPGAL3hl7bU5crGA5j4aBNm0Xy8_m8"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/child/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all child by parents",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/parent/childs/22_5nF60zA1CXO1J"
+			},
+			"response": []
+		},
+		{
+			"name": "Get child by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/child/id/1sQ2u_Kcwx4mm9jy"
+			},
+			"response": []
+		},
+		{
+			"name": "Update child",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "birth_weight",
+							"value": "2.777",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "birth_date",
+							"value": "2023-10-06T00:00:00.000Z",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{URL}}/child/update/dFWFpoXAWvoKjbD7"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove child",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{URL}}/removeChild/kuDE8E8YTOyswGE8"
+			},
+			"response": []
+		},
+		{
+			"name": "Prediction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "child_weight",
+						"value": "8",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "child_height",
+						"value": "68.3",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "child_weight",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "child_height",
+							"value": "5.9",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{URL}}/predict/1sQ2u_Kcwx4mm9jy"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all predicts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5NTg0MCwiZXhwIjoxNzIwODg3ODQwfQ.Q3fdKeKV3wvLyxPGAL3hl7bU5crGA5j4aBNm0Xy8_m8"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/predict/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Get predict by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/predict/id/dSHo7d2n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all predict by child",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/predict/child/1sQ2u_Kcwx4mm9jy"
+			},
+			"response": []
+		},
+		{
+			"name": "Recommendation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5NTg0MCwiZXhwIjoxNzIwODg3ODQwfQ.Q3fdKeKV3wvLyxPGAL3hl7bU5crGA5j4aBNm0Xy8_m8"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/recom/16Gst38v"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all recommendations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/recom/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all recommendation by child",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/recom/child/1sQ2u_Kcwx4mm9jy"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all foods recommendations by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/recom/id/16Gst38v/foods"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Note",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "note",
+							"value": "tes note 2",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{URL}}/notes/16Gst38v"
+			},
+			"response": []
+		},
+		{
+			"name": "Get notes by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/get_notes/16Gst38v"
+			},
+			"response": []
+		},
+		{
+			"name": "Get news",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/news"
+			},
+			"response": []
+		},
+		{
+			"name": "Get news details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiRExNTnZGTlhINGU4bm9SdiIsImlhdCI6MTcxODI5ODk4NiwiZXhwIjoxNzIwODkwOTg2fQ.txYRCTjufF8zQeBE-_hIBBrDHwfceXGgivd6oKu4RZg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{URL}}/news/1/relevansi/36de4276"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://stuntguard-api-hz4azdtnzq-et.a.run.app"
+		}
+	]
+}

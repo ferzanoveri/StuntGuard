@@ -57,9 +57,10 @@ def post_predict(child_id):
             data = request.json
         elif request.headers['Content-Type'] == 'application/x-www-form-urlencoded':
             data = request.form
-
+        
         if not data:
             return jsonify({"error": "Invalid content type."}), 400
+
 
         # Proses data berdasarkan jenis konten
         child_weight = float(data.get("child_weight"))
@@ -138,7 +139,7 @@ def post_predict(child_id):
             )
         else:
             cursor.execute(
-                "INSERT INTO StuntPredict (predict_id, child_weight, child_height, predict_result, child_id, created_at, protein, energy, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                "INSERT INTO StuntPredict (predict_id, child_weight, child_height, predict_result, child_id, created_at, protein, energy, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
                 (
                     predict_id,
                     child_weight,
