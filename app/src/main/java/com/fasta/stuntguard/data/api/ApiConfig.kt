@@ -1,6 +1,10 @@
 package com.fasta.stuntguard.data.api
 
+import android.content.Context
+import com.fasta.stuntguard.AuthInterceptor
 import com.fasta.stuntguard.BuildConfig
+import com.fasta.stuntguard.utils.UserPreferences
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -8,16 +12,25 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
     companion object {
-        fun getApiService(): ApiService {
-            val loggingInterceptor = if (BuildConfig.DEBUG) {
-                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-            } else {
-                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        fun getApiService(token: String? = null): ApiService {
+            val loggingInterceptor = HttpLoggingInterceptor().apply {
+                level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
             }
 
-            val client = OkHttpClient.Builder()
+            val clientBuilder = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
-                .build()
+
+            if (token != null) {
+                clientBuilder.addInterceptor(Interceptor { chain ->
+                    val original = chain.request()
+                    val requestBuilder = original.newBuilder()
+                        .header("Authorization", "Bearer $token")
+                    val request = requestBuilder.build()
+                    chain.proceed(request)
+                })
+            }
+
+            val client = clientBuilder.build()
 
             val retrofit = Retrofit.Builder()
                 .baseUrl("https://stuntguard-api-hz4azdtnzq-et.a.run.app/")
@@ -26,7 +39,6 @@ class ApiConfig {
                 .build()
 
             return retrofit.create(ApiService::class.java)
-
         }
     }
 }

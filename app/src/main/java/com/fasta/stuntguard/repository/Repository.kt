@@ -16,6 +16,8 @@ import com.fasta.stuntguard.data.response.ParentChildResponse
 import com.fasta.stuntguard.data.response.PostChildResponse
 import com.fasta.stuntguard.data.response.PredictionResponse
 import com.fasta.stuntguard.utils.UserPreferences
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,7 +25,7 @@ import retrofit2.Response
 class Repository private constructor(
     private val preferences: UserPreferences
 ){
-
+    val token = runBlocking { preferences.getUser().first().token }
     private val _registerData = MutableLiveData<RegisterResponse>()
     val registerData : LiveData<RegisterResponse> = _registerData
 
@@ -136,7 +138,7 @@ class Repository private constructor(
 
     fun getAllNews(){
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getNews()
+        val client = ApiConfig.getApiService(token).getNews()
         client.enqueue(object : Callback<GetAllNewsResponse>{
             override fun onResponse(
                 call: Call<GetAllNewsResponse>,
@@ -153,6 +155,7 @@ class Repository private constructor(
 
             override fun onFailure(call: Call<GetAllNewsResponse>, t: Throwable) {
                 _isLoading.value = false
+                _isError.value = true
                 Log.e(TAG, "onFailure: ${t.message.toString()}")
             }
 
@@ -161,7 +164,7 @@ class Repository private constructor(
 
     fun getDetailNews(page: Int, token: String){
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getDetailNews(page, token)
+        val client = ApiConfig.getApiService(token).getDetailNews(page, token)
         client.enqueue(object : Callback<GetDetailNewsResponse>{
             override fun onResponse(
                 call: Call<GetDetailNewsResponse>,
@@ -178,6 +181,7 @@ class Repository private constructor(
 
             override fun onFailure(call: Call<GetDetailNewsResponse>, t: Throwable) {
                 _isLoading.value = false
+                _isError.value = true
                 Log.e(TAG, "onFailure: ${t.message.toString()}")
             }
 
@@ -192,7 +196,7 @@ class Repository private constructor(
     ) {
         _isLoading.value = true
         _isError.value = false
-        val client = ApiConfig.getApiService()
+        val client = ApiConfig.getApiService(token)
             .updatePassword(parentId, oldPassword, newPassword, confirmPassword)
         client.enqueue(object : Callback<ChangePasswordResponse> {
             override fun onResponse(
@@ -219,7 +223,7 @@ class Repository private constructor(
     fun updateProfile(parentId: String, parentName: String, email: String, phone: String?) {
         _isLoading.value = true
         _isError.value = false
-        val client = ApiConfig.getApiService()
+        val client = ApiConfig.getApiService(token)
             .updateProfile(parentId, parentName, email, phone)
         client.enqueue(object : Callback<ChangeProfileResponse> {
             override fun onResponse(
@@ -245,7 +249,7 @@ class Repository private constructor(
     fun postPrediction(childId: String, childWeight: Float, childHeight: Float, breastfeeding: Boolean?) {
         _isLoading.value = true
         _isError.value = false
-        val client = ApiConfig.getApiService().postPrediction(childId, childWeight, childHeight, breastfeeding)
+        val client = ApiConfig.getApiService(token).postPrediction(childId, childWeight, childHeight, breastfeeding)
         client.enqueue(object : Callback<PredictionResponse> {
             override fun onResponse(call: Call<PredictionResponse>, response: Response<PredictionResponse>) {
                 _isLoading.value = false
@@ -266,7 +270,7 @@ class Repository private constructor(
 
     fun getAllPredictions() {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getAllPredictions()
+        val client = ApiConfig.getApiService(token).getAllPredictions()
         client.enqueue(object : Callback<List<PredictionResponse>> {
             override fun onResponse(call: Call<List<PredictionResponse>>, response: Response<List<PredictionResponse>>) {
                 _isLoading.value = false
@@ -287,7 +291,7 @@ class Repository private constructor(
 
     fun getPredictionsByChildId(childId: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getPredictionsByChildId(childId)
+        val client = ApiConfig.getApiService(token).getPredictionsByChildId(childId)
         client.enqueue(object : Callback<List<PredictionResponse>> {
             override fun onResponse(call: Call<List<PredictionResponse>>, response: Response<List<PredictionResponse>>) {
                 _isLoading.value = false
@@ -316,7 +320,7 @@ class Repository private constructor(
         breastfeeding: String
     ) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().postChild(
+        val client = ApiConfig.getApiService(token).postChild(
             id,
             childName,
             childGender,
@@ -350,7 +354,7 @@ class Repository private constructor(
     fun getParentChild(id: String) {
         _isLoading.value = true
         _isError.value = false
-        val client = ApiConfig.getApiService().getParentChild(id)
+        val client = ApiConfig.getApiService(token).getParentChild(id)
         client.enqueue(object : Callback<ParentChildResponse> {
             override fun onResponse(
                 call: Call<ParentChildResponse>,
