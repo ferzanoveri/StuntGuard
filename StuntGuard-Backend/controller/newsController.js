@@ -6,14 +6,14 @@ exports.getNews = async (req, res) => {
         const page = req.params.page ? parseInt(req.params.page) : 1;
         const result_type = req.params.result_type && req.params.result_type.trim() !== '' ? req.params.result_type : 'relevansi';
         if (result_type == 'relevansi' || result_type == 'latest') {
-            const data = await scraper.getIndex(page, result_type);
+            const data = await scraper.getArticle(page, result_type);
             return res.status(200).json({
                 status: true,
                 message: "Data retrieved successfully",
-                result: data.result,
-                hasNext: data.hasNext,
-                hasPrevious: data.hasPrevious,
-                currentPage: page
+                result: data,
+                // hasNext: data.hasNext,
+                // hasPrevious: data.hasPrevious,
+                // currentPage: page
             });
         } else {
             return res.status(400).json({

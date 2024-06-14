@@ -34,12 +34,10 @@ router.delete('/child/remove/:child_id', validation, childController.removeChild
 
 // News
 router.get('/news', (req, res) => {
-    res.redirect('/news/1/relevansi');
+    res.redirect('/news/relevansi');
 });
-router.get('/news/:page/:result_type?', validation, newsController.getNews);
-router.get('/news/:page/:result_type?/next', validation, newsController.getNextPage);
-router.get('/news/:page/:result_type?/back', validation, newsController.getPreviousPage);
-router.get('/news/:page/:result_type?/:token', validation, newsController.getNewsDetails);
+router.get('/news/:result_type?', validation, newsController.getNews);
+router.get('/news/:result_type?/:token', validation, newsController.getNewsDetails);
 
 // Predict
 router.post('/predict/:child_id', validation, predictController.postPredict);

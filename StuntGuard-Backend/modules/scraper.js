@@ -3,15 +3,15 @@ const cheerio = require('cheerio');
 const crypto = require('crypto');
 
 const base = "https://www.detik.com/search/searchall?query=stunting%20pada%20anak";
+const result = [];
 
 // Function to get the list of news articles
-exports.getIndex = async (page = 1, type) => {
+exports.getIndex = async (type) => {
     try {
-        const url = `${base}&page=${page}&result_type=${type}`;
+        const url = `${base}&page=1&result_type=${type}`;
         const response = await axios.get(url);
         const html_data = response.data;
         const $ = cheerio.load(html_data);
-        const result = [];
 
         const selectedElement = $("article.list-content__item");
         selectedElement.each(function () {
@@ -21,24 +21,33 @@ exports.getIndex = async (page = 1, type) => {
             const date = $(this).find('div.media__date').text().trim();
             const publisher = $(this).find('h2.media__subtitle').text().trim();
 
-
-            // Exclude articles with publisher "20Detik"
-            const excludedPublishers = ["20Detik", "detikInet"];
-            if (!excludedPublishers.includes(publisher) &&  !link.includes('video')) {
+            if (link.includes('stunting') &&  !link.includes('video')) {
                 // Generate a token for the link
                 const token = crypto.createHash('sha256').update(link).digest('hex').slice(0,8);
                 result.push({ token, link, image, title, date, publisher });
             }
         });
-
-        const hasNext = $("a.pagination__item.pagination__item--next").length > 0;
-        const hasPrevious = $("a.pagination__item.pagination__item--previous").length > 0;
- 
-        return { result, hasNext, hasPrevious, currentPage: page};
+        
+        return { result };
     } catch (error) {
         throw error; // Tangkap dan lemparkan error untuk menangani di controller
     }
 };
+
+// Function to get all article
+exports.getArticle = async (page, type) => {
+    try {
+        const promises = [];
+
+        for (let i = page; i < 50; i++) {
+            promises.push(this.getIndex(i, type));
+        }
+        const hasil = await Promise.all(promises);
+        return hasil;
+} catch (error) {
+    throw error; 
+}
+}
 
 // Function to get detailed information of a news article
 exports.getDetail = async (token, page, type) => {
