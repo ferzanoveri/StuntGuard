@@ -9,7 +9,7 @@ import pandas as pd
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Path relatif ke file model h5
-model_path = os.path.join(current_dir,"random_forest_model.pkl")
+model_path = os.path.join(current_dir,"random_forest_model2.pkl")
 # Load the model using pickle
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
@@ -93,23 +93,25 @@ def post_predict(child_id):
         prediction = model.predict(prediction_df)
         print(prediction)
         predict_result = bool(prediction[0])
-        if predict_result:
-            if prediction_data['Gender'] == 1:
-                energy = float((0.167 * prediction_data['Body Weight']) + (15.174 * prediction_data['Body Length']) - 617.6)
-            else:
-                energy = float((16.252 * prediction_data['Body Weight']) + (1.618 * prediction_data['Body Length']) - 413.5)
-            protein_calories = float(0.15 * energy)
-            protein_grams = float(protein_calories / 4)
-        else:
-            if prediction_data['Gender'] == 1:
-                energy = float((0.167 * prediction_data['Body Weight']) + (15.174 * prediction_data['Body Length']) - 617.6)
-            else:
-                energy = float((16.252 * prediction_data['Body Weight']) + (1.618 * prediction_data['Body Length']) - 413.5)
-            protein_calories = float(0.15 * energy)
-            protein_grams = float(protein_calories / 4)
 
-        protein = protein_grams
-        energy = energy
+        # energy = (((prediction_data['Body Length'] / 5) * predict_result / 5) + ((prediction_data['Age'] + 1) * 65))
+        # protein = (((prediction_data['Body Length'] / 5) * predict_result / 5) + (prediction_data['Age'] * 2))
+
+        if prediction_data["Age"] < 36:
+            if prediction_data["Gender"]:
+                energy = float((0.167 * child_weight) + (15.174 * child_height) - 617.6)
+            else:
+                energy = float((16.252 * child_weight) + (1.618 * child_height) - 413.5)
+        else:
+            if prediction_data["Gender"]:
+                energy = float((19.49 * child_weight) + (1.303 * child_height) + 414.9)
+            else:
+                energy = float((16.969 * child_weight) + (1.618 * child_height) + 371.2)
+
+        if predict_result:
+            energy = float(energy * 2)
+
+        protein = float((0.15 * energy)/4)
 
         predict_id = generate(size=8)
         created_at = datetime.now().strftime("%Y-%m-%d")
