@@ -80,7 +80,7 @@ class CalendarActivity : AppCompatActivity() {
 
         predictionViewModel.getUserData().observe(this) { user ->
             predictionViewModel.getParentChild(user.userId)
-            predictionViewModel.parentChild.observe(this) { user ->
+            predictionViewModel.children.observe(this) { user ->
                 setupData(user)
             }
         }

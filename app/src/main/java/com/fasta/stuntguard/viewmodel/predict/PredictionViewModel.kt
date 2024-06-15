@@ -10,13 +10,8 @@ import com.fasta.stuntguard.repository.Repository
 import kotlinx.coroutines.launch
 
 class PredictionViewModel(private val repository: Repository) : ViewModel() {
-    val predictionResponse: LiveData<PredictionResponse> = repository.predictionResponse
     val children: LiveData<ParentChildResponse> = repository.parentChild
-    val parentChild: LiveData<ParentChildResponse> = repository.parentChild
-
-    fun postPrediction(childId: String, childWeight: Float, childHeight: Float, breastfeeding: Boolean?) {
-        repository.postPrediction(childId, childWeight, childHeight, breastfeeding)
-    }
+    val predictionResponse: LiveData<PredictionResponse> = repository.predictionResponse
 
     fun getUserData(): LiveData<UserModel> {
         return repository.getUser()
@@ -27,4 +22,11 @@ class PredictionViewModel(private val repository: Repository) : ViewModel() {
             repository.getParentChild(id)
         }
     }
+
+    fun postPrediction(childId: String, weight: Float, height: Float, breastfeeding: Boolean?) {
+        viewModelScope.launch {
+            repository.postPrediction(childId, weight, height, breastfeeding)
+        }
+    }
+
 }

@@ -29,16 +29,9 @@ class DetailNewsActivity : AppCompatActivity() {
         binding = ActivityDetailNewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-//        val actionbar = supportActionBar
-//        actionbar?.title = "Detail News"
-//        actionbar?.setDisplayHomeAsUpEnabled(true)
-
         setupView()
         setupViewModel()
         setupAction()
-
-
     }
 
     private fun setupAction() {

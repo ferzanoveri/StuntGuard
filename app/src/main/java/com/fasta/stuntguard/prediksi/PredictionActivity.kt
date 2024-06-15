@@ -1,30 +1,23 @@
 package com.fasta.stuntguard.prediksi
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.RadioGroup
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.fasta.stuntguard.MainActivity
 import com.fasta.stuntguard.R
 import com.fasta.stuntguard.calendar.CalendarActivity
 import com.fasta.stuntguard.data.response.Child
-import com.fasta.stuntguard.data.response.ParentChildResponse
+import com.fasta.stuntguard.data.response.PredictionResponse
 import com.fasta.stuntguard.databinding.ActivityPredictionBinding
 import com.fasta.stuntguard.profile.ProfileActivity
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.predict.PredictionViewModel
-import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PredictionActivity : AppCompatActivity() {
@@ -35,9 +28,7 @@ class PredictionActivity : AppCompatActivity() {
     private lateinit var spinnerChildren: Spinner
     private lateinit var editTextWeight: EditText
     private lateinit var editTextHeight: EditText
-    private lateinit var editTextAge: EditText
     private lateinit var radioGroupBreastfeeding: RadioGroup
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,11 +38,9 @@ class PredictionActivity : AppCompatActivity() {
         setupView()
         setupAction()
         setupViewModel()
-
     }
 
     private fun setupView() {
-        @Suppress("DEPRECATION")
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.statusBarColor = Color.TRANSPARENT
         supportActionBar?.hide()
@@ -59,7 +48,6 @@ class PredictionActivity : AppCompatActivity() {
         spinnerChildren = binding.chooseClhild
         editTextWeight = binding.weightNow
         editTextHeight = binding.heightNow
-        editTextAge = binding.ageNow
         radioGroupBreastfeeding = binding.radiogroupBreastfeeding
 
         binding.btnPrediksi.setOnClickListener {
@@ -96,71 +84,102 @@ class PredictionActivity : AppCompatActivity() {
 
         predictionViewModel.getUserData().observe(this) { user ->
             predictionViewModel.getParentChild(user.userId)
-            predictionViewModel.parentChild.observe(this) { user ->
-                setupData(user)
+        }
+
+        predictionViewModel.children.observe(this) { parentChildResponse ->
+            setupSpinner(parentChildResponse.data)
+        }
+        predictionViewModel.predictionResponse.observe(this) { predictionResponse ->
+            Log.d(TAG, "Received prediction response: $predictionResponse")
+            showPredictionResult(predictionResponse)
+        }
+    }
+
+    private fun setupSpinner(children: ArrayList<Child>) {
+        val childNames = arrayListOf("Choose child")
+        childNames.addAll(children.map { it.childName })
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, childNames)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerChildren.adapter = adapter
+
+        spinnerChildren.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if (position > 0) {
+                    val selectedChildId = children[position - 1].childId
+                    Log.d(TAG, "Selected Child ID: $selectedChildId")
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
     }
 
-    private fun setupData(data: ParentChildResponse) {
-        setupSpinner(data.data)
-    }
-
-    private fun setupSpinner(children: ArrayList<Child>) {
-        val spinner: Spinner = binding.chooseClhild
-        val childNames = arrayListOf("choose child")
-        childNames.addAll(children.map { it.childName })
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, childNames)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
-    }
-
     private fun performPrediction() {
-        val selectedChildName = spinnerChildren.selectedItem.toString()
-        val currentWeight = editTextWeight.text.toString().toFloatOrNull()
-        val currentHeight = editTextHeight.text.toString().toFloatOrNull()
-        val currentAge = editTextAge.text.toString().toIntOrNull()
-        val breastfeedingStatus = when (radioGroupBreastfeeding.checkedRadioButtonId) {
+        val selectedChildId = getSelectedChildId()
+        val weight = editTextWeight.text.toString().toFloatOrNull() ?: 0f
+        val height = editTextHeight.text.toString().toFloatOrNull() ?: 0f
+        val breastfeeding = getBreastfeedingStatus()
+
+        if (selectedChildId.isEmpty()) {
+            Toast.makeText(this, "Please select a child.", Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (weight <= 0 || height <= 0) {
+            Toast.makeText(this, "Please enter valid weight and height.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        Log.d(TAG, "Performing prediction with childId: $selectedChildId, weight: $weight, height: $height, breastfeeding: $breastfeeding")
+        predictionViewModel.postPrediction(selectedChildId, weight, height, breastfeeding)
+    }
+
+
+    private fun getSelectedChildId(): String {
+        val position = spinnerChildren.selectedItemPosition
+        return if (position > 0) {
+            predictionViewModel.children.value?.data?.get(position - 1)?.childId ?: ""
+        } else {
+            ""
+        }
+    }
+
+    private fun getBreastfeedingStatus(): Boolean? {
+        val checkedId = radioGroupBreastfeeding.checkedRadioButtonId
+        return when (checkedId) {
             R.id.radioBreastfeedingYes -> true
             R.id.radioBreastfeedingNo -> false
             else -> null
         }
+    }
 
-        Log.d(TAG, "performPrediction: Weight: $currentWeight, Height: $currentHeight, Age: $currentAge, Breastfeeding: $breastfeedingStatus")
+    private fun showPredictionResult(predictionResponse: PredictionResponse) {
+        Log.d(TAG, "Received prediction response: $predictionResponse")
+        Log.d(TAG, "Predict Result: ${predictionResponse.predictResult}")
 
-        if (currentWeight == null || currentHeight == null || currentAge == null) {
-            Toast.makeText(this, "Please enter valid weight, height, and age", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val selectedChild = predictionViewModel.children.value?.data?.find { it.childName == selectedChildName }
-
-        if (selectedChild != null) {
-            Log.d(TAG, "Selected Child: ${selectedChild.childId}")
-            predictionViewModel.postPrediction(selectedChild.childId, currentWeight, currentHeight, breastfeedingStatus)
-            predictionViewModel.predictionResponse.observe(this) { predictionResponse ->
-                Log.d(TAG, "Prediction Response: $predictionResponse")
-                predictionResponse?.let {
-                    showPredictionResult(it.status)
-                } ?: run {
-                    Toast.makeText(this, "Prediction failed. Try again.", Toast.LENGTH_SHORT).show()
-                }
+        val predictionMessage: String
+        if (predictionResponse.predictResult != null) {
+            predictionMessage = if (predictionResponse.predictResult == "Yes") {
+                "Your child is stunted."
+            } else {
+                "Your child is not stunted."
             }
         } else {
-            Toast.makeText(this, "Selected child not found", Toast.LENGTH_SHORT).show()
-        }
-    }
-    private fun showPredictionResult(isStunted: Boolean) {
-        val message = if (isStunted) {
-            "The child is predicted to be stunted."
-        } else {
-            "The child is not predicted to be stunted."
+            predictionMessage = "Error: Prediction result is null."
         }
 
-        AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(this)
             .setTitle("Prediction Result")
-            .setMessage(message)
-            .setPositiveButton("OK", null)
-            .show()
+            .setMessage(predictionMessage)
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }
+        builder.show()
+    }
+
+
+    companion object {
+        private const val TAG = "PredictionActivity"
     }
 }

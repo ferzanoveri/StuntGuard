@@ -1,22 +1,36 @@
 package com.fasta.stuntguard.data.response
 
-data class PredictionResponse(
-	val data: List<DataItem>,
-	val message: String,
-	val status: Boolean
-)
+import com.google.gson.annotations.SerializedName
 
-data class DataItem(
-	val childGender: Boolean,
+data class PredictionResponse(
+	@SerializedName("child_id")
 	val childId: String,
-	val childAge: Int,
+
+	@SerializedName("updated_at")
 	val updatedAt: String,
-	val parentId: String,
-	val birthDate: String,
-	val birthWeight: Int,
+
+	@SerializedName("predict_id")
+	val predictId: String,
+
+	@SerializedName("protein")
+	val protein: Any,
+
+	@SerializedName("created_at")
 	val createdAt: String,
-	val breastfeeding: Boolean,
-	val childName: String,
-	val birthHeight: Int
+
+	@SerializedName("predict_result")
+	val predictResult: String,
+
+	@SerializedName("breastfeeding")
+	val breastfeeding: String,
+
+	@SerializedName("child_weight")
+	val childWeight: Float,  // Assuming the correct type is Float
+
+	@SerializedName("child_height")
+	val childHeight: Float,  // Assuming the correct type is Float
+
+	@SerializedName("energy")
+	val energy: Any
 )
 

@@ -1,14 +1,12 @@
 package com.fasta.stuntguard.data.api
 
-import android.content.Context
-import com.fasta.stuntguard.AuthInterceptor
 import com.fasta.stuntguard.BuildConfig
-import com.fasta.stuntguard.utils.UserPreferences
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 class ApiConfig {
     companion object {

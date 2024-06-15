@@ -162,9 +162,9 @@ class Repository private constructor(
         })
     }
 
-    fun getDetailNews(page: Int, token: String){
+    fun getDetailNews(page: Int, tokennews: String){
         _isLoading.value = true
-        val client = ApiConfig.getApiService(token).getDetailNews(page, token)
+        val client = ApiConfig.getApiService(token).getDetailNews(page, tokennews)
         client.enqueue(object : Callback<GetDetailNewsResponse>{
             override fun onResponse(
                 call: Call<GetDetailNewsResponse>,
@@ -246,6 +246,8 @@ class Repository private constructor(
         })
     }
 
+    // Repository.kt
+
     fun postPrediction(childId: String, childWeight: Float, childHeight: Float, breastfeeding: Boolean?) {
         _isLoading.value = true
         _isError.value = false
@@ -254,8 +256,10 @@ class Repository private constructor(
             override fun onResponse(call: Call<PredictionResponse>, response: Response<PredictionResponse>) {
                 _isLoading.value = false
                 if (response.isSuccessful && response.body() != null) {
-                    _predictionResponse.value = response.body()
+                    Log.d(TAG, "Prediction response body: ${response.body()}")
+                    _predictionResponse.value = response.body() // Pastikan nilai predictionResponse diset dengan body respons yang benar
                 } else {
+                    Log.d(TAG, "Prediction response error: ${response.errorBody()?.string()}")
                     _isError.value = true
                 }
             }
@@ -268,47 +272,8 @@ class Repository private constructor(
         })
     }
 
-    fun getAllPredictions() {
-        _isLoading.value = true
-        val client = ApiConfig.getApiService(token).getAllPredictions()
-        client.enqueue(object : Callback<List<PredictionResponse>> {
-            override fun onResponse(call: Call<List<PredictionResponse>>, response: Response<List<PredictionResponse>>) {
-                _isLoading.value = false
-                if (response.isSuccessful && response.body() != null) {
-                    _allPredictions.value = response.body()
-                } else {
-                    _isError.value = true
-                }
-            }
 
-            override fun onFailure(call: Call<List<PredictionResponse>>, t: Throwable) {
-                _isLoading.value = false
-                _isError.value = true
-                Log.e(TAG, "onFailure: ${t.message}")
-            }
-        })
-    }
 
-    fun getPredictionsByChildId(childId: String) {
-        _isLoading.value = true
-        val client = ApiConfig.getApiService(token).getPredictionsByChildId(childId)
-        client.enqueue(object : Callback<List<PredictionResponse>> {
-            override fun onResponse(call: Call<List<PredictionResponse>>, response: Response<List<PredictionResponse>>) {
-                _isLoading.value = false
-                if (response.isSuccessful && response.body() != null) {
-                    _predictionsByChildId.value = response.body()
-                } else {
-                    _isError.value = true
-                }
-            }
-
-            override fun onFailure(call: Call<List<PredictionResponse>>, t: Throwable) {
-                _isLoading.value = false
-                _isError.value = true
-                Log.e(TAG, "onFailure: ${t.message}")
-            }
-        })
-    }
 
     fun postChild(
         id: String,

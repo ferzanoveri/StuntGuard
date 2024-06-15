@@ -45,7 +45,8 @@ class FormAddChildActivity : AppCompatActivity() {
                 AlertDialog.Builder(this).apply {
                     setTitle(user.message)
                     setMessage("Tambah data anak berhasil")
-                    setPositiveButton("Lanjut") { _, _ ->
+                    setPositiveButton("Lanjut") { dialog, _ ->
+                        dialog.dismiss()
                         finish()
                     }
                     create()

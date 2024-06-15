@@ -14,6 +14,7 @@ import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
@@ -81,25 +82,13 @@ interface ApiService {
         @Field("breastfeeding") breastfeeding: String
     ): Call<PostChildResponse>
 
-    @POST("predict/{childId}")
+
+    @FormUrlEncoded
+    @POST("predict/{child_id}")
     fun postPrediction(
-        @Path("childId") childId: String,
-        @Field("childWeight") childWeight: Float,
-        @Field("childHeight") childHeight: Float,
+        @Path("child_id") childId: String,
+        @Field("child_weight") childWeight: Float,
+        @Field("child_height") childHeight: Float,
         @Field("breastfeeding") breastfeeding: Boolean?
     ): Call<PredictionResponse>
-
-    @GET("predict/all")
-    fun getAllPredictions(): Call<List<PredictionResponse>>
-
-    @GET("predict/id/{predict_id}")
-    fun getPredictionById(
-        @Path("predict_id") predictId: String
-    ): Call<PredictionResponse>
-
-    @GET("predict/child/{child_id}")
-    fun getPredictionsByChildId(
-        @Path("child_id") childId: String
-    ): Call<List<PredictionResponse>>
-
 }

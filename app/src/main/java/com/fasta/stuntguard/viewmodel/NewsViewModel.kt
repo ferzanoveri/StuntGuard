@@ -3,6 +3,7 @@ package com.fasta.stuntguard.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.fasta.stuntguard.data.model.UserModel
 import com.fasta.stuntguard.data.response.GetAllNewsResponse
 import com.fasta.stuntguard.data.response.GetDetailNewsResponse
 import com.fasta.stuntguard.repository.Repository
@@ -17,6 +18,10 @@ class NewsViewModel(private val repository: Repository) : ViewModel() {
         viewModelScope.launch {
             repository.getDetailNews(page, token)
         }
+    }
+
+    fun getUserData(): LiveData<UserModel> {
+        return repository.getUser()
     }
 
     fun getAllNews(){

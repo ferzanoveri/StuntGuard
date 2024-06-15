@@ -87,26 +87,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextFieldUmur"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        android:hint="Umur (Tahun)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldPass">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/age_now"
-            android:layout_width="match_parent"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <TextView
         android:id="@+id/menyusi"
         android:layout_width="0dp"
@@ -118,7 +98,7 @@
         android:fontFamily="@font/poppins_regular"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldUmur"/>
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldPass"/>
 
     <LinearLayout
         android:id="@+id/radio"
