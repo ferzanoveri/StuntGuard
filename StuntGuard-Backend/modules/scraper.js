@@ -53,8 +53,8 @@ exports.getArticle = async (page, type) => {
 // Function to get detailed information of a news article
 exports.getDetail = async (token, page, type) => {
     try {
-        const articles = await exports.getIndex(page, type);
-        const article = articles.result.find(article => article.token === token);
+        const articles = await exports.getArticle(page, type);
+        const article = articles.find(article => article.token === token);
 
         if (!article) {
             throw new Error('Article not found');
