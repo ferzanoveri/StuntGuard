@@ -46,11 +46,11 @@ interface ApiService {
     @GET("news")
     fun getNews() : Call<GetAllNewsResponse>
 
-    @GET("news/{page}/{token}")
+    @GET("news/{result_type}/{token}")
     fun getDetailNews(
-        @Path("page") page: Int,
+        @Path("result_type") resultType: String,
         @Path("token") token: String
-    ) : Call<GetDetailNewsResponse>
+    ): Call<GetDetailNewsResponse>
 
     @FormUrlEncoded
     @PUT("user/updatePassword/{parent_id}")
@@ -91,4 +91,9 @@ interface ApiService {
         @Field("child_height") childHeight: Float,
         @Field("breastfeeding") breastfeeding: Boolean?
     ): Call<PredictionResponse>
+
+    companion object {
+        const val RESULT_TYPE_LATEST = "latest"
+        const val RESULT_TYPE_RELEVANSI = "relevansi"
+    }
 }

@@ -14,12 +14,6 @@ class NewsViewModel(private val repository: Repository) : ViewModel() {
     val detailNews: LiveData<GetDetailNewsResponse> = repository.detailNews
     val isLoading: LiveData<Boolean> = repository.isLoading
 
-    fun getDetailNews(page: Int, token: String){
-        viewModelScope.launch {
-            repository.getDetailNews(page, token)
-        }
-    }
-
     fun getUserData(): LiveData<UserModel> {
         return repository.getUser()
     }
@@ -28,5 +22,13 @@ class NewsViewModel(private val repository: Repository) : ViewModel() {
         viewModelScope.launch {
             repository.getAllNews()
         }
+    }
+
+    fun getDetailNews(resultType: String ,token: String){
+        repository.getDetailNews("relevansi", token)
+    }
+
+    fun getRelevantNews(resultType: String ,token: String) {
+        repository.getDetailNews("relevansi", token)
     }
 }

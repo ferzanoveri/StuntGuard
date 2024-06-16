@@ -16,7 +16,8 @@ import com.fasta.stuntguard.prediksi.PredictionActivity
 import com.fasta.stuntguard.profile.ProfileActivity
 import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.MainViewModel
-import com.fasta.stuntguard.adapter.NewsAdapter
+import com.fasta.stuntguard.adapter.NewsLatestAdapter
+import com.fasta.stuntguard.adapter.NewsRelevansiAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.Calendar
 
@@ -91,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.getAllNews()
 
         mainViewModel.allNews.observe(this) { news ->
-            setupData(news)
+            setupDataLates(news)
         }
 
         mainViewModel.isLoading.observe(this) {
@@ -113,16 +114,27 @@ class MainActivity : AppCompatActivity() {
         binding.day.text = greeting
     }
 
-    private fun setupData(data: GetAllNewsResponse) {
+    private fun setupDataLates(data: GetAllNewsResponse) {
         setupAdapter(data.result)
     }
 
     private fun setupAdapter(news: ArrayList<News>) {
-        binding.rvNews.layoutManager = LinearLayoutManager(this)
-        val adapter = NewsAdapter(news)
-        binding.rvNews.adapter = adapter
+        binding.rvNewsLatest.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvNewsRelevansi.layoutManager = LinearLayoutManager(this)
 
-        adapter.setOnItemClickCallback(object : NewsAdapter.OnItemClickCallback{
+        val adapter = NewsLatestAdapter(news)
+        val adapter2 = NewsRelevansiAdapter(news)
+
+        binding.rvNewsLatest.adapter = adapter
+        binding.rvNewsRelevansi.adapter = adapter2
+
+        adapter2.setOnItemClickCallback(object : NewsRelevansiAdapter.OnItemClickCallback{
+            override fun onItemClicked(news: News) {
+                toDetailActivity(news)
+            }
+        })
+
+        adapter.setOnItemClickCallback(object : NewsLatestAdapter.OnItemClickCallback{
             override fun onItemClicked(news: News) {
                 toDetailActivity(news)
             }
@@ -140,7 +152,7 @@ class MainActivity : AppCompatActivity() {
     private fun toDetailActivity(news: News) {
         val intent = Intent(this@MainActivity, DetailNewsActivity::class.java)
         mainViewModel.allNews.observe(this){
-            intent.putExtra(DetailNewsActivity.EXTRA_PAGE, it.currentPage)
+            intent.putExtra(DetailNewsActivity.EXTRA_RESULT_TYPE, it.currentPage)
         }
         intent.putExtra(DetailNewsActivity.EXTRA_TOKEN, news.token)
         startActivity(intent)

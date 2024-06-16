@@ -44,11 +44,11 @@ class DetailNewsActivity : AppCompatActivity() {
     private fun setupViewModel() {
         factory = ViewModelFactory.getInstance(this)
 
-        val page = intent.getIntExtra(EXTRA_PAGE, 0)
+        val resultType = intent.getStringExtra(EXTRA_RESULT_TYPE) ?: ""
         token = intent.getStringExtra(EXTRA_TOKEN) ?: ""
 
 
-        newsViewModel.getDetailNews(page, token as String)
+        newsViewModel.getDetailNews(resultType , token!!)
 
         newsViewModel.detailNews.observe(this) {news ->
             setupData(news)
@@ -106,7 +106,7 @@ class DetailNewsActivity : AppCompatActivity() {
     }
 
     companion object{
-        const val EXTRA_PAGE = "extra_page"
+        const val EXTRA_RESULT_TYPE = "extra_result_type"
         const val EXTRA_TOKEN = "extra_token"
     }
 }

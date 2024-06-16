@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import com.fasta.stuntguard.data.api.ApiConfig
+import com.fasta.stuntguard.data.api.ApiService
 import com.fasta.stuntguard.data.model.UserModel
 import com.fasta.stuntguard.data.response.ChangePasswordResponse
 import com.fasta.stuntguard.data.response.GetAllNewsResponse
@@ -162,20 +163,19 @@ class Repository private constructor(
         })
     }
 
-    fun getDetailNews(page: Int, tokennews: String){
+    fun getDetailNews(resultType: String, tokennews: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService(token).getDetailNews(page, tokennews)
-        client.enqueue(object : Callback<GetDetailNewsResponse>{
+        val client = ApiConfig.getApiService(token).getDetailNews(resultType, tokennews)
+        client.enqueue(object : Callback<GetDetailNewsResponse> {
             override fun onResponse(
                 call: Call<GetDetailNewsResponse>,
                 response: Response<GetDetailNewsResponse>
             ) {
-                _isLoading.value = true
+                _isLoading.value = false
                 if (response.isSuccessful && response.body() != null) {
-                    _isLoading.value = false
                     _detailNews.value = response.body()
                 } else {
-                    _isLoading.value = false
+                    _isError.value = true
                 }
             }
 
@@ -184,7 +184,6 @@ class Repository private constructor(
                 _isError.value = true
                 Log.e(TAG, "onFailure: ${t.message.toString()}")
             }
-
         })
     }
 
@@ -246,8 +245,6 @@ class Repository private constructor(
         })
     }
 
-    // Repository.kt
-
     fun postPrediction(childId: String, childWeight: Float, childHeight: Float, breastfeeding: Boolean?) {
         _isLoading.value = true
         _isError.value = false
@@ -271,9 +268,6 @@ class Repository private constructor(
             }
         })
     }
-
-
-
 
     fun postChild(
         id: String,
