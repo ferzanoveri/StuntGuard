@@ -5,9 +5,9 @@ const crypto = require('crypto');
 const base = "https://www.detik.com/search/searchall?query=stunting%20pada%20anak";
 
 // Function to get the list of news articles
-exports.getIndex = async (type) => {
+exports.getIndex = async (page = 1, type) => {
     try {
-        const url = `${base}&page=1&result_type=${type}`;
+        const url = `${base}&page=${page}&result_type=${type}`;
         const response = await axios.get(url);
         const html_data = response.data;
         const $ = cheerio.load(html_data);
@@ -30,7 +30,7 @@ exports.getIndex = async (type) => {
         
         return result;
     } catch (error) {
-        throw error; // Tangkap dan lemparkan error untuk menangani di controller
+        throw error; 
     }
 };
 
@@ -43,7 +43,7 @@ exports.getArticle = async (page, type) => {
             promises.push(this.getIndex(i, type));
         }
         const hasil = await Promise.all(promises);
-        const mergedResults = [].concat(...hasil); // Gabungkan hasil dari semua halaman
+        const mergedResults = [].concat(...hasil); 
         return mergedResults;
 } catch (error) {
     throw error; 
