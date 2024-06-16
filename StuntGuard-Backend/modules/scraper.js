@@ -21,7 +21,8 @@ exports.getIndex = async (page = 1, type) => {
             const date = $(this).find('div.media__date').text().trim();
             const publisher = $(this).find('h2.media__subtitle').text().trim();
 
-            if (link.includes('stunting') &&  !link.includes('video')) {
+            const excludedPublishers = ["20Detik"]
+            if (link.includes('stunting') &&  !link.includes('video') && !excludedPublishers.includes(publisher)) {
                 // Generate a token for the link
                 const token = crypto.createHash('sha256').update(link).digest('hex').slice(0,8);
                 result.push({ token, link, image, title, date, publisher });
