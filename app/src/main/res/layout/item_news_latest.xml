@@ -10,12 +10,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp">
 
         <ImageView
             android:id="@+id/img_item_news"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:layout_height="150dp"
             android:src="@drawable/vektor_sayuran"
             android:scaleType="centerCrop"
             tools:ignore="MissingConstraints"/>
@@ -27,6 +28,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:maxLines="2"
+            android:layout_marginHorizontal="10dp"
             android:text="Perbedaan 4 Sehat 5 Sempurna dan Pedoman Gizi Seimbang"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -39,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:fontFamily="@font/roboto_bold"
+            android:fontFamily="@font/poppins_regular"
             android:text="Genre"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -52,10 +54,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:fontFamily="@font/roboto_bold"
+            android:fontFamily="@font/poppins_regular"
             android:text="Genre"
             android:textColor="@color/black"
             android:textSize="16dp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/genre" />

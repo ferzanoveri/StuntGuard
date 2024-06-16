@@ -15,6 +15,9 @@
         android:theme="@style/Theme.StuntGuard"
         tools:targetApi="31">
         <activity
+            android:name=".news.SeeAllNewsActivity"
+            android:exported="false" />
+        <activity
             android:name=".FoodRecomendationActivity"
             android:exported="false" />
         <activity

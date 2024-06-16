@@ -66,6 +66,9 @@ class Repository private constructor(
     private val _predictionsByChildId = MutableLiveData<List<PredictionResponse>>()
     val predictionsByChildId: LiveData<List<PredictionResponse>> = _predictionsByChildId
 
+    private val _allNewsLatest = MutableLiveData<GetAllNewsResponse>()
+    val allNewsLates: LiveData<GetAllNewsResponse> = _allNewsLatest
+
     fun postRegister(
         parentName: String,
         email: String,
@@ -137,9 +140,9 @@ class Repository private constructor(
         preferences.logout()
     }
 
-    fun getAllNews(){
+    fun getAllNewsRelevansi(){
         _isLoading.value = true
-        val client = ApiConfig.getApiService(token).getNews()
+        val client = ApiConfig.getApiService(token).getAllNewsRelevansi()
         client.enqueue(object : Callback<GetAllNewsResponse>{
             override fun onResponse(
                 call: Call<GetAllNewsResponse>,
@@ -163,9 +166,35 @@ class Repository private constructor(
         })
     }
 
+    fun getAllNewsLatest(){
+        _isLoading.value = true
+        val client = ApiConfig.getApiService(token).getAllNewsLatest()
+        client.enqueue(object : Callback<GetAllNewsResponse>{
+            override fun onResponse(
+                call: Call<GetAllNewsResponse>,
+                response: Response<GetAllNewsResponse>
+            ) {
+                _isLoading.value = true
+                if (response.isSuccessful && response.body() != null){
+                    _isLoading.value = false
+                    _allNewsLatest.value = response.body()
+                }else {
+                    _isLoading.value = false
+                }
+            }
+
+            override fun onFailure(call: Call<GetAllNewsResponse>, t: Throwable) {
+                _isLoading.value = false
+                _isError.value = true
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+
+        })
+    }
+
     fun getDetailNews(resultType: String, tokennews: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService(token).getDetailNews(resultType, tokennews)
+        val client = ApiConfig.getApiService(token).getDetailNewsRelevansi(resultType, tokennews)
         client.enqueue(object : Callback<GetDetailNewsResponse> {
             override fun onResponse(
                 call: Call<GetDetailNewsResponse>,

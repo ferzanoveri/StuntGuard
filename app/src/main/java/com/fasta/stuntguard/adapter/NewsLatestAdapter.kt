@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.fasta.stuntguard.data.response.News
 import com.fasta.stuntguard.databinding.ItemNewsLatestBinding
 
-class NewsLatestAdapter(private val listNews: ArrayList<News>) : RecyclerView.Adapter<NewsLatestAdapter.ListViewHolder>() {
+class NewsLatestAdapter(private val listNews: ArrayList<News>, private val limit: Int = listNews.size) : RecyclerView.Adapter<NewsLatestAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
@@ -21,8 +21,9 @@ class NewsLatestAdapter(private val listNews: ArrayList<News>) : RecyclerView.Ad
         return ListViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = listNews.size
-
+    override fun getItemCount(): Int {
+        return if (limit < listNews.size) limit else listNews.size
+    }
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val news = listNews[position]
 

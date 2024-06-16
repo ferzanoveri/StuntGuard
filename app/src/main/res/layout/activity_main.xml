@@ -86,8 +86,21 @@
                 android:textColor="@color/black"
                 android:layout_marginHorizontal="10dp"
                 app:layout_constraintTop_toBottomOf="@id/top"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/see_all"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="See All"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:textSize="15dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/top" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_news_latest"
@@ -97,46 +110,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/news_latest" />
-
-<!--            <HorizontalScrollView-->
-<!--                android:id="@+id/horizontal_sv_news"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/kategori"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent">-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <ImageView-->
-<!--                        android:layout_width="200dp"-->
-<!--                        android:layout_height="200dp"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:src="@drawable/bakso" />-->
-
-<!--                    <ImageView-->
-<!--                        android:layout_width="200dp"-->
-<!--                        android:layout_height="200dp"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:src="@drawable/bakso" />-->
-
-<!--                    <ImageView-->
-<!--                        android:layout_width="200dp"-->
-<!--                        android:layout_height="200dp"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:src="@drawable/bakso" />-->
-
-<!--                    <ImageView-->
-<!--                        android:layout_width="200dp"-->
-<!--                        android:layout_height="200dp"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:src="@drawable/bakso" />-->
-<!--                </LinearLayout>-->
-<!--            </HorizontalScrollView>-->
 
             <TextView
                 android:id="@+id/news_relevansi"

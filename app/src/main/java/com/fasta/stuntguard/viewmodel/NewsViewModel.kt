@@ -20,7 +20,7 @@ class NewsViewModel(private val repository: Repository) : ViewModel() {
 
     fun getAllNews(){
         viewModelScope.launch {
-            repository.getAllNews()
+            repository.getAllNewsLatest()
         }
     }
 

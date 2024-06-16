@@ -18,6 +18,7 @@ import com.fasta.stuntguard.utils.factory.ViewModelFactory
 import com.fasta.stuntguard.viewmodel.MainViewModel
 import com.fasta.stuntguard.adapter.NewsLatestAdapter
 import com.fasta.stuntguard.adapter.NewsRelevansiAdapter
+import com.fasta.stuntguard.news.SeeAllNewsActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.Calendar
 
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
 
         setupView()
         setupViewModel()
@@ -89,14 +93,23 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        mainViewModel.getAllNews()
+        mainViewModel.getAllNewsRelevansi()
+        mainViewModel.getAllNewsLatest()
 
         mainViewModel.allNews.observe(this) { news ->
+            setupDataRelevansi(news)
+        }
+
+        mainViewModel.allNewsLatest.observe(this) { news ->
             setupDataLates(news)
         }
 
         mainViewModel.isLoading.observe(this) {
             showLoading(it)
+        }
+
+        binding.seeAll.setOnClickListener{
+            startActivity(Intent(this, SeeAllNewsActivity::class.java))
         }
     }
 
@@ -118,23 +131,29 @@ class MainActivity : AppCompatActivity() {
         setupAdapter(data.result)
     }
 
+    private fun setupDataRelevansi(data: GetAllNewsResponse) {
+        setupAdapterRelevansi(data.result)
+    }
+
     private fun setupAdapter(news: ArrayList<News>) {
         binding.rvNewsLatest.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvNewsRelevansi.layoutManager = LinearLayoutManager(this)
-
-        val adapter = NewsLatestAdapter(news)
-        val adapter2 = NewsRelevansiAdapter(news)
-
+        val adapter = NewsLatestAdapter(news, limit = 5)
         binding.rvNewsLatest.adapter = adapter
-        binding.rvNewsRelevansi.adapter = adapter2
 
-        adapter2.setOnItemClickCallback(object : NewsRelevansiAdapter.OnItemClickCallback{
+        adapter.setOnItemClickCallback(object : NewsLatestAdapter.OnItemClickCallback{
             override fun onItemClicked(news: News) {
                 toDetailActivity(news)
             }
         })
+    }
 
-        adapter.setOnItemClickCallback(object : NewsLatestAdapter.OnItemClickCallback{
+    private fun setupAdapterRelevansi(news: ArrayList<News>) {
+        binding.rvNewsRelevansi.layoutManager = LinearLayoutManager(this)
+        val adapter2 = NewsRelevansiAdapter(news)
+
+        binding.rvNewsRelevansi.adapter = adapter2
+
+        adapter2.setOnItemClickCallback(object : NewsRelevansiAdapter.OnItemClickCallback{
             override fun onItemClicked(news: News) {
                 toDetailActivity(news)
             }

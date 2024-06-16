@@ -43,11 +43,20 @@ interface ApiService {
         @Path("id") id: String
     ): Call<ParentChildResponse>
 
-    @GET("news")
-    fun getNews() : Call<GetAllNewsResponse>
+    @GET("news/relevansi")
+    fun getAllNewsRelevansi() : Call<GetAllNewsResponse>
+
+    @GET("news/latest")
+    fun getAllNewsLatest() : Call<GetAllNewsResponse>
 
     @GET("news/{result_type}/{token}")
-    fun getDetailNews(
+    fun getDetailNewsRelevansi(
+        @Path("result_type") resultType: String,
+        @Path("token") token: String
+    ): Call<GetDetailNewsResponse>
+
+    @GET("news/{result_type}/{token}")
+    fun getDetailNewsLatest(
         @Path("result_type") resultType: String,
         @Path("token") token: String
     ): Call<GetDetailNewsResponse>

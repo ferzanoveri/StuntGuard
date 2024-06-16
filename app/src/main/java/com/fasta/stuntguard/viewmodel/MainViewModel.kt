@@ -11,15 +11,22 @@ import kotlinx.coroutines.launch
 
 class MainViewModel (private val repository: Repository) : ViewModel(){
     val allNews : LiveData<GetAllNewsResponse> = repository.allNews
+    val allNewsLatest: LiveData<GetAllNewsResponse> = repository.allNewsLates
     val isLoading: LiveData<Boolean> = repository.isLoading
 
     fun getUserData(): LiveData<UserModel> {
         return repository.getUser()
     }
 
-    fun getAllNews(){
+    fun getAllNewsRelevansi(){
         viewModelScope.launch {
-            repository.getAllNews()
+            repository.getAllNewsRelevansi()
+        }
+    }
+
+    fun getAllNewsLatest(){
+        viewModelScope.launch {
+            repository.getAllNewsLatest()
         }
     }
 
