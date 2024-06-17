@@ -63,16 +63,60 @@ exports.removeUser = async (req, res) => {
                 message: 'Parent not found.',
             });
         }
-        const deletedparent = await prisma.parent.delete({
-            where: {
-                parent_id: parent_id,
-            },
+
+        await prisma.$transaction(async (transaction) => {
+            // Get all children of the parent
+            const children = await transaction.child.findMany({
+                where: { parent_id: parent_id },
+                select: { child_id: true },
+            });
+
+            const childIds = children.map(child => child.child_id);
+
+            // Delete related records in the FoodDetails table
+            await transaction.foodDetails.deleteMany({
+                where: {
+                    recommendation_id: {
+                        in: (await transaction.recommendation.findMany({
+                            where: { child_id: { in: childIds } },
+                            select: { recommendation_id: true },
+                        })).map(rec => rec.recommendation_id),
+                    },
+                },
+            });
+
+            // Delete related records in the Recommendation table
+            await transaction.recommendation.deleteMany({
+                where: {
+                    child_id: { in: childIds },
+                },
+            });
+
+            // Delete related records in the StuntPredict table
+            await transaction.stuntPredict.deleteMany({
+                where: {
+                    child_id: { in: childIds },
+                },
+            });
+
+            // Delete the children records
+            await transaction.child.deleteMany({
+                where: {
+                    parent_id: parent_id,
+                },
+            });
+
+            // Finally, delete the parent record
+            await transaction.parent.delete({
+                where: {
+                    parent_id: parent_id,
+                },
+            });
         });
 
         res.status(200).json({
             status: true,
-            message: "parent deleted successfully.",
-            data: deletedparent,
+            message: "Parent deleted successfully.",
         });
     } catch (error) {
         console.error(error);
@@ -80,6 +124,8 @@ exports.removeUser = async (req, res) => {
             status: false,
             message: "An unexpected error occurred on the server.",
         });
+    } finally {
+        await prisma.$disconnect();
     }
 };
 

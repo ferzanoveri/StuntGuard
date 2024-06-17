@@ -83,7 +83,7 @@ async function updateChildAges() {
 
         for (const child of children) {
             const birthDate = new Date(child.birth_date);
-            
+
             // Perbarui usia anak jika tanggal lahirnya sama dengan tanggal hari ini
             if (today.getDate() === birthDate.getDate() && today.getMonth() === birthDate.getMonth()) {
                 const newAge = calculateChildAge(child.birth_date);
@@ -121,8 +121,8 @@ exports.getParentChilds = async (req, res) => {
 
     try {
         const parent = await prisma.parent.findUnique({
-            where: { 
-                parent_id: parent_id 
+            where: {
+                parent_id: parent_id
             }
         });
 
@@ -196,16 +196,45 @@ exports.removeChild = async (req, res) => {
                 message: "Child not found.",
             });
         }
-        const deletedChild = await prisma.child.delete({
-            where: {
-                child_id: child_id,
-            },
+
+        await prisma.$transaction(async (transaction) => {
+            // Delete related records in the FoodDetails table
+            await transaction.foodDetails.deleteMany({
+                where: {
+                    recommendation_id: {
+                        in: (await transaction.recommendation.findMany({
+                            where: { child_id: child_id },
+                            select: { recommendation_id: true },
+                        })).map(rec => rec.recommendation_id),
+                    },
+                },
+            });
+
+            // Delete related records in the Recommendation table
+            await transaction.recommendation.deleteMany({
+                where: {
+                    child_id: child_id,
+                },
+            });
+
+            // Delete related records in the StuntPredict table
+            await transaction.stuntPredict.deleteMany({
+                where: {
+                    child_id: child_id,
+                },
+            });
+
+            // Delete the child record
+            await transaction.child.delete({
+                where: {
+                    child_id: child_id,
+                },
+            });
         });
 
         res.status(200).json({
             status: true,
             message: "Child deleted successfully.",
-            data: deletedChild,
         });
     } catch (error) {
         console.error(error);
@@ -213,6 +242,8 @@ exports.removeChild = async (req, res) => {
             status: false,
             message: "An unexpected error occurred on the server.",
         });
+    } finally {
+        await prisma.$disconnect();
     }
 };
 
