@@ -192,6 +192,7 @@ def get_all_predictions():
                    sp.created_at, sp.updated_at, c.breastfeeding, sp.energy, sp.protein
             FROM StuntPredict sp
             JOIN Child c ON sp.child_id = c.child_id
+            ORDER BY sp.created_at DESC
         """
         )
         predictions = cursor.fetchall()
@@ -253,6 +254,7 @@ def get_predictions_by_child(child_id):
             FROM StuntPredict sp
             JOIN Child c ON sp.child_id = c.child_id
             WHERE sp.child_id = %s
+            ORDER BY sp.created_at DESC
         """,
             (child_id,),
         )
