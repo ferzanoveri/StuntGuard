@@ -5,12 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile.family.FormAddChildActivity">
+    tools:context=".ui.dashboard.profile.family.FormAddChildActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,12 +26,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/poppins_regular"
+            android:textStyle="bold"
             android:text="Add child data"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
     </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextFieldName"
@@ -39,11 +49,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="20dp"
         android:hint="Full Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/logo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_name"
@@ -93,6 +102,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_gender">
 
         <RadioButton
+            android:id="@+id/rb_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -101,6 +111,7 @@
             android:textSize="16dp" />
 
         <RadioButton
+            android:id="@+id/rb_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -174,6 +185,7 @@
         app:layout_constraintTop_toBottomOf="@id/menyusui">
 
         <RadioButton
+            android:id="@+id/rb_yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -182,6 +194,7 @@
             android:textSize="16dp" />
 
         <RadioButton
+            android:id="@+id/rb_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

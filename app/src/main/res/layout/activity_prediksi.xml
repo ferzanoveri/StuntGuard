@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.predict.PrediksiActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_main"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:backgroundTint="#4E7771"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_signInGreet2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Pilih Anak"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <Spinner
+        android:id="@+id/choose_child"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:entries="@array/child"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_signInGreet2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldWeight"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Berat Badan (Kg)"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_child">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weight_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldHeight"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Tinggi Badan (cm)"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldWeight">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/height_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/menyusi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Menyusui"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldHeight" />
+
+    <LinearLayout
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/menyusi">
+
+        <RadioGroup
+            android:id="@+id/rg_breastfeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Menyusui"
+                android:textSize="16dp" />
+
+            <RadioButton
+                android:id="@+id/rb_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Tidak Menyusui"
+                android:textSize="16dp" />
+        </RadioGroup>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_prediksi"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#4E7771"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Prediksi"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@id/radio" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#4E7771"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

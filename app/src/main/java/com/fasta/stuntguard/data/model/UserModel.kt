@@ -1,7 +1,6 @@
-package com.fasta.stuntguard.data.model
+package com.example.stuntguard.data.model
 
-data class
-UserModel(
+data class UserModel(
     val name: String,
     val token: String,
     val userId: String,

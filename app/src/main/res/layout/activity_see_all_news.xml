@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".news.SeeAllNewsActivity">
+    tools:context=".ui.dashboard.news.SeeAllNewsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -48,6 +48,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_news"
+        tools:listitem="@layout/item_news_latest"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

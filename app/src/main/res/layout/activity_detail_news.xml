@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".news.DetailNewsActivity">
+    tools:context=".ui.dashboard.news.DetailNewsActivity">
+
+
 
     <ImageView
         android:id="@+id/img_news"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
-        tools:src="@drawable/bakso"
+        android:background="@drawable/bakso"
+        android:foreground="@drawable/detail_color_gradient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,19 +32,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/author"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:textSize="14sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/headline"
+        app:layout_constraintStart_toStartOf="@id/headline"
+        android:fontFamily="@font/poppins_bold"
+        tools:text="author"/>
+
+    <TextView
         android:id="@+id/headline"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
-        tools:text="Perbedaan 4 Sehat 5 Sempurna dan Pedoman Gizi Seimbang"
-        android:textColor="@color/black"
+        tools:text="Perbedaan 4 Sehat 5 Sempurna dan Pedoman Gizi Seimbang dan dan dandan"
+        android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
-        android:textSize="20dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/container_description"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="210dp"/>
+        android:layout_marginTop="200dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_description"
@@ -50,19 +66,18 @@
         android:background="@drawable/bg_detail_news"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headline">
 
-        <!--        <ImageView-->
-        <!--            android:id="@+id/logo_news"-->
-        <!--            android:layout_width="64dp"-->
-        <!--            android:layout_height="64dp"-->
-        <!--            android:src="@drawable/vektor_sayuran"-->
-        <!--            app:layout_constraintStart_toStartOf="@id/container_description"-->
-        <!--            app:layout_constraintTop_toTopOf="@id/container_description"-->
-        <!--            android:layout_marginStart="15dp"-->
-        <!--            android:layout_marginTop="10dp" />-->
+<!--        <ImageView-->
+<!--            android:id="@+id/logo_news"-->
+<!--            android:layout_width="64dp"-->
+<!--            android:layout_height="64dp"-->
+<!--            android:src="@drawable/vektor_sayuran"-->
+<!--            app:layout_constraintStart_toStartOf="@id/container_description"-->
+<!--            app:layout_constraintTop_toTopOf="@id/container_description"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="10dp" />-->
 
         <TextView
             android:id="@+id/nama_perusahaan"
@@ -96,7 +111,7 @@
                 tools:text="Anak remaja terkadang menolak saran-saran orang tuanya. Kendati ditolak, saran orang tua ternyata tetap dapat bermanfaat bagi sang anak. Lebih jauh, peneliti mendapati anak yang patuh atas saran orang tua tak selalu baik untuk pertumbuhannya. Mengapa demikian?Studi menunjukkan, para remaja kerap butuh waktu untuk mencerna dan mengevaluasi saran yang orang tua berikan. Kendati tidak langsung dianggap membantu, saran yang berisi opsi-opsi cara pandang dan cara penyelesaian dari orang tua bantu sang anak membentuk strategi sendiri dalam mengatasi masalah.Penelitian tim asal University of Illinois Urbana-Champaign semula berangkat dari adanya kecenderungan remaja untuk menolak saran-saran dari orang tua saat menghadapi suatu masalah. Contohnya saat menghadapi kesulitan di masa transisi akademik dan pertemanan dari SD ke SMP.Para peneliti coba mengamati percakapan antara 100 anak kelas 5 SD dan ibunya. Pada tahap ini, peneliti mencari tahu seperti apa strategi para ibu bantu anak menghadapi masalah dan respons para anak "
                 android:textColor="@color/black"
                 android:fontFamily="@font/poppins_regular"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:justificationMode="inter_word"/>
 
         </ScrollView>

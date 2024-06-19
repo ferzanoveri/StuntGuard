@@ -1,4 +1,4 @@
-package com.fasta.stuntguard.utils
+package com.example.stuntguard.utils
 
 object Constant {
 

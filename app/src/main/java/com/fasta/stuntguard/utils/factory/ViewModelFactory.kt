@@ -1,16 +1,18 @@
-package com.fasta.stuntguard.utils.factory
+package com.example.stuntguard.utils.factory
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.fasta.stuntguard.repository.Repository
-import com.fasta.stuntguard.viewmodel.MainViewModel
-import com.fasta.stuntguard.utils.Injection
-import com.fasta.stuntguard.viewmodel.NewsViewModel
-import com.fasta.stuntguard.viewmodel.auth.LoginViewModel
-import com.fasta.stuntguard.viewmodel.auth.RegisterViewModel
-import com.fasta.stuntguard.viewmodel.predict.PredictionViewModel
-import com.fasta.stuntguard.viewmodel.profile.ProfileViewModel
+import com.example.stuntguard.repository.Repository
+import com.example.stuntguard.utils.Injection
+import com.example.stuntguard.viewmodel.MainViewModel
+import com.example.stuntguard.viewmodel.auth.LoginViewModel
+import com.example.stuntguard.viewmodel.auth.RegisterViewModel
+import com.example.stuntguard.viewmodel.calendar.CalendarViewModel
+import com.example.stuntguard.viewmodel.news.NewsViewModel
+import com.example.stuntguard.viewmodel.predict.PredictViewModel
+import com.example.stuntguard.viewmodel.profile.ProfileViewModel
+import com.example.stuntguard.viewmodel.recommendation.FoodRecommendationViewModel
 
 class ViewModelFactory(private val repository: Repository) :
     ViewModelProvider.NewInstanceFactory() {
@@ -30,17 +32,26 @@ class ViewModelFactory(private val repository: Repository) :
                 ProfileViewModel(repository) as T
             }
 
-            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
-                MainViewModel(repository) as T
-            }
-
             modelClass.isAssignableFrom(NewsViewModel::class.java) -> {
                 NewsViewModel(repository) as T
             }
 
-            modelClass.isAssignableFrom(PredictionViewModel::class.java) -> {
-                PredictionViewModel(repository) as T
+            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
+                MainViewModel(repository) as T
             }
+
+            modelClass.isAssignableFrom(PredictViewModel::class.java) -> {
+                PredictViewModel(repository) as T
+            }
+
+            modelClass.isAssignableFrom(FoodRecommendationViewModel::class.java) -> {
+                FoodRecommendationViewModel(repository) as T
+            }
+
+            modelClass.isAssignableFrom(CalendarViewModel::class.java) -> {
+                CalendarViewModel(repository) as T
+            }
+
 
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
@@ -54,4 +65,5 @@ class ViewModelFactory(private val repository: Repository) :
                 INSTANCE ?: ViewModelFactory(Injection.provideRepository(context))
             }.also { INSTANCE = it }
     }
+
 }

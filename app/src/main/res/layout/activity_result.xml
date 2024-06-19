@@ -2,61 +2,80 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".prediksi.result.ResultActivity">
+    tools:context=".ui.dashboard.predict.ResultActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/black">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:textColor="@color/red"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:text="STUNTING" />
 
     <ImageView
-        android:id="@+id/img_stunting"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/logo_stuntguard"
-        android:layout_marginTop="30dp"
+        android:id="@+id/img_status"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginHorizontal="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/status"
+        android:src="@drawable/stunting" />
 
     <TextView
-        android:id="@+id/stunting"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_desc1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:textColor="@color/black"
-        android:text="STUNTING"
-        android:textSize="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_stunting" />
-    
-    <TextView
-        android:id="@+id/deskripsi_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Anak Anda Terdeteksi Stunting"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-        android:gravity="center"
+        android:layout_marginHorizontal="32dp"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/stunting"/>
+        app:layout_constraintTop_toBottomOf="@id/img_status"
+        android:text="Our predictions indicate that the child is exhibiting signs of stunting" />
 
     <TextView
-        android:id="@+id/deskripsi_bottom"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Segera periksa ke dokter untuk pemeriksaan lebih lanjut!"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/poppins_regular"
-        android:textSize="30dp"
+        android:textAlignment="center"
         android:textColor="@color/black"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/deskripsi_top"/>
-
-
-
+        app:layout_constraintTop_toBottomOf="@id/tv_desc1"
+        android:text="Please consult a doctor immediately for a thorough examination!" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

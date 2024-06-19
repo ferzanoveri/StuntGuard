@@ -1,9 +1,9 @@
-package com.fasta.stuntguard.adapter
+package com.example.stuntguard.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.fasta.stuntguard.data.response.Child
+import com.example.stuntguard.data.response.children.Child
 import com.fasta.stuntguard.databinding.ItemFamilyBinding
 
 class FamilyAdapter(private val listChild: ArrayList<Child>) :
@@ -24,7 +24,7 @@ class FamilyAdapter(private val listChild: ArrayList<Child>) :
 
         holder.binding.apply {
             tvItemName.text = child.childName
-            tvItemUmur.text = "${child.childAge.toString()} tahun"
+            tvItemUmur.text = "${child.childAge.toString()} bulan"
         }
     }
 

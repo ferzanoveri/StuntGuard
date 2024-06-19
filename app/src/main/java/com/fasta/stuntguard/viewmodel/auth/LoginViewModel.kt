@@ -1,11 +1,11 @@
-package com.fasta.stuntguard.viewmodel.auth
+package com.example.stuntguard.viewmodel.auth
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.fasta.stuntguard.data.model.UserModel
-import com.fasta.stuntguard.data.response.LoginResponse
-import com.fasta.stuntguard.repository.Repository
+import com.example.stuntguard.data.model.UserModel
+import com.example.stuntguard.data.response.auth.LoginResponse
+import com.example.stuntguard.repository.Repository
 import kotlinx.coroutines.launch
 
 class LoginViewModel (private val repository: Repository) : ViewModel() {

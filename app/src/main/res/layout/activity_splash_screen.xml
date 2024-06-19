@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".splashscreen.SplashScreenActivity">
+    tools:context=".ui.splashscreen.SplashScreenActivity">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_stuntguard"
+        android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

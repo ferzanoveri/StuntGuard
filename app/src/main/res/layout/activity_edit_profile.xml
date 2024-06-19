@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile.edit.EditProfileActivity">
+    tools:context=".ui.dashboard.profile.edit.EditProfileActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,13 +21,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_arrow_back_24"/>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Family Member"
+            android:fontFamily="@font/poppins_regular"
+            android:textStyle="bold"
+            android:text="Edit Profile"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -37,10 +37,12 @@
         android:id="@+id/logo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/logo_stuntguard"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@id/edit_nama"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_nama"
@@ -49,9 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="16dp"
-        android:hint="Nama Lengkap"
         android:fontFamily="@font/poppins_regular"
+        android:hint="Nama Lengkap"
         android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@id/edit_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo">
@@ -70,9 +73,10 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="16dp"
-        android:hint="Email"
         android:fontFamily="@font/poppins_regular"
+        android:hint="Email"
         android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@id/edit_nomor_hp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_nama">
@@ -91,9 +95,10 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="16dp"
-        android:hint="Nomor HP"
         android:fontFamily="@font/poppins_regular"
+        android:hint="Nomor HP"
         android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_editprofile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_email">
@@ -112,10 +117,12 @@
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="70dp"
         android:backgroundTint="#4E7771"
-        android:textColor="@color/white"
-        android:textSize="16dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Ubah Profile"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_nomor_hp" />
 
 

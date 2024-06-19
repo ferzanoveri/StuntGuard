@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile.family.FamilyMemberActivity">
+    tools:context=".ui.dashboard.profile.family.FamilyMemberActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/poppins_bold"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
                     android:text="Family Member"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -83,29 +84,28 @@
                     android:background="@drawable/itemparent"
                     android:padding="12dp">
 
-                    <ImageView
-                        android:id="@+id/img_item_photo"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        card_view:layout_constraintBottom_toBottomOf="parent"
-                        card_view:layout_constraintStart_toStartOf="parent"
-                        card_view:layout_constraintTop_toTopOf="parent"
-                        tools:src="@drawable/girl"
-                        android:src="@drawable/girl"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/img_item_photo"-->
+<!--                        android:layout_width="70dp"-->
+<!--                        android:layout_height="70dp"-->
+<!--                        card_view:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        card_view:layout_constraintStart_toStartOf="parent"-->
+<!--                        card_view:layout_constraintTop_toTopOf="parent"-->
+<!--                        tools:src="@drawable/girl"-->
+<!--                        android:src="@drawable/girl"/>-->
 
                     <TextView
                         android:id="@+id/tv_item_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
-                        android:layout_toEndOf="@id/img_item_photo"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/poppins_regular"
                         card_view:layout_constraintEnd_toEndOf="parent"
-                        card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
+                        card_view:layout_constraintStart_toStartOf="parent"
                         card_view:layout_constraintTop_toTopOf="parent"
                         card_view:layout_constraintBottom_toBottomOf="parent"
                         tools:text="users"

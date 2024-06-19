@@ -1,20 +1,24 @@
-package com.fasta.stuntguard.data.api
+package com.example.stuntguard.data.api
 
-import com.fasta.stuntguard.data.response.ChangePasswordResponse
-import com.fasta.stuntguard.data.response.GetAllNewsResponse
-import com.fasta.stuntguard.data.response.GetDetailNewsResponse
-import com.fasta.stuntguard.data.response.LoginResponse
-import com.fasta.stuntguard.data.response.ParentChildResponse
-import com.fasta.stuntguard.data.response.RegisterResponse
-import com.fasta.stuntguard.data.response.ChangeProfileResponse
-import com.fasta.stuntguard.data.response.PostChildResponse
-import com.fasta.stuntguard.data.response.PredictionResponse
+import com.example.stuntguard.data.response.users.ChangePasswordResponse
+import com.example.stuntguard.data.response.users.ChangeProfileResponse
+import com.example.stuntguard.data.response.recommendation.FoodRecomResponse
+import com.example.stuntguard.data.response.news.GetAllNewsResponse
+import com.example.stuntguard.data.response.children.GetDetailChildResponse
+import com.example.stuntguard.data.response.news.GetDetailNewsResponse
+import com.example.stuntguard.data.response.users.GetDetailUserResponse
+import com.example.stuntguard.data.response.prediction.GetPredictionByChildIdResponse
+import com.example.stuntguard.data.response.auth.LoginResponse
+import com.example.stuntguard.data.response.children.ParentChildResponse
+import com.example.stuntguard.data.response.children.PostChildResponse
+import com.example.stuntguard.data.response.prediction.PostPredictionResponse
+import com.example.stuntguard.data.response.recommendation.RecomByChildIDResponse
+import com.example.stuntguard.data.response.auth.RegisterResponse
+import com.example.stuntguard.data.response.recommendation.PostRecomResponse
 import retrofit2.Call
-import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
@@ -24,7 +28,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("register")
     fun postRegister(
-        @Field("parentName") parentName: String,
+        @Field("parent_name") parentName: String,
         @Field("email") email: String,
         @Field("phone") phone: String,
         @Field("password") password: String,
@@ -38,26 +42,37 @@ interface ApiService {
         @Field("password") password: String
     ): Call<LoginResponse>
 
+
     @GET("parent/childs/{id}")
     fun getParentChild(
         @Path("id") id: String
     ): Call<ParentChildResponse>
 
+    @FormUrlEncoded
+    @POST("child/{id}")
+    fun postChild(
+        @Path("id") id: String,
+        @Field("child_name") childName: String,
+        @Field("child_gender") childGender: String,
+        @Field("birth_date") birthDate: String,
+        @Field("birth_weight") birthWeight: Double,
+        @Field("birth_height") birthHeight: Int,
+        @Field("breastfeeding") breastfeeding: String
+    ): Call<PostChildResponse>
+
     @GET("news/relevansi")
-    fun getAllNewsRelevansi() : Call<GetAllNewsResponse>
+    fun getAllNewsRelevansi(): Call<GetAllNewsResponse>
 
     @GET("news/latest")
-    fun getAllNewsLatest() : Call<GetAllNewsResponse>
+    fun getAllNewsLatest(): Call<GetAllNewsResponse>
 
-    @GET("news/{result_type}/{token}")
+    @GET("news/relevansi/{token}")
     fun getDetailNewsRelevansi(
-        @Path("result_type") resultType: String,
         @Path("token") token: String
     ): Call<GetDetailNewsResponse>
 
-    @GET("news/{result_type}/{token}")
+    @GET("news/latest/{token}")
     fun getDetailNewsLatest(
-        @Path("result_type") resultType: String,
         @Path("token") token: String
     ): Call<GetDetailNewsResponse>
 
@@ -79,30 +94,42 @@ interface ApiService {
         @Field("phone") phone: String?
     ): Call<ChangeProfileResponse>
 
-    @FormUrlEncoded
-    @POST("child/{id}")
-    fun postChild(
-        @Path("id") id: String,
-        @Field("child_name") childName: String,
-        @Field("child_gender") childGender: String,
-        @Field("birth_date") birthDate: String,
-        @Field("birth_weight") birthWeight: Double,
-        @Field("birth_height") birthHeight: Int,
-        @Field("breastfeeding") breastfeeding: String
-    ): Call<PostChildResponse>
+    @GET("user/id/{id}")
+    fun getDetailUser(
+        @Path("id") id: String
+    ): Call<GetDetailUserResponse>
 
+    @GET("child/id/{id}")
+    fun getDetailChild(
+        @Path("id") id: String
+    ): Call<GetDetailChildResponse>
 
     @FormUrlEncoded
     @POST("predict/{child_id}")
-    fun postPrediction(
+    fun postPredict(
         @Path("child_id") childId: String,
         @Field("child_weight") childWeight: Float,
         @Field("child_height") childHeight: Float,
-        @Field("breastfeeding") breastfeeding: Boolean?
-    ): Call<PredictionResponse>
+        @Field("breastfeeding") breastfeeding: String?
+    ): Call<PostPredictionResponse>
 
-    companion object {
-        const val RESULT_TYPE_LATEST = "latest"
-        const val RESULT_TYPE_RELEVANSI = "relevansi"
-    }
+    @GET("predict/child/{child_id}")
+    fun getPredictByChildId(
+        @Path("child_id") childId: String
+    ) : Call<GetPredictionByChildIdResponse>
+
+    @POST("recom/{predict_id}")
+    fun postFoodRecom(
+        @Path("predict_id") predictId: String
+    ): Call<PostRecomResponse>
+
+    @GET("recom/child/{child_id}")
+    fun getRecomByChildId(
+        @Path("id") id: String
+    ): Call<RecomByChildIDResponse>
+
+    @GET("recom/id/{recommendation_id}/foods")
+    fun foodRecom(
+        @Path("recommendation_id") recommendationId: String
+    ): Call<FoodRecomResponse>
 }

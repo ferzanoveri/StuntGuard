@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".auth.LoginActivity">
+    tools:context=".ui.auth.LoginActivity">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/logo_stuntguard"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,29 +25,35 @@
 
         <TextView
             android:id="@+id/tv_signInGreet1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Let Sign You In"
-            android:textSize="16sp"
+            android:gravity="center"
+            android:text="Hello Again!"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_signInGreet2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
-            android:text="Welcome Back!"
+            android:gravity="center"
+            android:text="Welcome Back"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_signInGreet1" />
 
         <TextView
             android:id="@+id/tv_signInGreet3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
             android:text="You've Been Missed"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_signInGreet2" />
 

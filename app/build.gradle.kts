@@ -67,4 +67,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")
+
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }

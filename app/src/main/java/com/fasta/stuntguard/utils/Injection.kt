@@ -1,10 +1,10 @@
-package com.fasta.stuntguard.utils
+package com.example.stuntguard.utils
 
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.fasta.stuntguard.repository.Repository
+import com.example.stuntguard.repository.Repository
 
 private val Context.datastore : DataStore<Preferences> by preferencesDataStore(name = "settings")
 
