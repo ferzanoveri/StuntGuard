@@ -71,6 +71,13 @@ class CalendarActivity : AppCompatActivity() {
                 binding.getFoodRecomendation.visibility = View.GONE
             }
         }
+
+        calendarViewModel.predictByChildId.observe(this) {
+            binding.weightChild.text = it.data[0].childWeight.toString()
+            binding.heightChild.text = it.data[0].childHeight.toString()
+            updateStuntingStatus(it.data[0])
+        }
+
     }
 
     private fun setupView() {
@@ -80,6 +87,19 @@ class CalendarActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
     }
+
+//    private fun updateStuntingStatus(isStunting: Boolean) {
+//        val stuntingStatus = binding.stuntingStatus
+//        val indicator = binding.indicator
+//
+//        if (isStunting) {
+//            stuntingStatus.text = "Stunting"
+//            indicator.setBackgroundResource(R.drawable.indicator_red)
+//        } else {
+//            stuntingStatus.text = "Not Stunting"
+//            indicator.setBackgroundResource(R.drawable.indicator_green)
+//        }
+//    }
 
     private fun setupAction() {
         binding.getFoodRecomendation.setOnClickListener {
@@ -114,6 +134,21 @@ class CalendarActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    private fun updateStuntingStatus(prediction: ChildPrediction) {
+        val stuntingIndicator = binding.stuntingIndicator
+        val stuntingStatus = binding.stuntingStatus
+
+        if (prediction.predictResult == 1) {
+            stuntingIndicator.setBackgroundResource(R.drawable.indicator_red)
+            stuntingStatus.text = "Stunting"
+        } else {
+            stuntingIndicator.setBackgroundResource(R.drawable.indicator_green)
+            stuntingStatus.text = "Not Stunting"
+        }
+
+        stuntingIndicator.visibility = View.VISIBLE
     }
 
     private fun setupSpinner(children: ArrayList<Child>) {
