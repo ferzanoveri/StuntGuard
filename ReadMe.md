@@ -79,7 +79,7 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 
 # Cloud Services
 
-## ![Cloud Architecture](images/CloudArchitecture.png)
+## ![Cloud Architecture](images/CloudArchitectures.png)
 
 ## Deskripsi Layanan Cloud
 
