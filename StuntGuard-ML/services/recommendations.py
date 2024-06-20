@@ -1,14 +1,6 @@
 from flask import request, jsonify
 import numpy as np
-import mysql.connector
 import os
-from datetime import datetime, date
-from dotenv import load_dotenv
-from sklearn.neighbors import NearestNeighbors
-from sklearn.preprocessing import StandardScaler, FunctionTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.metrics.pairwise import cosine_distances
-import tensorflow as tf
 from db import *
 from nanoid import generate
 import pandas as pd
