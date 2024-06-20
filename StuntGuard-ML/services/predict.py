@@ -9,7 +9,7 @@ import pandas as pd
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Path relatif ke file model h5
-model_path = os.path.join(current_dir,"random_forest_model2.pkl")
+model_path = os.path.join(current_dir,"PredictModel.pkl")
 # Load the model using pickle
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
@@ -94,14 +94,11 @@ def post_predict(child_id):
         print(prediction)
         predict_result = bool(prediction[0])
 
-        # energy = (((prediction_data['Body Length'] / 5) * predict_result / 5) + ((prediction_data['Age'] + 1) * 65))
-        # protein = (((prediction_data['Body Length'] / 5) * predict_result / 5) + (prediction_data['Age'] * 2))
-
         if prediction_data["Age"] < 36:
             if prediction_data["Gender"]:
                 energy = float((0.167 * child_weight) + (15.174 * child_height) - 617.6)
             else:
-                energy = float((16.252 * child_weight) + (1.618 * child_height) - 413.5)
+                energy = float((16.252 * child_weight) + (10.232 * child_height) - 413.5)
         else:
             if prediction_data["Gender"]:
                 energy = float((19.49 * child_weight) + (1.303 * child_height) + 414.9)

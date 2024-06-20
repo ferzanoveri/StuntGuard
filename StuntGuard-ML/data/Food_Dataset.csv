@@ -1,0 +1,392 @@
+,Nama,Kategori,Jumlah Porsi,Takaran Porsi,Kalori (kal),Lemak (g),Lemak Jenuh (g),Lemak Tak Jenuh Ganda (g),Lemak Tak Jenuh Tunggal (g),Kolestrol (g),Protein (g),Karbohidrat (g),Serat (g),Gula (g),Sodium (g),Kalium (g)
+0,Alpukat,Buah Buahan,100,gram (g),160.0,14.66,2.126,1.816,9.799,0.0,2.0,8.53,6.7,0.66,7.0,485.0
+1,Guacamole,Buah Buahan,1,sdm,23.0,02.08,302,258,1.393,0.0,0.29,1.24,1.0,0.1,22.0,69.0
+2,Guacamole dengan Tomat,Buah Buahan,100,gram (g),116.0,9.94,1.446,1.258,6.625,0.0,1.62,7.64,4.9,1.37,201.0,393.0
+3,Guacamole dengan Tomat dan Cabe Paprika,Buah Buahan,1,mangkok,266.0,22.72,3.304,2.882,15.129,0.0,3.77,17.75,11.4,3.31,459.0,913.0
+4,Buah Anggur,Buah Buahan,1,tanpa biji,3.0,0.01,3,2,0.0,0.0,0.04,0.9,0.0,0.77,0.0,10.0
+5,"Anggur (Merah atau Hijau, Jenis Varietas Eropa Seperti Thompson tanpa Biji)",Buah Buahan,100,gram (g),69.0,0.16,54,48,7,0.0,0.72,18.1,0.9,15.48,2.0,191.0
+6,Anggur Jenis Amerika (Kulit Licin),Buah Buahan,1,anggur,2.0,0.01,3,2,0.0,0.0,0.02,0.41,0.0,0.39,0.0,5.0
+7,Anggur Jenis Eropa,Buah Buahan,1,tanpa biji,3.0,0.01,3,2,0.0,0.0,0.04,0.9,0.0,0.77,0.0,10.0
+8,Apel,Buah Buahan,1,sedang (diameter 7 cm) (kira-kira 3 per 450 g),72.0,0.23,39,0.07,0.01,0.0,0.36,19.06,3.3,14.34,1.0,148.0
+9,Apel (tanpa Kulit),Buah Buahan,100,gram (g),48.0,0.13,21,37,5,0.0,0.27,12.76,1.3,10.1,0.0,90.0
+10,Apel Emas Lezat,Buah Buahan,1,sedang (diameter 7 cm),72.0,0.23,38,71,0.01,0.0,0.36,19.06,3.3,14.33,1.0,148.0
+11,Apel Merah Lezat,Buah Buahan,1,sedang (diameter 7 cm),72.0,0.23,38,71,0.01,0.0,0.36,19.06,3.3,14.33,1.0,148.0
+12,Apel Fuji,Buah Buahan,100,gram (g),52.0,0.17,28,51,7,0.0,0.26,13.81,2.4,10.39,1.0,107.0
+13,Blewah Melon,Buah Buahan,100,gram (g),34.0,0.19,51,81,3,0.0,0.84,8.16,0.9,7.86,16.0,267.0
+14,Blueberi,Buah Buahan,100,gram (g),57.0,0.33,28,146,47,0.0,0.74,14.49,2.4,9.96,1.0,77.0
+15,"Blueberry (tanpa Pemanis, Beku)",Buah Buahan,100,gram (g),51.0,0.64,53,279,91,0.0,0.42,12.17,2.7,8.45,1.0,54.0
+16,"Blueberry (Manis, Beku)",Buah Buahan,100,gram (g),81.0,0.13,11,57,18,0.0,0.4,21.95,2.2,19.72,1.0,60.0
+17,Blueberry Tawar dalam Kemasan Air (Dimasak atau Kalengan),Buah Buahan,1,mangkok,93.0,0.54,46,239,76,0.0,1.22,23.69,3.9,16.27,2.0,112.0
+18,Beri,Buah Buahan,100,gram (g),33.0,0.3,16,156,43,0.0,0.68,7.98,2.1,4.87,1.0,150.0
+19,Stroberi,Buah Buahan,100,gram (g),32.0,0.3,15,155,43,0.0,0.67,7.68,2.0,4.66,1.0,153.0
+20,Rasberi,Buah Buahan,100,gram (g),52.0,0.65,19,375,64,0.0,1.2,11.94,6.5,4.42,1.0,151.0
+21,Blackberry,Buah Buahan,100,gram (g),43.0,0.49,14,0.28,47,0.0,1.39,9.61,5.3,4.88,1.0,162.0
+22,Campuran Buah Kering,Buah Buahan,100,gram (g),244.0,0.44,0.06,82,63,0.0,2.19,64.81,7.4,47.66,17.0,746.0
+23,Apel Kering,Buah Buahan,100,gram (g),243.0,0.32,52,93,13,0.0,0.93,65.89,8.7,57.19,87.0,450.0
+24,Cranberry Kering,Buah Buahan,100,gram (g),308.0,1.37,103,658,198,0.0,0.07,82.36,5.7,65.0,3.0,40.0
+25,Prune Kering,Buah Buahan,100,gram (g),240.0,0.38,88,62,53,0.0,2.18,63.88,7.1,38.13,2.0,732.0
+26,Aprikot Kering,Buah Buahan,100,gram (g),241.0,0.51,17,74,74,0.0,3.39,62.64,7.3,53.44,10.0,1162.0
+27,Buah Pir,Buah Buahan,100,gram (g),58.0,0.12,6,29,26,0.0,0.38,15.46,3.1,9.8,1.0,119.0
+28,Pir (Dimasak atau Kalengan),Buah Buahan,1,mangkok,197.0,0.35,19,0.08,72,0.0,0.53,50.99,4.3,40.43,13.0,173.0
+29,Pir Asia,Buah Buahan,1,"buah dengan tinggi 5,5 cm x diameter 6,5 cm",51.0,0.28,15,67,0.06,0.0,0.61,12.99,4.4,8.6,0.0,148.0
+30,"Pir (Padat dan Cair, Kemasan Sirup Ringan, Kalengan)",Buah Buahan,1,"mangkok, separuh",143.0,0.08,5,18,15,0.0,0.48,38.08,4.0,30.37,13.0,166.0
+31,Ceri Manis,Buah Buahan,1,ceri,4.0,0.01,3,4,3,0.0,0.07,01.09,0.1,0.87,0.0,15.0
+32,Bing Ceri,Buah Buahan,100,gram (g),63.0,0.2,38,52,47,0.0,01.06,16.01,2.1,12.82,0.0,222.0
+33,Ceri Beku,Buah Buahan,100,gram (g),46.0,0.44,0.1,132,0.12,0.0,0.92,11.02,1.6,09.02,1.0,124.0
+34,Ceri Merah Asam,Buah Buahan,100,gram (g),50.0,0.3,68,0.09,82,0.0,1.0,12.18,1.6,8.49,3.0,173.0
+35,Jeruk,Buah Buahan,1,"buah (diameter 6,5 cm)",62.0,0.16,0.02,33,0.03,0.0,1.23,15.39,3.1,12.25,0.0,237.0
+36,Jeruk Keprok (Jeruk Mandarin),Buah Buahan,1,"kecil (diameter 5,5 cm)",37.0,0.22,27,46,42,0.0,0.57,9.34,1.3,7.41,1.0,116.0
+37,Jeruk Bali,Buah Buahan,100,gram (g),32.0,0.1,14,24,13,0.0,0.63,08.08,1.1,6.98,0.0,139.0
+38,Jeruk Bali (Merah dan Merah Muda),Buah Buahan,100,gram (g),42.0,0.14,0.02,36,0.02,0.0,0.77,10.66,1.6,6.89,0.0,135.0
+39,Jeruk Mandarin (Kaleng atau Beku),Buah Buahan,100,gram (g),61.0,0.1,12,0.02,18,0.0,0.45,16.19,0.7,15.49,6.0,78.0
+40,"Jeruk Keprok (Jeruk Mandarin, Jus Kemasan, Kalengan)",Buah Buahan,1,gelas,92.0,0.07,7,12,12,0.0,1.54,23.83,1.7,22.09,12.0,331.0
+41,"Jeruk Keprok (Jeruk Mandarin,  Sirup Ringan Kemasan, Kalengan)",Buah Buahan,1,gelas,154.0,0.25,0.03,0.05,45,0.0,1.13,40.8,1.8,39.03,15.0,197.0
+42,Kelapa,Buah Buahan,100,gram (g),354.0,33.49,29.698,366,1.425,0.0,3.33,15.23,9.0,6.23,20.0,356.0
+43,Kelapa Kering,Buah Buahan,100,gram (g),660.0,64.53,57.218,706,2.745,0.0,6.88,23.65,16.3,7.35,37.0,543.0
+44,Air Kelapa,Buah Buahan,1,gelas,46.0,0.48,422,5,19,0.0,1.73,8.9,2.6,6.26,252.0,600.0
+45,Kismis,Buah Buahan,100,gram (g),299.0,0.46,58,37,51,0.0,03.07,79.18,3.7,59.19,11.0,749.0
+46,Kismis (tanpa Biji),Buah Buahan,100,gram (g),299.0,0.46,58,37,51,0.0,03.07,79.18,3.7,59.19,11.0,749.0
+47,Kismis Emas (tanpa Biji),Buah Buahan,100,gram (g),302.0,0.46,151,135,19,0.0,3.39,79.52,4.0,59.19,12.0,746.0
+48,Kismis Dilapisi Coklat,Buah Buahan,1,kismis,4.0,0.15,88,5,47,0.0,0.04,0.68,0.0,0.62,0.0,5.0
+49,Kismis Dilapisi Coklat Susu,Buah Buahan,100,gram (g),390.0,14.8,8.8,0.51,4.74,3.0,4.1,68.3,4.2,62.22,36.0,514.0
+50,Kurma,Buah Buahan,1,kurma,23.0,0.03,3,2,3,0.0,0.2,6.23,0.7,5.26,0.0,54.0
+51,Mangga,Buah Buahan,100,gram (g),65.0,0.27,66,51,101,0.0,0.51,17.0,1.8,14.8,2.0,156.0
+52,Mangga Kering,Buah Buahan,1,"untai (8,5 cm x 2 cm x 0,3 cm)",16.0,0.04,0.01,7,15,0.0,0.07,04.08,0.3,3.76,0.0,23.0
+53,Nektar Mangga,Buah Buahan,1,mangkok,145.0,0.28,65,0.05,0.1,0.0,0.5,37.9,1.8,35.67,5.0,140.0
+54,Nanas,Buah Buahan,100,gram (g),48.0,0.12,9,42,14,0.0,0.54,12.63,1.4,9.26,1.0,115.0
+55,"Nanas (Padat dan Cair, Air Kemasan, Kalengan)",Buah Buahan,1,"mangkok, lumatan, irisan, atau potongan",79.0,0.22,15,76,27,0.0,01.06,20.42,2.0,18.45,2.0,312.0
+56,"Nanas Potongan (Manis, Beku)",Buah Buahan,100,gram (g),86.0,0.1,7,35,12,0.0,0.4,22.2,1.1,21.1,2.0,100.0
+57,"Nanas (Padat dan Cair, Kemasan Sirup Ringan, Kalengan)",Buah Buahan,1,"mangkok, lumatan, irisan, atau potongan",131.0,0.3,23,101,33,0.0,0.91,33.89,2.0,31.88,3.0,265.0
+58,"Nanas (Padat dan Cair, Jus Kemasan, Kalengan)",Buah Buahan,1,"mangkok, lumatan, irisan, atau potongan",149.0,0.2,15,72,25,0.0,01.05,39.09,2.0,35.98,2.0,304.0
+59,Pepaya,Buah Buahan,100,gram (g),39.0,0.14,43,31,38,0.0,0.61,9.81,1.8,5.9,3.0,257.0
+60,Jus Pepaya,Buah Buahan,100,ml,60.0,0.16,49,37,43,0.0,0.18,15.16,0.6,14.53,5.0,32.0
+61,Pisang,Buah Buahan,100,gram (g),89.0,0.33,112,73,32,0.0,01.09,22.84,2.6,12.23,1.0,358.0
+62,Pisang Apel,Buah Buahan,1,buah,65.0,0.24,82,53,23,0.0,0.8,16.67,1.9,8.93,1.0,261.0
+63,Rasberi Merah,Buah Buahan,100,gram (g),52.0,0.65,19,375,64,0.0,1.2,11.94,6.5,4.42,1.0,151.0
+64,Rasberi Beku tanpa Pemanis,Buah Buahan,100,gram (g),52.0,0.65,19,375,64,0.0,1.2,11.94,6.5,4.42,1.0,136.0
+65,Rasberi Beku,Buah Buahan,100,gram (g),103.0,0.16,5,89,15,0.0,0.7,26.16,4.4,21.76,1.0,114.0
+66,Salad Buah,Buah Buahan,1,porsi (95 g),54.0,0.81,614,42,51,0.0,0.63,12.5,1.7,10.23,5.0,134.0
+67,Semangka,Buah Buahan,100,gram (g),30.0,0.15,16,0.05,37,0.0,0.61,7.55,0.4,6.2,1.0,112.0
+68,Stroberi Beku tanpa Pemanis,Buah Buahan,100,gram (g),35.0,0.11,6,54,15,0.0,0.43,9.13,2.1,4.56,2.0,148.0
+69,Stroberi Beku,Buah Buahan,100,gram (g),87.0,0.14,7,66,19,0.0,0.52,23.46,1.9,21.49,2.0,98.0
+70,Stroberi Beku dengan Gula,Buah Buahan,1,mangkok,222.0,0.36,18,168,48,0.0,1.33,59.82,4.8,54.8,5.0,250.0
+71,Stroberi dalam Sirup (Dimasak atau Kalengan),Buah Buahan,100,gram (g),92.0,0.26,14,129,36,0.0,0.56,23.53,1.7,21.83,4.0,86.0
+72,Ayam,Daging,100,gram (g),237.0,13.49,3.758,2.945,5.296,87.0,27.07,0.0,0.0,0.0,404.0,221.0
+73,Ayam (Kulit tidak Dimakan),Daging,100,gram (g),188.0,7.35,2.023,1.676,2.638,88.0,28.69,0.0,0.0,0.0,408.0,241.0
+74,Dada Ayam,Daging,100,gram (g),195.0,7.72,2.172,1.646,3.005,83.0,29.55,0.0,0.0,0.0,393.0,243.0
+75,Paha Ayam,Daging,1,"kecil (hasil setelah masak, tulang dihilangkan)",135.0,8.45,2.362,1.865,3.354,51.0,13.67,0.0,0.0,0.0,223.0,121.0
+76,Sayap Ayam,Daging,1,"kecil (hasil setelah masak, tulang dihilangkan)",81.0,5.4,1.513,1.15,2.121,23.0,7.46,0.0,0.0,0.0,113.0,51.0
+78,Dada Ayam Goreng tanpa Pelapis (Kulit Dimakan),Daging,100,gram (g),216.0,9.1,2.414,2.091,3.583,92.0,31.67,0.0,0.0,0.0,430.0,267.0
+79,Sayap Ayam Goreng tanpa Pelapis (Kulit Dimakan),Daging,1,"kecil (hasil setelah masak, tulang dihilangkan)",89.0,6.33,1.651,1.468,2.504,31.0,7.56,0.0,0.0,0.0,120.0,52.0
+80,Paha Ayam Goreng tanpa Pelapis (Kulit Dimakan),Daging,1,"sedang (hasil setelah masak, tulang dihilangkan)",119.0,6.79,1.676,1.717,2.67,56.0,13.6,0.0,0.0,0.0,211.0,116.0
+82,Daging Ayam (Panggang),Daging,100,gram (g),111.0,2.7,0.67,0.67,0.83,65.0,20.33,0.0,0.0,0.0,75.0,238.0
+83,Daging dan Kulit Ayam (Panggang),Daging,100,gram (g),216.0,15.85,4.53,3.4,6.64,73.0,17.14,0.0,0.0,0.0,68.0,196.0
+84,Daging Babi Panggang,Daging,100,gram (g),247.0,14.59,5.348,1.205,6.483,82.0,26.98,0.0,0.0,0.0,221.0,406.0
+85,Babi Panggang (Hanya Daging yang Dimakan),Daging,100,gram (g),208.0,9.57,3.489,755,4.294,81.0,28.45,0.0,0.0,0.0,289.0,423.0
+86,Bahu Daging Babi Panggang,Daging,1,"irisan tipis (berdiameter sekitar 7,5 cm x 0,3 cm)",41.0,2.98,1.096,286,1.32,13.0,3.25,0.0,0.0,0.0,32.0,46.0
+87,Bakso Daging Sapi,Daging,1,sedang,57.0,3.69,1.394,205,163,1.57,3.47,2.12,21.0,0.1,0.42,134.0
+88,Bakso Daging Sapi dan Babi,Daging,1,kecil,25.0,1.43,0.53,65,85,607,1.9,1.0,10.0,0.1,0.2,63.0
+89,Bakso Ayam,Daging,1,sedang,45.0,1.57,0.45,354,551,23.0,5.43,1.94,0.1,0.41,124.0,56.0
+90,Bakso Kalkun,Daging,1,sedang,42.0,1.16,383,0.31,277,21.0,5.5,1.94,0.1,0.41,121.0,65.0
+91,Bakso Daging Babi,Daging,1,sedang,47.0,1.95,566,355,853,23.0,5.55,1.33,0.1,0.14,223.0,80.0
+92,Daging Bebek,Daging,100,gram (g),132.0,5.95,2.32,0.75,1.54,77.0,18.28,0.0,0.0,0.0,74.0,271.0
+93,Dada Ayam (Kulit tidak Dimakan),Daging,100,gram (g),164.0,3.54,1.002,764,1.23,84.0,30.76,0.0,0.0,0.0,396.0,254.0
+94,Dada Ayam Masak,Daging,100,gram (g),110.0,1.24,0.33,0.02,0.28,0.3,23.09,0.0,58.0,0.0,0.0,65.0
+95,Daging Dada Kalkun,Daging,100,gram (g),104.0,1.66,0.48,0.0,274,0.54,17.07,4.21,43.0,0.5,3.51,1015.0
+96,"Daging Dada Kalkun (Digoreng, Dimasak, Dipanggang)",Daging,100,gram (g),135.0,0.74,0.24,0.2,0.13,83.0,30.06,0.0,0.0,0.0,52.0,292.0
+97,Daging Babi,Daging,100,gram (g),271.0,17.04,6.168,1.438,7.576,90.0,27.34,0.0,0.0,0.0,384.0,351.0
+98,Potongan Daging Babi,Daging,100,gram (g),250.0,14.57,5.402,1.413,6.381,83.0,27.91,0.0,0.0,0.0,386.0,404.0
+100,Potongan Daging Domba,Daging,1,"kecil (112 g, dengan tulang, mentah) (hasil setelah masak, tulang dihhilangkan)",226.0,17.55,7.669,1.302,7.186,68.0,15.86,0.0,0.0,0.0,281.0,184.0
+101,Potongan Daging Domba (Hanya Daging yang Dimakan),Daging,100,gram (g),215.0,10.48,3.857,796,4.382,93.0,28.17,0.0,0.0,0.0,403.0,327.0
+102,Daging Sapi,Daging,100,gram (g),288.0,19.54,7.731,708,8.353,87.0,26.33,0.0,0.0,0.0,384.0,315.0
+103,Daging Sapi Giling,Daging,100,gram (g),276.0,18.58,7.192,516,8.557,88.0,25.35,0.0,0.0,0.0,400.0,287.0
+104,Daging Sapi Giling tanpa Lemak,Daging,100,gram (g),269.0,17.67,6.71,513,7.833,90.0,25.54,0.0,0.0,0.0,397.0,302.0
+105,Daging Sapi Panggang,Daging,100,gram (g),267.0,17.32,6.813,627,7.355,76.0,25.91,0.0,0.0,0.0,217.0,292.0
+106,Daging Kornet,Daging,1,"irisan tipis (sekitar 11 cm x 6,5 cm x 0,3 cm)",53.0,3.99,1.331,141,1.936,21.0,3.82,0.1,0.0,0.0,238.0,30.0
+107,Daging Sapi Ekstra tanpa Lemak,Daging,100,gram (g),248.0,15.35,5.843,0.48,6.615,89.0,25.71,0.0,0.0,0.0,394.0,315.0
+108,Daging Sapi (95% tanpa Lemak / 5% Lemak),Daging,100,gram (g),137.0,5.0,2.25,341,257,2.151,21.41,0.0,62.0,0.0,0.0,66.0
+109,Daging Sapi (85% tanpa Lemak / 15% Lemak),Daging,100,gram (g),215.0,15.0,5.865,935,433,6.555,18.59,0.0,68.0,0.0,0.0,66.0
+110,Daging Sapi (70% tidak Berlemak / 30% Lemak),Daging,100,gram (g),332.0,30.0,11.289,1.826,696,13.161,14.35,0.0,78.0,0.0,0.0,67.0
+111,Daging Sapi Panggang (Hanya Bagian tanpa Lemak yang Dimakan),Daging,100,gram (g),198.0,8.52,3.228,281,3.531,75.0,28.32,0.0,0.0,0.0,217.0,306.0
+112,Daging Domba,Daging,100,gram (g),292.0,20.77,8.756,1.497,8.747,96.0,24.32,0.0,0.0,0.0,394.0,307.0
+113,Domba Giling,Daging,100,gram (g),282.0,23.41,10.19,1.85,9.6,73.0,16.56,0.0,0.0,0.0,59.0,222.0
+114,Daging Domba Panggang,Daging,100,gram (g),266.0,18.15,7.633,1.394,7.533,92.0,23.93,0.0,0.0,0.0,228.0,281.0
+115,Potongan Daging Domba (Daging dan Lemak Dimakan),Daging,100,gram (g),314.0,24.37,10.652,1.809,9.98,95.0,22.03,0.0,0.0,0.0,390.0,255.0
+116,Iga Babi Panggang dengan Saus,Daging,100,gram (g),310.0,22.33,8.068,2.182,9.926,87.0,21.44,4.2,0.4,1.29,334.0,287.0
+117,Kalkun,Daging,100,gram (g),187.0,07.02,1.999,1.749,2.21,77.0,28.9,0.0,0.0,0.0,69.0,291.0
+118,Paha Ayam (Kulit tidak Dimakan),Daging,100,gram (g),207.0,10.79,3.005,2.459,4.115,94.0,25.72,0.0,0.0,0.0,410.0,236.0
+119,Daging Paha Ayam (Ayam Pedaging),Daging,100,gram (g),119.0,3.91,1.0,106,0.97,1.21,19.65,0.0,83.0,0.0,0.0,86.0
+120,Paha Ayam Panggang,Daging,100,gram (g),245.0,15.36,4.294,3.392,6.099,92.0,24.85,0.0,0.0,0.0,406.0,220.0
+121,Paha Ayam Panggang (Kulit Dimakan),Daging,1,"kecil (hasil setelah masak, tulang dihilangkan)",135.0,8.45,2.362,1.865,3.354,51.0,13.67,0.0,0.0,0.0,223.0,121.0
+122,Punggung Sapi,Daging,100,gram (g),342.0,26.15,10.203,924,11.555,93.0,24.84,0.0,0.0,0.0,225.0,242.0
+123,Daging Punggung Sapi (Hanya Bagian tanpa Lemak yang Dimakan),Daging,100,gram (g),230.0,11.53,4.133,349,5.311,93.0,29.63,0.0,0.0,0.0,232.0,284.0
+124,Sayap Ayam (Kulit tidak Dimakan),Daging,100,gram (g),201.0,08.06,2.241,1.765,2.588,84.0,30.21,0.0,0.0,0.0,414.0,208.0
+125,Sayap Ayam Panggang (Kulit Dimakan),Daging,1,"kecil (hasil setelah masak, tulang dihilangkan)",86.0,5.79,1.621,1.232,2.273,25.0,7.99,0.0,0.0,0.0,121.0,55.0
+126,Daging dan Kulit Sayap Ayam (Ayam Pedaging),Daging,1,"sayap, tulang dihilangkan (hasil dari 450 g - ayam siap dimasak)",64.0,4.63,1.299,55,983,1.842,5.32,0.0,22.0,0.0,0.0,21.0
+127,Sosis Daging Sapi,Daging,1,ikatan (panjang 2 cm x 10 cm),42.0,3.78,1.497,141,1.785,7.0,1.44,0.52,0.0,0.33,146.0,21.0
+128,Sosis Ayam,Daging,1,ikatan (panjang 2 cm x 10 cm),49.0,2.83,726,83,755,1.021,05.05,0.43,22.0,0.0,0.0,205.0
+129,Sosis Babi Segar,Daging,100,gram (g),304.0,26.53,8.801,211,3.712,11.894,15.09,0.0,72.0,0.0,0.0,636.0
+130,Sosis Kalkun,Daging,100,gram (g),155.0,08.08,1.963,0.35,2.386,2.624,18.79,0.47,75.0,0.0,0.0,593.0
+131,Sosis Italia,Daging,1,ikatan (panjang 13 cm ),234.0,18.57,6.484,2.23,8.126,39.0,13.0,2.9,0.1,0.58,821.0,207.0
+132,Cumi Goreng,Ikan & Seafood,100,gram (g),125.0,2.17,569,715,372,217.0,15.13,9.9,0.5,0.66,335.0,234.0
+133,Cumi Kukus atau Rebus,Ikan & Seafood,100,gram (g),91.0,1.37,355,0.52,106,231.0,15.45,03.05,0.0,0.0,367.0,244.0
+134,Cumi-cumi,Ikan & Seafood,100,gram (g),92.0,1.38,358,524,107,233.0,15.58,03.08,0.0,0.0,44.0,246.0
+135,Gurita,Ikan & Seafood,100,gram (g),82.0,01.04,227,239,162,48.0,14.91,2.2,0.0,0.0,230.0,350.0
+136,Udang,Ikan & Seafood,100,gram (g),144.0,2.35,446,909,344,206.0,27.59,1.24,0.0,0.0,613.0,176.0
+137,Lobster,Ikan & Seafood,1,"kecil (berat hidup 450 g) (hasil setelah dimasak, kulit dihilangkan)",114.0,0.68,125,106,187,84.0,23.99,1.5,0.0,0.0,826.0,412.0
+138,Kepiting,Ikan & Seafood,100,gram (g),101.0,1.76,226,674,278,99.0,20.03,0.0,0.0,0.0,600.0,321.0
+139,Remis,Ikan & Seafood,100,gram (g),86.0,2.24,425,606,507,28.0,11.9,3.69,0.0,0.0,286.0,320.0
+140,Ikan,Ikan & Seafood,100,gram (g),84.0,0.92,195,364,0.16,58.0,17.76,0.0,0.0,0.0,81.0,351.0
+141,Ikan Panggang,Ikan & Seafood,100,gram (g),126.0,3.44,0.68,1.141,1.288,73.0,21.94,0.33,0.0,0.08,356.0,341.0
+142,Ikan Salmon Panggang,Ikan & Seafood,100,gram (g),171.0,7.56,1.312,2.627,2.736,62.0,23.97,0.49,0.0,0.11,467.0,395.0
+143,Nila (Ikan),Ikan & Seafood,100,gram (g),96.0,1.7,571,387,486,50.0,20.08,0.0,0.0,0.0,52.0,302.0
+144,Kakap (Ikan) (Spesies Campuran),Ikan & Seafood,100,gram (g),100.0,1.34,285,459,251,37.0,20.51,0.0,0.0,0.0,64.0,417.0
+145,Ikan Kembung,Ikan & Seafood,100,gram (g),167.0,9.36,2.444,2.343,3.205,64.0,19.32,0.0,0.0,0.0,78.0,389.0
+146,Ikan Kembung Atlantik,Ikan & Seafood,100,gram (g),205.0,13.89,3.257,3.35,5.456,70.0,18.6,0.0,0.0,0.0,90.0,314.0
+147,Ikan Lele,Ikan & Seafood,1,porsi (85 g),204.0,12.35,2.759,3.122,5.51,59.0,14.93,7.26,0.4,0.72,338.0,277.0
+148,Ikan Lele Panggang,Ikan & Seafood,100,gram (g),184.0,11.71,2.599,2.667,5.533,55.0,18.16,0.41,0.0,0.09,385.0,354.0
+149,Ikan Salmon,Ikan & Seafood,100,gram (g),146.0,5.93,1.26,1.992,2.134,45.0,21.62,0.0,0.0,0.0,46.0,423.0
+150,Salmon Merah Muda,Ikan & Seafood,100,gram (g),116.0,3.45,558,1.353,934,52.0,19.94,0.0,0.0,0.0,67.0,323.0
+151,Ikan Sarden dalam Minyak (Kalengan),Ikan & Seafood,1,ikan sarden,25.0,1.37,183,618,464,17.0,2.95,0.0,0.0,0.0,61.0,48.0
+152,Ikan Sarden Di dalam Air,Ikan & Seafood,100,gram (g),217.0,12.37,2.791,2.919,5.112,82.0,24.58,0.0,0.0,0.0,918.0,447.0
+153,Sarden dengan Saus Tomat (Campuran),Ikan & Seafood,100,gram (g),186.0,10.46,2.686,2.112,4.821,61.0,20.86,0.74,0.1,0.43,414.0,341.0
+154,"Ikan Teri (Kering Padat dalam Minyak, Kalengan)",Ikan & Seafood,5,ikan teri,42.0,1.94,441,512,754,17.0,5.78,0.0,0.0,0.0,734.0,109.0
+155,Tuna dalam Air (Kalengan),Ikan & Seafood,100,gram (g),116.0,0.82,234,337,159,30.0,25.51,0.0,0.0,0.0,338.0,237.0
+156,Tuna dalam Minyak (Kalengan),Ikan & Seafood,100,gram (g),198.0,8.21,1.534,2.885,2.949,18.0,29.13,0.0,0.0,0.0,354.0,207.0
+157,Tuna Sirip Biru (Ikan),Ikan & Seafood,100,gram (g),144.0,4.9,1.257,1.433,1.6,38.0,23.33,0.0,0.0,0.0,39.0,252.0
+158,Tuna Sirip Kuning (Ikan),Ikan & Seafood,100,gram (g),108.0,0.95,235,284,154,45.0,23.38,0.0,0.0,0.0,37.0,444.0
+159,Ikan Tuna Panggang,Ikan & Seafood,100,gram (g),153.0,3.96,811,1.169,1.529,53.0,27.3,0.41,0.0,0.09,366.0,524.0
+160,Kepiting Panggang,Ikan & Seafood,100,gram (g),136.0,6.24,1.073,1.98,2.426,94.0,18.91,0.11,0.0,0.0,539.0,304.0
+161,Kepiting Kalengan,Ikan & Seafood,100,gram (g),99.0,1.23,252,0.44,218,89.0,20.52,0.0,0.0,0.0,333.0,374.0
+162,Kerang,Ikan & Seafood,100,gram (g),217.0,10.96,2.216,3.36,4.415,54.0,18.14,10.49,0.5,0.82,487.0,337.0
+163,Kerang (Spesies Campuran),Ikan & Seafood,100,gram (g),88.0,0.76,79,261,37,33.0,16.78,2.36,0.0,0.0,161.0,322.0
+164,Kerang Panggang,Ikan & Seafood,100,gram (g),132.0,3.86,649,1.179,1.438,40.0,20.22,2.92,0.0,0.0,527.0,389.0
+165,Kerang Kukus atau Rebus,Ikan & Seafood,100,gram (g),106.0,03.09,519,943,1.15,32.0,16.18,2.33,0.0,0.0,422.0,280.0
+166,Lobster Kukus atau Rebus,Ikan & Seafood,1,"kecil (berat hidup 450 g) (hasil setelah dimasak, kulit dihilangkan)",114.0,0.68,125,106,187,84.0,23.99,1.5,0.0,0.0,826.0,412.0
+167,Lobster Panggang,Ikan & Seafood,1,"kecil (berat hidup 450 g) (hasil setelah dimasak, kulit dihilangkan)",137.0,3.55,1.947,211,929,90.0,23.34,1.46,0.0,0.0,743.0,401.0
+168,Udang (Karang) Rebus atau Kukus,Ikan & Seafood,100,gram (g),81.0,1.19,179,364,242,132.0,16.63,0.0,0.0,0.0,416.0,294.0
+169,Dimasak Hidup-hidup,Ikan & Seafood,100,gram (g),133.0,4.24,867,1.222,1.621,56.0,22.0,0.41,0.0,0.09,417.0,427.0
+170,Dipanggang Hidup-hidup,Ikan & Seafood,100,gram (g),133.0,4.24,867,1.222,1.621,56.0,22.0,0.41,0.0,0.09,417.0,427.0
+171,Tiram,Ikan & Seafood,100,gram (g),68.0,2.46,772,968,314,53.0,07.05,3.91,0.0,0.0,211.0,156.0
+172,Udang Panggang,Ikan & Seafood,100,gram (g),154.0,05.03,949,1.671,1.698,183.0,24.47,1.17,0.0,0.0,512.0,224.0
+173,Udang Kukus atau Rebus,Ikan & Seafood,100,gram (g),138.0,2.26,428,873,0.33,198.0,26.5,1.19,0.0,0.0,589.0,169.0
+175,Buncis,Kacang Kacangan,100,gram (g),31.0,0.12,26,59,5,0.0,1.82,7.13,3.4,1.4,6.0,209.0
+176,Kacang Panjang Hijau,Kacang Kacangan,100,gram (g),31.0,0.12,26,59,5,0.0,1.82,7.13,3.4,1.4,6.0,209.0
+177,Kacang Merah (Kalengan),Kacang Kacangan,100,gram (g),85.0,0.34,0.05,189,27,0.0,5.25,15.59,6.4,0.22,341.0,257.0
+178,"Kacang Belang (Biji Matang, Kalengan)",Kacang Kacangan,100,gram (g),86.0,0.81,167,289,162,0.0,4.86,15.25,4.6,0.22,294.0,243.0
+179,Kacang Belang (Biji Matang),Kacang Kacangan,100,gram (g),347.0,1.23,235,407,229,0.0,21.42,62.55,15.5,2.11,12.0,1393.0
+180,"Kacang Merah (tanpa Garam, Dimasak, Direbus)",Kacang Kacangan,100,gram (g),127.0,0.5,72,275,39,0.0,8.67,22.8,6.4,0.32,1.0,405.0
+181,Kacang Panggang Vegetarian,Kacang Kacangan,100,gram (g),94.0,0.37,88,133,83,0.0,4.75,21.14,4.1,09.04,337.0,217.0
+182,Kacang Panggang Boston,Kacang Kacangan,100,gram (g),155.0,05.06,1.792,671,2.325,5.0,06.04,22.04,3.9,6.4,454.0,422.0
+183,Tahu Goreng,Kacang Kacangan,1,buah,35.0,2.62,379,1.481,579,0.0,2.23,1.36,0.5,0.35,2.0,19.0
+185,Keju Colby Jack,Susu,1,iris (28 g),109.0,8.85,5.569,263,2.556,26.0,6.84,0.46,0.0,0.14,162.0,29.0
+186,Keju Amerika,Susu,1,iris (28 g),96.0,7.39,4.417,0.31,2.115,23.0,5.37,1.97,0.0,1.83,368.0,77.0
+187,Keju Cheddar atau Colby Rendah Lemak,Susu,1,iris (28 g),49.0,1.98,1.231,63,0.59,6.0,6.9,0.54,0.0,0.15,174.0,19.0
+188,Keju Provolone,Susu,1,iris (28 g),98.0,7.45,4.782,215,02.07,19.0,7.16,0.6,0.0,0.16,245.0,39.0
+189,Keju Parmesan (Parut),Susu,1,sdm,22.0,1.43,865,59,419,4.0,1.92,0.2,0.0,0.04,76.0,6.0
+190,Keju Parmesan Parut Kering,Susu,1,sdm,22.0,1.43,865,59,419,4.0,1.92,0.2,0.0,0.04,76.0,6.0
+191,Keju Parmesan Keras,Susu,100,gram (g),392.0,25.83,16.41,569,7.515,68.0,35.75,3.22,0.0,0.8,1602.0,92.0
+192,Keju Krim,Susu,1,sdm,51.0,05.06,3.185,183,1.427,16.0,01.09,0.39,0.0,0.03,43.0,17.0
+193,Keju Krim Proses tanpa atau Bebas Lemak,Susu,1,sdm,15.0,0.21,0.14,9,52,1.0,2.25,0.9,0.0,0.06,85.0,25.0
+194,Keju Krim (Rendah Lemak),Susu,1,sdm,35.0,2.64,1.663,95,745,8.0,1.59,01.05,0.0,0.03,44.0,25.0
+195,Margarin,Susu,1,sdm,75.0,8.46,1.436,3.53,2.905,0.0,0.09,0.0,0.0,0.0,112.0,4.0
+196,"Margarin (Minyak Nabati, 20% Lemak )",Susu,1,sdm,26.0,2.92,0.43,1.206,1.122,0.0,0.0,0.06,0.0,0.0,110.0,4.0
+197,Mentega,Susu,1,sdm,102.0,11.52,7.294,432,2.985,31.0,0.12,0.01,0.0,0.01,2.0,3.0
+198,Mentega (Asin),Susu,1,sdm,102.0,11.52,7.294,432,2.985,31.0,0.12,0.01,0.0,0.01,82.0,3.0
+199,Mentega Dikocok (Asin),Susu,1,sdm,67.0,7.62,4.746,283,2.202,21.0,0.08,0.01,0.0,0.01,78.0,2.0
+200,Susu,Susu,1,gelas,122.0,4.88,2.965,249,1.301,17.0,08.03,11.49,0.0,12.59,100.0,361.0
+201,Susu Murni,Susu,100,ml,62.0,3.35,1.923,201,837,10.0,3.32,4.66,0.0,5.42,41.0,147.0
+202,1% Lemak Susu,Susu,1,gelas,102.0,2.37,1.545,85,676,12.0,8.22,12.18,0.0,12.69,107.0,366.0
+203,2% Lemak Susu,Susu,100,gram (g),50.0,1.97,1.257,73,0.56,8.0,3.3,4.68,0.0,05.06,41.0,150.0
+204,Susu (tanpa Lemak),Susu,1,gelas,86.0,0.44,287,17,115,5.0,8.35,11.88,0.0,12.47,127.0,407.0
+205,Susu Rendah Lemak,Susu,1,mangkok,102.0,2.37,1.545,85,676,12.0,8.22,12.18,0.0,12.69,107.0,366.0
+206,Susu dengan Lemak yang telah Dikurangi,Susu,1,gelas,122.0,4.81,3.067,178,1.366,20.0,08.05,11.42,0.0,12.35,100.0,366.0
+207,Yogurt Polos,Susu,100,gram (g),63.0,1.55,1.0,44,426,6.0,5.25,07.04,0.0,07.04,70.0,234.0
+208,Yogurt Polos Rendah Lemak,Susu,100,gram (g),63.0,1.55,1.0,44,426,6.0,5.25,07.04,0.0,07.04,70.0,234.0
+209,Yogurt Polos tanpa Lemak,Susu,100,gram (g),56.0,0.18,116,5,49,2.0,5.73,7.68,0.0,7.68,77.0,255.0
+210,Yoghurt Vanila (Rendah Lemak),Susu,1,mangkok (240 ml),208.0,03.06,1.975,88,0.84,12.0,12.08,33.81,0.0,33.81,162.0,537.0
+211,Makaroni,Karbohidrat,100,gram (g),157.0,0.92,175,317,0.13,0.0,5.76,30.68,1.8,0.56,232.0,45.0
+212,Makaroni Gandum,Karbohidrat,100,gram (g),123.0,0.54,98,212,75,0.0,5.3,26.38,2.8,0.8,234.0,44.0
+213,Makaroni atau Mie dengan Keju,Karbohidrat,1,mangkok,493.0,22.84,9.625,3.579,7.849,41.0,19.29,52.15,2.7,8.72,953.0,328.0
+214,Makaroni atau Mie dengan Keju (Campuran Ditumbuk dengan Saus Keju),Karbohidrat,1,mangkok,386.0,11.59,6.619,909,2.873,26.0,15.28,54.29,3.0,2.45,786.0,132.0
+215,Makanan Pembuka Makaroni dan Keju (Kalengan),Karbohidrat,1,porsi,200.0,6.0,2.15,739,1.464,15.0,8.25,28.11,1.2,1.22,1027.0,205.0
+216,Makaroni atau Mie dengan Keju (Campuran Kering),Karbohidrat,100,gram (g),219.0,10.06,2.503,2.658,4.223,4.0,6.25,25.74,1.4,2.76,365.0,87.0
+217,Makaroni Krim dengan Keju,Karbohidrat,100,gram (g),208.0,8.59,3.693,1.311,2.937,16.0,8.13,24.09,1.4,0.52,167.0,61.0
+218,Mie,Karbohidrat,100,gram (g),137.0,02.06,417,549,578,29.0,4.51,25.01,1.2,0.4,236.0,38.0
+219,"Mie Telur (Ditambah, Masak)",Karbohidrat,100,gram (g),138.0,02.07,419,21,552,581,4.54,25.16,29.0,1.2,0.4,5.0
+220,Mie Gandum,Karbohidrat,100,gram (g),120.0,1.37,343,0.36,363,32.0,5.31,23.49,3.9,0.19,158.0,140.0
+221,Mie Cina Chow Mein,Karbohidrat,1,mangkok,237.0,13.84,1.973,7.799,3.46,0.0,3.77,25.89,1.8,0.12,198.0,54.0
+222,Nasi Putih Instan,Karbohidrat,1,"mangkok,masak",191.0,0.83,28,28,121,0.0,3.56,41.04,1.0,0.0,582.0,15.0
+223,Nasi Putih,Karbohidrat,100,gram (g),129.0,0.28,76,75,87,0.0,2.66,27.9,0.4,0.05,365.0,35.0
+224,Nasi Merah,Karbohidrat,100,gram (g),110.0,0.89,179,321,325,0.0,2.56,22.78,1.8,0.35,301.0,43.0
+225,Nasi Goreng,Karbohidrat,100,gram (g),168.0,6.23,1.137,2.699,1.907,52.0,6.3,21.06,0.7,0.76,415.0,102.0
+226,Nasi Goreng tanpa Daging,Karbohidrat,100,gram (g),151.0,5.48,926,2.519,1.615,44.0,4.23,20.97,1.0,1.12,425.0,93.0
+228,Nasi Merah Instan,Karbohidrat,1,"mangkok,masak",233.0,1.89,0.38,681,689,0.0,5.43,48.29,3.8,0.74,638.0,91.0
+231,"Nasi Merah (Butir-Panjang, Dimasak)",Karbohidrat,100,gram (g),111.0,0.9,0.18,323,327,0.0,2.58,22.96,1.8,0.35,5.0,43.0
+232,"Nasi Putih (Butir-Panjang, Dimasak)",Karbohidrat,100,gram (g),130.0,0.28,77,76,88,0.0,2.69,28.17,0.4,0.05,1.0,35.0
+233,Spageti,Karbohidrat,100,gram (g),157.0,0.92,175,317,0.13,0.0,5.76,30.68,1.8,0.56,232.0,45.0
+234,Pasta dengan Saus Daging,Karbohidrat,1,mangkok,329.0,13.06,4.34,1.339,5.638,51.0,20.22,33.33,3.8,8.47,1887.0,811.0
+235,Pasta tanpa Daging dengan Saus Tomat,Karbohidrat,1,mangkok,206.0,1.17,221,424,171,0.0,7.56,41.56,3.5,6.35,412.0,355.0
+236,Spageti Gandum,Karbohidrat,100,gram (g),123.0,0.54,98,212,75,0.0,5.3,26.38,4.5,0.8,234.0,44.0
+237,Kaldu Sapi,Sup,1,gelas (240 ml),7.0,0.19,96,0.0,72,0.0,0.84,0.8,0.0,0.63,1157.0,19.0
+238,Kaldu Jamur,Sup,100,gram (g),7.0,0.01,0.0,0.0,0.0,0.0,0.87,0.83,0.0,0.45,1325.0,23.0
+239,Sayuran Rebus (tanpa Daging),Sup,100,gram (g),56.0,0.97,443,81,362,1.0,2.65,9.73,1.7,1.93,226.0,220.0
+240,Daging Sapi Rebus dengan Kentang dan Sayuran dalam Saus Tomat,Sup,1,mangkok,207.0,5.75,1.502,1.444,2.142,33.0,16.63,21.9,3.0,2.77,547.0,630.0
+241,Sup Tomat,Sup,1,mangkok,102.0,2.93,988,988,727,5.0,03.05,17.93,1.0,10.54,705.0,307.0
+242,"Sayur Sup (Kalengan, Terkondensasi)",Sup,1,mangkok,145.0,3.89,0.59,1.451,1.673,0.0,4.23,24.06,1.2,7.7,1653.0,421.0
+243,Sup Mie Ayam,Sup,1,mangkok,65.0,2.39,658,663,1.048,14.0,3.18,7.4,0.0,01.06,868.0,53.0
+244,Sup Miso,Sup,1,mangkok,84.0,3.36,622,1.394,1.085,0.0,06.02,7.78,1.9,2.59,998.0,367.0
+245,Sup Ayam,Sup,1,mangkok,75.0,2.46,651,554,1.109,7.0,04.05,9.35,0.7,0.27,1106.0,55.0
+246,Sup Nasi Ayam,Sup,1,mangkok,60.0,1.9,453,417,906,7.0,3.54,7.16,0.7,0.19,817.0,101.0
+247,Sup Ayam Kental (Kalengan),Sup,1,mangkok,170.0,6.34,1.896,1.32,2.832,29.0,12.14,16.51,1.4,02.09,850.0,168.0
+248,"Sup Ayam (dan) Sayur (dengan Volume Air yang Sama, Kalengan)",Sup,1,gelas (240 ml),75.0,2.84,844,602,1.277,10.0,3.62,8.58,1.0,1.3,945.0,154.0
+249,Sup Mie Daging Sapi,Sup,1,mangkok,83.0,03.07,1.142,0.49,1.242,5.0,4.83,8.98,0.7,2.59,954.0,100.0
+250,Sup Mie Instan,Sup,1,mangkok,46.0,0.84,262,177,322,7.0,2.16,7.32,0.5,0.43,758.0,60.0
+251,Daging Sapi Gaya Oriental dan Sup Beras ( Pho Bo Vietnam),Sup,1,mangkok,176.0,3.86,1.403,239,1.584,39.0,17.35,16.81,1.0,01.05,669.0,305.0
+252,"Sup Tomat (Kalengan, Terkondensasi)",Sup,1,mangkok,151.0,1.41,688,896,846,0.0,04.04,33.66,3.0,20.36,1383.0,575.0
+253,Krim Sup Tomat (Disiapkan dengan Susu),Sup,1,mangkok,136.0,3.15,1.83,573,1.076,10.0,06.05,22.62,1.5,16.49,742.0,469.0
+254,Sup Tomat (Disiapkan dengan Air),Sup,1,mangkok,76.0,0.71,344,449,422,0.0,02.03,16.84,1.5,10.17,693.0,288.0
+255,Kuning Telur Matang,Telur,1,besar,55.0,4.49,1.617,712,1.988,209.0,2.69,0.61,0.0,0.1,34.0,19.0
+257,Telur Orak-Arik,Telur,2,telur,199.0,15.21,5.784,1.851,5.536,400.0,13.01,1.96,0.0,1.43,211.0,138.0
+258,"Telur Orak-Arik (Utuh, Dimasak)",Telur,1,besar,101.0,7.45,2.244,1.31,2.908,215.0,6.76,1.34,0.0,01.06,171.0,84.0
+259,Telur Dadar atau Telur Orak-Arik,Telur,1,besar,98.0,7.14,2.086,1.243,2.867,213.0,6.81,1.15,0.0,1.17,247.0,91.0
+260,Telur Dadar atau Telur Orak-Arik dengan Keju,Telur,1,besar,140.0,10.37,4.131,1.333,3.751,213.0,9.15,2.23,0.0,2.21,411.0,129.0
+261,Telur Dadar atau Telur Orak-Arik dengan Jamur,Telur,1,besar,91.0,6.34,1.869,1.104,2.514,185.0,6.37,02.05,0.4,1.6,289.0,107.0
+262,Putih Telur,Telur,100,gram (g),52.0,0.17,0.0,0.0,0.0,0.0,10.9,0.73,0.0,0.71,166.0,163.0
+263,Pengganti Telur (Cair),Telur,100,gram (g),84.0,3.31,659,1.603,896,1.0,12.0,0.64,0.0,0.64,177.0,330.0
+264,Putih Telur Matang,Telur,1,besar,17.0,0.06,0.0,0.0,0.0,0.0,3.58,0.24,0.0,0.23,106.0,53.0
+265,Telur,Telur,1,besar,74.0,4.97,1.55,682,1.905,212.0,6.29,0.38,0.0,0.38,70.0,67.0
+266,Telur Rebus,Telur,1,besar,77.0,5.28,1.627,704,02.03,211.0,6.26,0.56,0.0,0.56,139.0,63.0
+267,Telur Ceplok,Telur,1,besar,92.0,07.04,1.975,1.224,2.919,210.0,6.27,0.4,0.0,0.38,94.0,68.0
+268,Telur Dadar,Telur,1,besar,93.0,7.33,2.053,1.279,3.044,217.0,6.48,0.42,0.0,0.4,98.0,70.0
+269,Telur Dadar atau Telur Orak-Arik dengan Sayuran,Telur,1,besar,106.0,7.34,2.169,1.274,2.925,216.0,7.22,2.38,0.3,1.86,280.0,117.0
+270,Telur Dadar atau Telur Orak-Arik dengan Sosis,Telur,1,sedang,181.0,14.26,4.329,2.26,6.005,215.0,11.13,1.29,0.0,1.31,322.0,161.0
+271,Telur Goreng,Telur,1,besar,89.0,6.76,1.88,1.214,2.754,210.0,6.24,0.43,0.0,0.38,238.0,67.0
+272,Telur Goreng tanpa Lemak,Telur,1,besar,73.0,4.93,1.537,677,1.89,210.0,6.24,0.38,0.0,0.38,223.0,66.0
+273,Telur Rebus Lunak,Telur,1,sedang,68.0,4.65,1.432,0.62,1.787,186.0,5.51,0.49,0.0,0.49,122.0,55.0
+274,Acar,Sayur,1,sedang,12.0,0.12,31,0.05,2,0.0,0.4,2.68,0.8,2.28,833.0,75.0
+275,Acar Mentimun Manis,Sayur,100,gram (g),117.0,0.26,66,106,4,0.0,0.37,31.81,1.1,14.63,939.0,32.0
+276,Acar Mentimun Asam,Sayur,100,gram (g),11.0,0.2,52,82,3,0.0,0.33,2.26,1.2,01.06,1208.0,23.0
+277,Bawang,Sayur,100,gram (g),42.0,0.08,26,62,23,0.0,0.92,10.11,1.4,4.28,3.0,144.0
+278,Bawang Merah,Sayur,100,gram (g),42.0,0.08,26,62,23,0.0,0.92,10.11,1.4,4.28,3.0,144.0
+279,Daun Bawang (Loncang),Sayur,100,gram (g),32.0,0.19,32,74,27,0.0,1.83,7.34,2.6,2.33,16.0,276.0
+280,Bawang Hijau Muda,Sayur,100,gram (g),32.0,0.19,32,74,27,0.0,1.83,7.34,2.6,2.33,16.0,276.0
+281,Bawang Putih,Sayur,1,siung,4.0,0.02,3,7,0.0,0.0,0.19,0.99,0.1,0.03,1.0,12.0
+282,Bawang Putih Cincang,Sayur,1,sdt,5.0,0.03,4,9,0.0,0.0,0.25,1.32,0.1,0.04,1.0,16.0
+283,Bawang Putih Dimasak,Sayur,1,siung,3.0,0.01,2,5,0.0,0.0,0.13,0.66,0.0,0.02,0.0,8.0
+284,Bawang Putih Bubuk,Sayur,1,sdt,9.0,0.02,4,11,0.0,0.0,0.47,02.04,0.3,0.68,1.0,31.0
+285,Bayam,Sayur,100,gram (g),23.0,0.39,63,165,0.01,0.0,2.86,3.63,2.2,0.42,79.0,558.0
+286,"Bayam (Cincang atau Daun, Beku)",Sayur,100,gram (g),31.0,0.75,292,166,0.0,0.0,3.94,4.33,3.1,0.87,74.0,372.0
+287,Bayam Bayi/Kecil,Sayur,1,mangkok,7.0,0.12,19,0.05,3,0.0,0.86,01.09,0.7,0.13,24.0,167.0
+288,"Bayam (Kering Padat, Kaleng)",Sayur,1,mangkok,49.0,01.07,173,447,0.03,0.0,06.01,7.28,5.1,0.86,58.0,740.0
+289,Bayam Dimasak (dari Segar),Sayur,100,gram (g),40.0,2.25,415,689,949,0.0,2.88,3.68,2.3,0.42,285.0,452.0
+290,Brokoli,Sayur,100,gram (g),34.0,0.37,39,38,11,0.0,2.82,6.64,2.6,1.7,33.0,316.0
+291,Brokoli Dimasak (Lemak tidak Ditambahkan dalam Masakan),Sayur,100,gram (g),35.0,0.41,79,169,0.04,0.0,2.37,7.14,3.3,1.38,278.0,291.0
+292,Brokoli Cina (Dimasak),Sayur,100,gram (g),22.0,0.72,0.11,0.33,0.05,0.0,1.14,3.81,2.5,0.84,7.0,261.0
+293,"Brokoli (Tusuk, Beku)",Sayur,100,gram (g),29.0,0.34,52,162,24,0.0,03.06,5.35,3.0,1.47,17.0,250.0
+294,Daun Bawang,Sayur,100,gram (g),61.0,0.3,0.04,166,4,0.0,1.5,14.15,1.8,3.9,20.0,180.0
+295,Bawang Bombay Dimasak,Sayur,100,gram (g),94.0,4.0,735,1.251,1.752,0.0,1.51,14.24,1.8,3.9,282.0,163.0
+296,Jagung,Sayur,100,gram (g),86.0,1.18,182,559,347,0.0,3.22,19.02,2.7,3.22,15.0,270.0
+297,Jagung Manis Kuning,Sayur,100,gram (g),86.0,1.18,182,559,347,0.0,3.22,19.02,2.7,3.22,15.0,270.0
+298,Jagung Kecil/Tunas Jagung,Sayur,100,gram (g),81.0,1.0,154,471,292,0.0,2.62,18.59,2.0,3.5,214.0,195.0
+299,"Jagung Manis Kuning (Kernel Utuh, Padat Dikeringkan, Kalengan)",Sayur,100,gram (g),81.0,1.0,154,471,292,0.0,2.62,18.59,2.0,3.5,214.0,195.0
+300,Jamur,Sayur,100,gram (g),22.0,0.34,0.05,0.16,0.0,0.0,03.09,3.28,1.0,1.65,5.0,318.0
+301,"Jamur (Kering Padat, Kaleng)",Sayur,100,gram (g),25.0,0.29,38,113,5,0.0,1.87,05.09,2.4,2.2,425.0,129.0
+302,Potongan-Potongan Jamur dan Batang,Sayur,1,mangkok,15.0,0.24,35,112,0.0,0.0,2.16,2.3,0.7,1.16,4.0,223.0
+303,Jamur Portabella,Sayur,100,gram (g),26.0,0.2,26,78,3,0.0,2.5,05.07,1.5,1.8,6.0,484.0
+304,Jamur Tiram,Sayur,100,gram (g),35.0,0.44,0.02,0.04,0.01,0.0,3.34,6.43,2.4,1.11,18.0,420.0
+305,Kacang Hijau,Sayur,100,gram (g),81.0,0.4,71,187,35,0.0,5.42,14.46,5.1,5.67,5.0,244.0
+306,Kacang Polong,Sayur,100,gram (g),42.0,0.2,39,89,21,0.0,2.8,7.55,2.6,4.0,4.0,200.0
+307,Kacang Hijau (Beku),Sayur,2,mangkok,55.0,0.27,48,126,24,0.0,3.75,9.87,3.0,3.87,81.0,107.0
+308,Kacang Hijau Dimasak (Kalengan),Sayur,1,mangkok,150.0,4.31,801,1.365,1.804,0.0,7.54,21.51,7.0,07.09,460.0,296.0
+309,Kembang Kol,Sayur,100,gram (g),25.0,0.1,32,99,14,0.0,1.98,5.3,2.5,2.4,30.0,303.0
+310,Kembang Kol (Beku),Sayur,2,"mangkok  (potongan 2,5 cm)",16.0,0.18,27,84,13,0.0,1.33,03.09,1.5,1.47,16.0,127.0
+311,Kembang Kol Dimasak (Lemak tidak Ditambahkan dalam Masakan),Sayur,100,gram (g),22.0,0.37,58,179,26,0.0,1.75,3.96,2.7,1.28,284.0,140.0
+312,"Kembang Kol Dimasak (dari Beku, Lemak tidak Ditambahkan dalam Masakan)",Sayur,1,mangkok,34.0,0.4,0.06,184,27,0.0,2.88,6.71,4.9,1.87,403.0,248.0
+313,"Kembang Kol Dimasak (dari Segar, Lemak tidak Ditambahkan dalam Masakan)",Sayur,100,gram (g),23.0,0.45,69,215,32,0.0,1.83,04.08,2.7,1.4,313.0,141.0
+314,Kentang Putih (Daging dan Kulit),Sayur,100,gram (g),70.0,0.1,26,42,2,0.0,1.68,15.71,2.4,1.15,6.0,407.0
+315,"Kentang Putih (Daging dan Kulit, Dipanggang)",Sayur,100,gram (g),94.0,0.15,22,37,2,0.0,2.1,21.08,2.1,1.53,7.0,544.0
+316,Kentang Tumbuk,Sayur,100,gram (g),100.0,3.54,791,978,1.577,1.0,1.8,15.72,1.3,1.38,231.0,260.0
+317,Kentang Panggang,Sayur,100,gram (g),149.0,7.0,0.9,3.442,2.329,0.0,2.32,20.06,2.5,0.9,101.0,483.0
+318,"Kentang (Daging, dengan Garam, Direbus)",Sayur,100,gram (g),87.0,0.1,26,43,2,0.0,1.87,20.13,2.0,0.87,240.0,379.0
+319,Kentang Panggang (Kulit Dimakan),Sayur,100,gram (g),109.0,2.2,423,664,982,0.0,2.43,20.53,2.1,1.14,235.0,519.0
+320,Kentang Panggang (Kulit tidak Dimakan),Sayur,100,gram (g),92.0,0.1,26,43,2,0.0,1.95,21.39,1.5,1.69,287.0,388.0
+321,Kentang Panggang Diisi dengan Krim Asam (Kulit Dimakan),Sayur,1,sedang,316.0,16.0,8.255,1.638,5.242,26.0,6.14,39.11,3.8,2.12,451.0,1008.0
+322,Kentang Panggang yang Diisi Daging Babi dan Keju (Kulit Dimakan),Sayur,1,sedang,322.0,13.72,5.843,1.804,4.973,30.0,11.86,38.92,3.8,4.13,924.0,1044.0
+323,Kentang Panggang Diisi dengan Keju (Kulit Dimakan),Sayur,1,sedang,288.0,11.09,4.982,1.507,3.809,23.0,9.54,38.9,3.7,4.14,778.0,1008.0
+324,Kentang Tumbuk (dari Kentang Segar),Sayur,100,gram (g),122.0,6.96,1.595,1.884,3.12,3.0,2.11,13.22,1.0,2.24,392.0,240.0
+325,Kentang Tumbuk (dari Kentang Kering),Sayur,100,gram (g),105.0,5.56,1.274,1.506,2.489,2.0,02.02,12.22,0.9,1.87,326.0,186.0
+326,Kentang Tumbuk (Ditambahkan Susu ),Sayur,100,gram (g),83.0,0.57,253,55,104,2.0,1.92,17.53,1.5,1.51,302.0,298.0
+327,Kentang Tumbuk (Ditambahkan Susu dan Mentega ),Sayur,100,gram (g),113.0,4.22,2.078,149,0.16,851,1.87,16.77,11.0,1.5,1.43,317.0
+328,Mentimun (dengan Kulit),Sayur,100,gram (g),15.0,0.11,34,53,3,0.0,0.65,3.63,0.5,1.67,2.0,147.0
+329,Mentimun (Kupas),Sayur,100,gram (g),12.0,0.16,13,3,2,0.0,0.59,2.16,0.7,1.38,2.0,136.0
+330,Kubis,Sayur,100,gram (g),24.0,0.12,16,0.06,9,0.0,1.44,5.58,2.3,3.58,18.0,246.0
+331,Kubis Merah,Sayur,100,gram (g),31.0,0.16,34,125,19,0.0,1.43,7.37,2.1,3.91,27.0,243.0
+332,Kubis Hijau,Sayur,100,gram (g),24.0,0.12,16,0.06,9,0.0,1.44,5.58,2.3,3.58,18.0,246.0
+333,Kubis Savoy,Sayur,1,"mangkok, parut",19.0,0.07,9,34,5,0.0,1.4,4.27,2.2,1.59,20.0,161.0
+334,Kubis Cina,Sayur,100,gram (g),13.0,0.2,26,96,15,0.0,1.5,2.18,1.0,1.18,65.0,252.0
+335,Labu,Sayur,100,gram (g),26.0,0.1,52,5,13,0.0,1.0,6.5,0.5,1.36,1.0,340.0
+336,"Labu (tanpa Garam, Kaleng)",Sayur,1,mangkok,83.0,0.69,358,37,91,0.0,2.7,19.82,7.1,08.08,12.0,505.0
+337,Labu Dimasak,Sayur,100,gram (g),46.0,1.75,0.42,448,734,0.0,01.08,7.94,2.8,3.22,166.0,202.0
+338,Lobak,Sayur,100,gram (g),28.0,0.1,11,53,6,0.0,0.9,6.43,1.8,3.8,67.0,191.0
+339,Lobak Dimasak,Sayur,100,gram (g),42.0,2.37,438,712,1.086,0.0,0.69,4.94,1.9,2.88,265.0,171.0
+340,Paprika Hijau,Sayur,100,gram (g),20.0,0.17,58,62,8,0.0,0.86,4.64,1.7,2.4,3.0,175.0
+341,Paprika Jalapeno,Sayur,1,lada/merica,4.0,0.09,9,45,5,0.0,0.19,0.83,0.4,0.48,0.0,30.0
+342,Paprika Hijau Pedas,Sayur,100,gram (g),40.0,0.2,21,109,11,0.0,2.0,9.46,1.5,5.1,7.0,340.0
+343,"Sayuran Campur (Kering Padatan, Kaleng)",Sayur,1,mangkok,80.0,0.41,83,194,26,0.0,4.22,15.09,4.9,3.99,243.0,474.0
+344,"Sayuran Campur Matang (Jagung, Kacang Lima, Kacang Polong, Kacang Hijau dan Wortel)",Sayur,100,gram (g),81.0,2.12,0.4,648,941,0.0,2.78,12.74,4.3,03.06,249.0,164.0
+345,"Sayuran Campur (Jagung, Kacang Lima, Kacang Polong, Kacang Hijau, Wortel) (tanpa Tambahan Garam, Kaleng)",Sayur,1,mangkok,67.0,0.36,71,178,0.04,0.0,2.55,13.3,5.6,4.46,47.0,251.0
+346,Selada,Sayur,100,gram (g),14.0,0.14,18,74,6,0.0,0.9,2.97,1.2,1.76,10.0,141.0
+347,Selada Daun Hijau,Sayur,100,gram (g),15.0,0.15,0.02,82,6,0.0,1.36,2.79,1.3,0.78,28.0,194.0
+348,Salad Sayuran Hijau Campur,Sayur,1,"mangkok, parut atau cincang",9.0,0.13,21,63,4,0.0,0.84,1.76,1.1,0.48,16.0,160.0
+349,Selada Arugula,Sayur,100,gram (g),25.0,0.66,86,319,49,0.0,2.58,3.65,1.6,02.05,27.0,369.0
+350,Selada Gunung Es (Termasuk Jenis Crisphead),Sayur,100,gram (g),14.0,0.14,18,74,6,0.0,0.9,2.97,1.2,1.76,10.0,141.0
+351,Seledri,Sayur,100,gram (g),14.0,0.17,43,81,32,0.0,0.69,2.97,1.6,1.83,80.0,260.0
+352,Seledri Dimasak,Sayur,100,gram (g),39.0,2.54,486,0.77,1.153,0.0,0.81,3.93,1.5,2.29,307.0,275.0
+353,Terung,Sayur,100,gram (g),24.0,0.19,34,76,16,0.0,01.01,5.7,3.4,2.35,2.0,230.0
+354,Terung Dimasak,Sayur,100,gram (g),65.0,3.85,723,1.153,1.735,0.0,0.79,8.31,2.4,03.02,488.0,117.0
+355,Terong Goreng,Sayur,100,gram (g),148.0,10.75,2.118,3.465,4.569,16.0,2.4,11.58,3.1,2.41,62.0,222.0
+356,Tomat,Sayur,100,gram (g),18.0,0.2,46,135,51,0.0,0.88,3.92,1.2,2.63,5.0,237.0
+357,Tomat Merah,Sayur,1,"utuh sedang (diameter 6,5 cm)",22.0,0.25,57,166,63,0.0,01.08,4.82,1.5,3.23,6.0,292.0
+358,Tomat Merah (Kaleng),Sayur,1,mangkok,41.0,0.31,43,0.13,0.05,0.0,1.92,9.38,2.2,6.14,307.0,451.0
+359,Tomat Ceri,Sayur,100,gram (g),18.0,0.2,46,135,51,0.0,0.88,3.92,1.2,2.63,5.0,237.0
+360,Ubi Jalar (Manis),Sayur,100,gram (g),86.0,0.05,18,14,1,0.0,1.57,20.12,3.0,4.18,55.0,337.0
+361,"Ubi Jalar (tanpa Kulit, Dimasak, Direbus)",Sayur,100,gram (g),76.0,0.14,0.04,0.08,0.0,0.0,1.37,17.72,2.5,5.74,27.0,230.0
+362,"Ubi Jalar (tanpa Garam, Dipanggang dengan Kulitnya, Dimasak)",Sayur,100,gram (g),90.0,0.15,52,96,2,0.0,02.01,20.71,3.3,8.44,36.0,475.0
+363,"Ubi Jalar/Manis (Tumbuk, Kaleng)",Sayur,100,gram (g),101.0,0.2,41,84,8,0.0,1.98,23.19,1.7,5.45,75.0,210.0
+364,Ubi Rambat,Sayur,100,gram (g),118.0,0.17,37,76,6,0.0,1.53,27.88,4.1,0.5,9.0,816.0
+365,"Ubi Jalar (dengan Garam, Dikeringkan, Dimasak, Direbus)",Sayur,100,gram (g),116.0,0.14,29,0.06,5,0.0,1.49,27.58,3.9,0.49,244.0,670.0
+366,"Ubi Rambat (tanpa Garam, Dikeringkan, Dimasak, Direbus, Dipanggang)",Sayur,100,gram (g),116.0,0.14,29,0.06,5,0.0,1.49,27.58,3.9,0.49,8.0,670.0
+367,Wortel,Sayur,100,gram (g),41.0,0.24,37,0.0,117,14,0.93,9.58,0.0,2.8,4.54,69.0
+368,Wortel Bayi,Sayur,1,sedang,4.0,0.01,2,6,1,0.0,0.06,0.82,0.2,0.48,8.0,24.0
+369,Wortel Dimasak,Sayur,100,gram (g),54.0,2.48,468,778,1.094,0.0,0.74,7.99,2.9,3.33,306.0,227.0
+370,"Wortel (Padat dan Cair, Kaleng)",Sayur,2,"mangkok, irisan",28.0,0.17,31,0.08,7,0.0,0.71,6.61,2.2,03.03,295.0,213.0
+371,Zaitun,Sayur,100,gram (g),117.0,11.27,1.493,962,8.324,0.0,0.92,5.4,3.1,0.16,1083.0,18.0
+372,Zaitun Hitam,Sayur,100,gram (g),105.0,9.54,1.263,814,7.043,0.0,0.88,06.06,3.0,0.0,880.0,8.0
+373,Zaitun Hijau,Sayur,1,10 porsi kecil,42.0,4.44,588,379,3.281,0.0,0.3,1.11,1.0,0.16,451.0,12.0
+374,Zaitun Hijau Isi,Sayur,1,10 porsi kecil,44.0,4.49,595,0.39,3.309,0.0,0.35,1.37,1.1,0.3,456.0,20.0
+375,"Zaitun Hijau (Acar, Kaleng atau Botol)",Sayur,100,gram (g),145.0,15.32,2.029,1.307,11.314,0.0,01.03,3.84,3.3,0.54,1556.0,42.0
+376,Dendeng Sapi,Snack (Makanan Ringan),1,"buah, besar",82.0,5.12,2.17,202,2.261,10.0,6.64,2.2,0.4,1.8,443.0,119.0
+377,Keripik Kentang,Snack (Makanan Ringan),100,gram (g),547.0,37.47,10.96,12.17,9.84,0.0,6.56,49.74,4.4,4.12,525.0,1642.0
+378,Keripik Jagung Tawar,Snack (Makanan Ringan),100,gram (g),518.0,28.41,3.612,634,14.01,7.913,06.03,63.01,0.0,5.3,1.16,616.0
+379,Keripik Jagung Tortilla,Snack (Makanan Ringan),100,gram (g),488.0,23.36,2.458,9.956,9.52,0.0,7.79,65.32,5.3,1.0,421.0,215.0
+380,Keripik Kentang (Asin),Snack (Makanan Ringan),100,gram (g),547.0,37.47,10.96,12.17,9.84,0.0,6.56,49.74,4.4,4.12,525.0,1642.0
+381,Keripik Kentang Bebas Lemak,Snack (Makanan Ringan),1,mangkok,76.0,0.12,0.03,51,3,0.0,1.93,16.75,1.5,0.74,129.0,326.0
+382,Keripik Kentang dengan Lemak yang Dikurangi,Snack (Makanan Ringan),100,gram (g),471.0,20.8,4.16,10.94,4.8,0.0,7.1,66.9,5.9,0.22,492.0,1744.0
+383,Kerupuk / Biskuit,Snack (Makanan Ringan),1,"kerupuk, segi empat",20.0,01.01,151,382,426,0.0,0.3,2.44,0.1,0.07,34.0,5.0
+384,Kerupuk Asin,Snack (Makanan Ringan),1,kerupuk,13.0,0.34,0.05,37,0.21,0.0,0.28,2.13,0.1,0.01,32.0,5.0
+385,Kerupuk Gandum,Snack (Makanan Ringan),1,kerupuk,9.0,0.41,104,56,229,0.0,0.17,1.3,0.1,0.26,16.0,4.0
+386,Biskuit Keju,Snack (Makanan Ringan),1,"kerupuk 2,5 cm persegi",5.0,0.25,94,25,121,0.0,0.1,0.58,0.0,0.0,10.0,1.0
+387,Kue Beras Merah,Snack (Makanan Ringan),1,kue,35.0,0.25,51,89,93,0.0,0.74,7.34,0.4,0.08,29.0,26.0
+388,Permen Karet (tanpa Gula),Snack (Makanan Ringan),1,buah,5.0,0.01,1,5,2,0.0,0.0,1.9,0.0,0.0,0.0,0.0
+389,Permen Karet (Manis),Snack (Makanan Ringan),1,buah,10.0,0.01,2,5,3,0.0,0.0,2.64,0.1,2.64,0.0,0.0
+390,Permen Karet,Snack (Makanan Ringan),1,batang,7.0,0.01,1,4,2,0.0,0.0,1.98,0.1,1.98,0.0,0.0
+391,Popcorn,Snack (Makanan Ringan),100,gram (g),387.0,4.54,637,2.318,0.95,0.0,12.94,77.78,14.5,0.87,8.0,329.0
+392,Selai Kacang dan Sandwich Jeli,Snack (Makanan Ringan),1,sandwich,327.0,14.23,2.931,4.156,6.229,0.0,10.32,42.23,2.9,12.11,483.0,222.0
+393,Sandwich Daging Sapi Panggang,Snack (Makanan Ringan),1,sandwich,341.0,13.49,5.078,1.058,5.345,67.0,26.85,26.02,1.2,2.22,602.0,366.0
+394,Sandwich Keju,Snack (Makanan Ringan),1,sandwich,261.0,12.67,5.378,2.109,4.211,22.0,9.1,27.6,1.2,3.95,734.0,127.0
+395,Sushi,Snack (Makanan Ringan),1,buah,37.0,0.11,23,33,33,1.0,1.12,7.77,0.2,1.63,155.0,34.0
+396,Sushi dengan Sayuran dan Seafood,Snack (Makanan Ringan),1,buah,36.0,0.11,26,32,23,2.0,1.4,7.15,0.3,1.47,56.0,34.0
+397,Sushi dengan Sayuran,Snack (Makanan Ringan),1,buah,38.0,0.07,18,23,17,0.0,0.8,8.24,0.3,1.7,62.0,26.0
+398,Sushi dengan Sayuran yang Digulung dengan Rumput Laut,Snack (Makanan Ringan),1,buah,31.0,0.06,17,18,18,0.0,0.57,6.71,0.1,1.16,25.0,16.0
+399,Sashimi Salmon,Snack (Makanan Ringan),1,buah,41.0,1.68,357,565,605,13.0,6.13,0.0,0.0,0.0,13.0,120.0

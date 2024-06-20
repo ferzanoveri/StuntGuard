@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import request, jsonify
 import numpy as np
 import mysql.connector
 import os
@@ -14,40 +14,73 @@ from nanoid import generate
 import pandas as pd
 import pickle
 
-app = Flask(__name__)
-
 # Load preprocessed data from CSV
-data_path = "data/preprocessed_dataset.csv"
+data_path = "data/Food_Dataset.csv"
 food_df_new = pd.read_csv(data_path)
 food_df = food_df_new.drop(['Jumlah Porsi', 'Takaran Porsi'], axis=1)
 food_df = food_df.loc[:, ['Protein (g)', 'Kalori (kal)']]
 
-# Standardize the food dataset
-scaler = StandardScaler()
-food_data_scaled = scaler.fit_transform(food_df.to_numpy())
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Path relatif ke file model h5
+model_path = os.path.join(current_dir,"RecommendationModel.pkl")
+# Load the model using pickle
+with open(model_path, 'rb') as file:
+    model = pickle.load(file)
 
-# Create the NearestNeighbors model
-model = NearestNeighbors(metric='cosine')
-model.fit(food_data_scaled)
-
-# Create the pipeline
-transformer = FunctionTransformer(model.kneighbors, kw_args={'return_distance': False})
-pipeline = Pipeline([('std_scaler', scaler), ('NN', transformer)])
-pipeline.set_params(NN__kw_args={'n_neighbors': 5, 'return_distance': False})
-
-# Recommend foods for each child in the filtered dataset
-def recommend_foods(child_nutrients_scaled):
-    recommendation_indices = pipeline.transform(child_nutrients_scaled)[0]
-    return food_df_new.iloc[recommendation_indices]
+scaler_path = os.path.join(current_dir,"scaler.pkl")
+# Load the scaler using pickle
+with open(scaler_path, 'rb') as file:
+    scaler = pickle.load(file)
 
 def check_model_attributes():
     try:
         # Check model attributes
-        model_attributes = dir(model)
-        return jsonify({"model_attributes": model_attributes})
+        model_attributes = dir(scaler)
+        return jsonify({"scaler_attributes": model_attributes})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+def recommend_foods_greedy_knn(child, food_df, model, scaler, n_recommendations):
+    energy = child['Energy_kal']
+    protein = child['Protein_g']
+    remaining_energy = energy
+    remaining_protein = protein
+    recommendations = []
+    percentages = [0.4, 0.5, 0.5, 0.5, 1.0]
+
+    for pct in percentages:
+        if remaining_energy <= 0 and remaining_protein <= 0:
+            break
+
+        target_energy = remaining_energy * pct
+        target_protein = remaining_protein * pct
+        input_data = np.array([[target_protein, target_energy]])
+        input_data_scaled = scaler.transform(input_data)
+        indices = model.kneighbors(input_data_scaled, n_neighbors=5, return_distance=False)
+
+        best_food = None
+        best_diff = float('inf')
+
+        for idx in indices[0]:
+            if idx >= len(food_df):
+                continue  # Skip if index is out-of-bounds
+
+            food_item = food_df.iloc[idx]
+            energy_diff = abs(food_item['Kalori (kal)'] - target_energy)
+            protein_diff = abs(food_item['Protein (g)'] - target_protein)
+            total_diff = energy_diff + protein_diff
+
+            if total_diff < best_diff:
+                best_diff = total_diff
+                best_food = food_item
+
+        if best_food is not None:
+            recommendations.append(best_food.to_dict())
+            remaining_energy -= best_food['Kalori (kal)']
+            remaining_protein -= best_food['Protein (g)']
+            food_df = food_df.drop(best_food.name)
+
+    return recommendations
 def post_recom(predict_id):
     try:
         data = request.get_json()
@@ -62,6 +95,8 @@ def post_recom(predict_id):
             WHERE sp.predict_id = %s
         """, (predict_id,))
         child_data = cursor.fetchone()
+
+        print(child_data)
         
         if not child_data:
             cursor.close()
@@ -70,8 +105,6 @@ def post_recom(predict_id):
         
         energy_kal = float(child_data['Energy_kal'])
         protein_g = float(child_data['Protein_g'])
-        # energy_kal = 1012
-        # protein_g = 45
         child_id = child_data['child_id']
         print('energy dan protein:', energy_kal, protein_g)
 
@@ -108,9 +141,11 @@ def post_recom(predict_id):
         print("Input data (scaled):", input_data_scaled)
 
         # Process recommendations based on nearest neighbors
-        recommended_foods = recommend_foods(input_data_scaled)
+        recommended_foods = recommend_foods_greedy_knn(child_data, food_df_new, model, scaler, 5)
+
         food_details = []
-        for idx, food_data in recommended_foods.iterrows():
+
+        for food_data in recommended_foods:
             food_details.append({
                 'food_id': generate(size=8),
                 'food_name': food_data['Nama'],
@@ -163,9 +198,16 @@ def post_recom(predict_id):
         cursor.close()
         connection.close()
 
+        # Calculate total recommended calories and protein
+        recommended_foods_df = pd.DataFrame(recommended_foods)
+        total_energy = recommended_foods_df['Kalori (kal)'].sum()
+        total_protein = recommended_foods_df['Protein (g)'].sum()
+
         response_data = {
             'recommendation': recommendation_data,
-            'food_details': food_details_data
+            'food_details': food_details_data,
+            'total_energy': total_energy,
+            'total_protein': total_protein
         }
 
         return jsonify(response_data)
