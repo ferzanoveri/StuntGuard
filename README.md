@@ -1,7 +1,7 @@
 # StundGuard
 
 <div align="center">
-	<img src="image.png">
+	<img src="logo_stuntguard_2.png">
 </div>
 
 # About
