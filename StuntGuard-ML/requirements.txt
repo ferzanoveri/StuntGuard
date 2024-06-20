@@ -1,7 +1,8 @@
 Flask
-numpy
+numpy==1.25.2
 mysql-connector-python
 python-dotenv
 nanoid
 pandas
-scikit-learn
+scikit-learn==1.2.2
+requests
