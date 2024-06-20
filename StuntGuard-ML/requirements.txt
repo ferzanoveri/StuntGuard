@@ -2,7 +2,6 @@ Flask
 numpy
 mysql-connector-python
 python-dotenv
-tensorflow
 nanoid
 pandas
 scikit-learn
