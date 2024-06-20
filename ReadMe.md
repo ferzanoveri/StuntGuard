@@ -58,7 +58,7 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 ### Predictions
 | Endpoint                          | Method | Input                       | Description                   | Status       |
 |-----------------------------------|--------|-----------------------------|-------------------------------|--------------|
-| /predict/:child_id             | POST   | child_weight, child_height, breastfeeding(optional)  | Post a prediction             | 🟠 Model on development   |
+| /predict/:child_id             | POST   | child_weight, child_height, breastfeeding(optional)  | Post a prediction             | ✅ Completed   |
 | /predict/all                  | GET    | -                           | Get all predictions           | ✅ Completed   |
 | /predict/id/:predict_id       | GET    | need predict_id params                 | Get predictions by predict_id | ✅ Completed   |
 | /predict/child/:child_id   | GET    | need child_id params                   | Get predictions by child_id   | ✅ Completed   |
@@ -85,9 +85,6 @@ Clone this repository. `git clone -b backend https://github.com/ferzanoveri/Stun
 
 ### Cloud Run
 Cloud Run is used as a backend service and to deploy machine learning models and API endpoints using containerized services.
-
-### Cloud Storage
-Cloud Storage is used to store assets and machine learning models.
 
 ### Cloud SQL
 Cloud SQL is used to store relational data such as user data, child data, and prediction results from machine learning models.
